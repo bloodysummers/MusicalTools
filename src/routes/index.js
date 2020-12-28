@@ -1,6 +1,7 @@
 export default {
     home: {
-        name: 'MusicalTools',
+        name: 'Home',
+        headerName: 'MusicalTools',
         section: 'HomeSection',
         screen: 'HomeScreen'
     },

@@ -35,7 +35,7 @@ const MenuButton = (props) => {
 export const HomeStack = () => (
     <Stack.Navigator
         screenOptions={{
-            headerTintColor: 'white',
+            headerTintColor: colors.white,
             headerStyle: styles.header
         }}
         headerMode="screen"
@@ -43,7 +43,7 @@ export const HomeStack = () => (
       <Stack.Screen
         name={home.screen}
         options={{
-          headerTitle: home.name,
+          headerTitle: home.headerName,
           headerLeft: MenuButton
         }}
         component={Home}
@@ -54,6 +54,7 @@ export const HomeStack = () => (
 export const SettingsStack = () => (
     <Stack.Navigator
         screenOptions={{
+            headerTintColor: colors.white,
             headerStyle: styles.header
         }}
     >
