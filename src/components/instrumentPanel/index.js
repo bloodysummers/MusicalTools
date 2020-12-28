@@ -8,13 +8,8 @@ import styles from './styles';
 
 const InstrumentPanel = () => {
     const [noteType, setNoteType] = useState('C');
-    const [sound, setSound] = useState(true);
     const [allow, setAllow] = useState(true);
     const [instrument, setInstrument] = useState('Piano');
-
-    const VolumeIcon = (props) => (
-        <Icon {...props} name={sound ? 'volume-up-outline' : 'volume-off-outline'} />
-    );
 
     const AllowIcon = (props) => (
         <Icon {...props} name={allow ? 'checkmark-square-2-outline' : 'close-square-outline'} />
@@ -28,7 +23,6 @@ const InstrumentPanel = () => {
                 <Keyboard
                     noteType={noteType}
                     scale={['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']}
-                    sound={sound}
                     allow={allow}
                     onPress={note => console.log(note)}
                 />
@@ -41,13 +35,6 @@ const InstrumentPanel = () => {
                     <Button status={activeButton('Do')} onPress={() => setNoteType('Do')}>Do</Button>
                     <Button status={activeButton('None')} onPress={() => setNoteType('None')}>None</Button>
                 </View>
-                <Button
-                    size="medium"
-                    style={styles.button}
-                    status={sound ? 'primary' : 'basic'}
-                    onPress={() => setSound(!sound)}
-                    accessoryLeft={VolumeIcon}
-                />
                 <Button
                     size="medium"
                     style={styles.button}

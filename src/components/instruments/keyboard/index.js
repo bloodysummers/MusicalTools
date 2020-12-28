@@ -11,15 +11,15 @@ import { keys, sounds } from './helper';
 const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
 
-const KeyboardPad = ({ noteType, sound, allow, scale, onPress }) => {
+const KeyboardPad = ({ noteType, allow, scale, onPress }) => {
 
     const playSound = useCallback(key => {
         if (onPress) onPress(key.note);
-        if (sound && (allow || scale.indexOf(key.note) > -1)) {
+        if (allow || scale.indexOf(key.note) > -1) {
             const player = sounds[key.sound];
             player.play(() => player.stop());
         }
-    }, [sound, onPress, allow, scale]);
+    }, [onPress, allow, scale]);
 
     return (
         <View style={styles.keyboard}>
@@ -65,7 +65,9 @@ KeyboardPad.defaultProps = {
 
 KeyboardPad.propTypes = {
     noteType: PropTypes.oneOf(['C', 'Do', 'None']),
-    scale: PropTypes.array
+    scale: PropTypes.array,
+    allow: PropTypes.bool,
+    onPress: PropTypes.func
 };
 
 export default KeyboardPad;
