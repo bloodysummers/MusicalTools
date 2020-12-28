@@ -11,12 +11,13 @@ import { keys, sounds } from './helper';
 const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
 
-const Keyboard = ({ noteType, allow, scale, onPress }) => {
+const Keyboard = ({ noteType, allow, sound, scale, onPress }) => {
 
     const playSound = useCallback(key => {
         if (onPress) onPress(key.note);
-        if (allow || scale.indexOf(key.note) > -1) {
+        if (sound && (allow || scale.indexOf(key.note) > -1)) {
             const player = sounds[key.sound];
+            if (player.isPlaying()) player.stop();
             player.play(() => player.stop());
         }
     }, [onPress, allow, scale]);
@@ -67,6 +68,7 @@ Keyboard.propTypes = {
     noteType: PropTypes.oneOf(['C', 'Do', 'None']),
     scale: PropTypes.array,
     allow: PropTypes.bool,
+    sound: PropTypes.bool,
     onPress: PropTypes.func
 };
 

@@ -3,7 +3,7 @@ import colors from '../../../utils/colors';
 
 export default StyleSheet.create({
     keyboard: {
-        height: 250,
+        height: 220,
         width: '100%',
         backgroundColor: colors.black2
     },
