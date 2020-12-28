@@ -9,14 +9,39 @@ import {
 } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import InstrumentPanel from './src/components/instrumentPanel';
+import theme from './src/utils/theme';
+
+import { HomeStack, SettingsStack } from './src/routes/stacks';
+import { CustomDrawer } from './src/routes/drawer';
+import routes from './src/routes';
+const { home, settings } = routes;
+
+const Drawer = createDrawerNavigator();
 
 export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <InstrumentPanel />
+    <ApplicationProvider {...eva} theme={theme}>
+      <NavigationContainer>
+        <Drawer.Navigator
+          initialRouteName="Home"
+          drawerContent={(props) => <CustomDrawer {...props} />}
+        >
+          <Drawer.Screen
+            name={home.section}
+            options={{ title: home.name }}
+            component={HomeStack}
+          />
+          <Drawer.Screen
+            name={settings.section}
+            options={{ title: settings.name }}
+            component={SettingsStack}
+          />
+        </Drawer.Navigator>
+      </NavigationContainer>
     </ApplicationProvider>
   </>
 );

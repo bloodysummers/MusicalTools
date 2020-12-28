@@ -6,7 +6,7 @@ import styles from './styles';
 import { tones, getNoteByFret, sounds } from './helper';
 import colors from '../../../utils/colors';
 
-const Fretboard = ({ tuning }) => {
+const Guitar = ({ tuning }) => {
 
     const playSound = (note) => {
         const player = sounds[note.sound][`${note.sound}${note.octave}`];
@@ -59,7 +59,7 @@ const Fretboard = ({ tuning }) => {
     );
 };
 
-Fretboard.defaultProps = {
+Guitar.defaultProps = {
     tuning: [
         { note: 'E', octave: 4 },
         { note: 'B', octave: 3 },
@@ -70,4 +70,4 @@ Fretboard.defaultProps = {
     ]
 };
 
-export default Fretboard;
+export default Guitar;
