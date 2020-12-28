@@ -4,18 +4,14 @@ import { Text } from '@ui-kitten/components';
 
 import styles from './styles';
 import { tones, getNoteByFret, sounds } from './helper';
-import colors from '../../../../../utils/colors';
+import colors from '../../../utils/colors';
 
 const Fretboard = ({ tuning }) => {
 
     const playSound = (note) => {
         const player = sounds[note.sound][`${note.sound}${note.octave}`];
+        if (player.isPlaying()) player.stop();
         player.play(() => player.stop());
-    };
-
-    const stopSound = (note) => {
-        const player = sounds[note.sound][`${note.sound}${note.octave}`];
-        player.stop();
     };
 
     return (
@@ -49,10 +45,6 @@ const Fretboard = ({ tuning }) => {
                                         onPressIn={() => {
                                             const data = getNoteByFret(note, fret, octave);
                                             playSound(data);
-                                        }}
-                                        onPressOut={() => {
-                                            const data = getNoteByFret(note, fret, octave);
-                                            stopSound(data);
                                         }}
                                     >
                                         <Text category="h6" style={styles.noteName}>{noteByFret.note}</Text>

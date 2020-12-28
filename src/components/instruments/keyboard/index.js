@@ -21,13 +21,6 @@ const KeyboardPad = ({ noteType, sound, allow, scale, onPress }) => {
         }
     }, [sound, onPress, allow, scale]);
 
-    const stopSound = useCallback(key => {
-        if (sound && (allow || scale.indexOf(key.note) > -1)) {
-            const player = sounds[key.sound];
-            player.stop();
-        }
-    }, [sound, allow, scale]);
-
     return (
         <View style={styles.keyboard}>
             <View style={styles.whiteKeys}>
@@ -39,7 +32,6 @@ const KeyboardPad = ({ noteType, sound, allow, scale, onPress }) => {
                             disabled={disabled}
                             mark={scale.indexOf(key.note) > -1}
                             onPressIn={!disabled ? () => playSound(key) : null}
-                            onPressOut={!disabled ? () => stopSound(key) : null}
                             noteType={noteType}
                             noteData={key}
                         />
@@ -56,7 +48,6 @@ const KeyboardPad = ({ noteType, sound, allow, scale, onPress }) => {
                             mark={scale.indexOf(key.note) > -1}
                             style={styles[`blackKey${i+1}`]}
                             onPressIn={!disabled ? () => playSound(key) : null}
-                            onPressOut={!disabled ? () => stopSound(key) : null}
                             noteType={noteType}
                             noteData={key}
                         />

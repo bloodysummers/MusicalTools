@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Button, Layout, Icon } from '@ui-kitten/components';
 
-import KeyboardPad from './instruments/keyboard/keyboardPad';
-import Fretboard from './instruments/guitar/fretboard';
+import Keyboard from '../instruments/keyboard';
+import Guitar from '../instruments/guitar';
 import styles from './styles';
 
-const Keyboard = () => {
+const InstrumentPanel = () => {
     const [noteType, setNoteType] = useState('C');
     const [sound, setSound] = useState(true);
     const [allow, setAllow] = useState(true);
@@ -25,7 +25,7 @@ const Keyboard = () => {
     return (
         <>
             {instrument === 'Piano' ? (
-                <KeyboardPad
+                <Keyboard
                     noteType={noteType}
                     scale={['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']}
                     sound={sound}
@@ -33,7 +33,7 @@ const Keyboard = () => {
                     onPress={note => console.log(note)}
                 />
             ) : (
-                <Fretboard />
+                <Guitar />
             )}
             <Layout style={styles.buttons}>
                 <View style={styles.notesButtons}>
@@ -68,4 +68,4 @@ const Keyboard = () => {
     );
 };
 
-export default Keyboard;
+export default InstrumentPanel;

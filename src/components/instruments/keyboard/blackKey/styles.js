@@ -1,25 +1,23 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../../../../../utils/colors';
+import colors from '../../../../utils/colors';
 
 export default StyleSheet.create({
-    whiteKey: {
+    blackKey: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-end',
-        backgroundColor: colors.white,
-        width: `${100 / 7}%`,
-        height: '100%',
-        borderRightWidth: 1,
-        borderBottomWidth: 2,
-        borderColor: colors.black,
+        position: 'absolute',
+        width: `${100 / 10}%`,
+        height: '70%',
+        backgroundColor: colors.black,
         paddingBottom: 10,
-        borderBottomLeftRadius: 4,
-        borderBottomRightRadius: 4
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8
     },
     mark: {
         backgroundColor: colors.red,
-        paddingLeft: 5,
-        paddingRight: 5,
+        paddingLeft: 2,
+        paddingRight: 2,
         borderRadius: 15
     },
     emptyMark: {
@@ -29,6 +27,6 @@ export default StyleSheet.create({
         borderRadius: 10
     },
     disabled: {
-        backgroundColor: colors.grey1
+        backgroundColor: colors.black3
     }
 });
