@@ -14,7 +14,7 @@ const Settings = () => {
         getInitialData();
     }, []);
 
-    const getInitialData = async () => {
+    const getInitialData = useCallback(async () => {
         try {
             const notationType = await AsyncStorage.getItem('notation_type');
             setNotationType(notationType || 'None');
@@ -23,17 +23,23 @@ const Settings = () => {
         } catch(e) {
             showToast('error', 'Sorry', 'An error ocurred while retrieving the saved data');
         }
-      }
+    }, [setNotationType, setSound]);
 
     const activeButton = useMemo(() =>
         type => type === notationType ? 'primary' : 'basic'
     ,[notationType]);
 
     const VolumeIcon = useCallback((props) => (
-        <Icon {...props} name={sound === 'on' ? 'volume-up-outline' : 'volume-off-outline'} />
+        <Icon
+            {...props}
+            name={sound === 'on'
+                ? 'volume-up-outline'
+                : 'volume-off-outline'
+            }
+        />
     ), [sound]);
 
-    const saveNotationType = async value => {
+    const saveNotationType = useCallback(async value => {
         const oldValue = notationType;
         try {
             setNotationType(value);
@@ -42,9 +48,9 @@ const Settings = () => {
             setNotationType(oldValue);
             showToast('error', 'Sorry', 'An error ocurred while saving the data.');
         }
-    };
+    }, [notationType, setNotationType]);
 
-    const saveSound = async () => {
+    const saveSound = useCallback(async () => {
         const oldValue = sound;
         try {
             const value = sound === 'on' ? 'off' : 'on';
@@ -54,7 +60,7 @@ const Settings = () => {
             setSound(oldValue);
             showToast('error', 'Sorry', 'An error ocurred while saving the data.');
         }
-    };
+    }, [sound, setSound]);
 
     return (
         <Layout style={styles.page} level="4">
@@ -62,15 +68,31 @@ const Settings = () => {
                 <Layout style={styles.section}>
                     <Text>Notation</Text>
                     <View style={styles.notesButtons}>
-                        <Button status={activeButton('C')} style={styles.firstButton} onPress={() => saveNotationType('C')}>C</Button>
-                        <Button status={activeButton('Do')} style={styles.middleButton} onPress={() => saveNotationType('Do')}>Do</Button>
-                        <Button status={activeButton('None')} style={styles.lastButton} onPress={() => saveNotationType('None')}>None</Button>
+                        <Button
+                            status={activeButton('C')}
+                            style={styles.firstButton}
+                            onPress={() => saveNotationType('C')}
+                        >C</Button>
+                        <Button
+                            status={activeButton('Do')}
+                            style={styles.middleButton}
+                            onPress={() => saveNotationType('Do')}
+                        >Do</Button>
+                        <Button
+                            status={activeButton('None')}
+                            style={styles.lastButton}
+                            onPress={() => saveNotationType('None')}
+                        >None</Button>
                     </View>
                 </Layout>
                 <Divider />
                 <Layout style={styles.section}>
                     <Text>Instrument sound</Text>
-                    <Button status={sound === 'on' ? 'primary' : 'basic'} onPress={saveSound} accessoryLeft={VolumeIcon} />
+                    <Button
+                        status={sound === 'on' ? 'primary' : 'basic'}
+                        onPress={saveSound}
+                        accessoryLeft={VolumeIcon}
+                    />
                 </Layout>
             </Card>
         </Layout>
