@@ -15,10 +15,10 @@ import Toast from 'react-native-toast-message';
 
 import theme from './src/utils/theme';
 
-import { HomeStack, SettingsStack } from './src/routes/stacks';
+import { HomeStack, SettingsStack, ScaleFinderStack } from './src/routes/stacks';
 import { CustomDrawer } from './src/routes/drawer';
 import routes from './src/routes';
-const { home, settings } = routes;
+const { home, settings, scaleFinder } = routes;
 
 const Drawer = createDrawerNavigator();
 
@@ -35,6 +35,11 @@ export default () => (
             name={home.section}
             options={{ title: home.name }}
             component={HomeStack}
+          />
+          <Drawer.Screen
+            name={scaleFinder.section}
+            options={{ title: scaleFinder.name}}
+            component={ScaleFinderStack}
           />
           <Drawer.Screen
             name={settings.section}

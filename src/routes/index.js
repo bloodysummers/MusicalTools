@@ -9,5 +9,11 @@ export default {
         name: 'Settings',
         section: 'SettingsSection',
         screen: 'SettingsScreen'
+    },
+    scaleFinder: {
+        name: 'Scale Finder',
+        section: 'ScaleFinderSection',
+        screen: 'ScaleFinderScreen',
+        scale: 'Scale'
     }
 };

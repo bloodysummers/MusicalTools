@@ -5,7 +5,10 @@ export default StyleSheet.create({
     keyboard: {
         height: 220,
         width: '100%',
-        backgroundColor: colors.black2
+        backgroundColor: colors.black2,
+        borderWidth: 1,
+        borderColor: colors.black2,
+        borderRightWidth: 0
     },
     whiteKeys: {
         flexDirection: 'row',
