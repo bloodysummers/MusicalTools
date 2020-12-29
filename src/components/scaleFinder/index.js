@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AdMobBanner } from "react-native-admob";
 
 import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
@@ -10,11 +11,13 @@ import { findScales } from './helper';
 import { showToast } from '../../utils/functions';
 import styles from './styles';
 import routes from '../../routes';
+import ads from '../../config/ads';
 const { scaleFinder } = routes;
 
 const ScaleFinder = () => {
     const [scale, setScale] = useState([]);
     const [finds, setFinds] = useState([]);
+    const [showAd, setShowAd] = useState(true);
     const [init, setInit] = useState(true);
     const [notationType, setNotationType] = useState('None');
     const [sound, setSound] = useState('on');
@@ -22,7 +25,10 @@ const ScaleFinder = () => {
     const isFocused = useIsFocused();
 
     useEffect(() => {
-        if (isFocused) getInitialData();
+        if (isFocused) {
+            getInitialData();
+            setShowAd(true);
+        }
     }, [isFocused]);
 
     const getInitialData = useCallback(async () => {
@@ -45,6 +51,8 @@ const ScaleFinder = () => {
         } else {
             newScale.push(note);
         }
+        setFinds([]);
+        setInit(true);
         setScale(newScale);
     };
 
@@ -65,6 +73,14 @@ const ScaleFinder = () => {
         });
     };
 
+    const bannerError = (e) => {
+        setShowAd(false);
+    };
+
+    const bannerSuccess = (hey) => {
+        setShowAd(true);
+    };
+
     return (
         <ScrollView>
             <Layout level="1">
@@ -80,6 +96,15 @@ const ScaleFinder = () => {
                 />
                 <Layout style={styles.titleWrap}>
                     <Button onPress={startFinding}>Find</Button>
+                </Layout>
+                <Layout style={showAd ? styles.ad : styles.hideAd}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID={ads.scaleFinderBanner}
+                        testDevices={[AdMobBanner.simulatorId]}
+                        onAdFailedToLoad={bannerError}
+                        onAdLoaded={bannerSuccess}
+                    />
                 </Layout>
                 {finds.length > 0 ? (
                     <ScalesList scales={finds} notationType={notationType} onTry={tryScale} />

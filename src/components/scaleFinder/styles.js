@@ -3,5 +3,13 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     titleWrap: {
         padding: 15
+    },
+    ad: {
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    hideAd: {
+        height: 0
     }
 })
