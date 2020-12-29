@@ -9,10 +9,19 @@ export default StyleSheet.create({
         position: 'absolute',
         width: `${100 / 10}%`,
         height: '70%',
-        backgroundColor: colors.black,
+        backgroundColor: colors.darkBlue,
         paddingBottom: 10,
-        borderBottomLeftRadius: 8,
-        borderBottomRightRadius: 8
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+
+        elevation: 8
     },
     mark: {
         backgroundColor: colors.red,

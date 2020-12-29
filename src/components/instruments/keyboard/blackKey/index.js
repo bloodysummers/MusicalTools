@@ -9,7 +9,7 @@ import colors from '../../../../utils/colors';
 const BlackKey = ({ style, onPressIn, noteType, noteData, mark, disabled }) => (
     <TouchableHighlight
         style={[styles.blackKey, style, disabled ? styles.disabled : {}]}
-        underlayColor={colors.darkBlue}
+        underlayColor={colors.black}
         onPressIn={!disabled ? onPressIn : null}
     >
         {noteType === 'None' ? <View style={mark ? styles.emptyMark : null} /> : (

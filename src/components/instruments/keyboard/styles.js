@@ -3,12 +3,11 @@ import colors from '../../../utils/colors';
 
 export default StyleSheet.create({
     keyboard: {
-        height: 220,
+        height: 230,
+        paddingBottom: 10,
         width: '100%',
-        backgroundColor: colors.black2,
-        borderWidth: 1,
-        borderColor: colors.black2,
-        borderRightWidth: 0
+        borderTopWidth: 2,
+        borderColor: colors.black3
     },
     whiteKeys: {
         flexDirection: 'row',

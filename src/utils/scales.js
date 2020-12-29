@@ -16,16 +16,15 @@ export default [
         latinName: 'C# mayor',
         scale: [Cs, Ds, F, Fs, Gs, As, C],
         latinScale: [Dos, Res, Fa, Fas, Sols, Las, Do],
-        findBy: [Db, Eb, Gb, Ab, Bb]
+        findBy: [Db, Eb, Gb, Ab, Bb],
+        alt: {
+            name: 'Db major',
+            root: Db,
+            latinName: 'Reb mayor',
+            scale: [Db, Eb, F, Gb, Ab, Bb, C],
+            latinScale: [Reb, Mib, Fa, Solb, Lab, Sib, Do]
+        }
     },
-    // {
-    //     name: 'Db major',
-    //     root: Db,
-    //     latinName: 'Reb mayor',
-    //     scale: [Db, Eb, F, Gb, Ab, Bb, C],
-    //     latinScale: [Reb, Mib, Fa, Solb, Lab, Sib, Do],
-    //     findBy: [Cs, Ds, Fs, Gs, As]
-    // },
     {
         name: 'D major',
         root: D,
@@ -38,15 +37,14 @@ export default [
         root: Ds,
         latinName: 'Re# mayor',
         scale: [Ds, F, G, Gs, As, C, D],
-        findBy: [Eb, Ab, Bb]
+        findBy: [Eb, Ab, Bb],
+        alt: {
+            name: 'Eb major',
+            root: Eb,
+            latinName: 'Mib mayor',
+            scale: [Eb, F, G, Ab, Bb, C, D]
+        }
     },
-    // {
-    //     name: 'Eb major',
-    //     root: Eb,
-    //     latinName: 'Mib mayor',
-    //     scale: [Eb, F, G, Ab, Bb, C, D],
-    //     findBy: [Ds, Gs, As]
-    // },
     {
         name: 'E major',
         root: E,
@@ -66,15 +64,14 @@ export default [
         root: Fs,
         latinName: 'Fa# mayor',
         scale: [Fs, Gs, As, B, Cs, Ds, F],
-        findBy: [Gb, Ab, Bb, Db, Eb]
+        findBy: [Gb, Ab, Bb, Db, Eb],
+        alt: {
+            name: 'Gb major',
+            root: Gb,
+            latinName: 'Solb mayor',
+            scale: [Gb, Ab, Bb, B, Db, Eb, F]
+        }
     },
-    // {
-    //     name: 'Gb major',
-    //     root: Gb,
-    //     latinName: 'Solb mayor',
-    //     scale: [Gb, Ab, Bb, B, Db, Eb, F],
-    //     findBy: [Fs, Gs, As, Cs, Ds]
-    // },
     {
         name: 'G major',
         root: G,
@@ -87,15 +84,14 @@ export default [
         root: Gs,
         latinName: 'Sol# mayor',
         scale: [Gs, As, C, Cs, Ds, F, G],
-        findBy: [Ab, Bb, Db, Eb]
+        findBy: [Ab, Bb, Db, Eb],
+        alt: {
+            name: 'Ab major',
+            root: Ab,
+            latinName: 'Lab mayor',
+            scale: [Ab, Bb, C, Db, Eb, F, G]
+        }
     },
-    // {
-    //     name: 'Ab major',
-    //     root: Ab,
-    //     latinName: 'Lab mayor',
-    //     scale: [Ab, Bb, C, Db, Eb, F, G],
-    //     findBy: [Gs, As, Cs, Ds]
-    // },
     {
         name: 'A major',
         root: A,
@@ -108,15 +104,14 @@ export default [
         root: As,
         latinName: 'La# mayor',
         scale: [As, C, D, Ds, F, G, A],
-        findBy: [Bb, Eb]
+        findBy: [Bb, Eb],
+        alt: {
+            name: 'Bb major',
+            root: Bb,
+            latinName: 'Sib mayor',
+            scale: [Bb, C, D, Eb, F, G, A]
+        }
     },
-    // {
-    //     name: 'Bb major',
-    //     root: Bb,
-    //     latinName: 'Sib mayor',
-    //     scale: [Bb, C, D, Eb, F, G, A],
-    //     findBy: [As, Ds]
-    // },
     {
         name: 'B major',
         root: B,
@@ -124,11 +119,11 @@ export default [
         scale:[B, Cs, Ds, E, Fs, Gs, As],
         findBy: [Eb, Db, Gb, Ab, Bb]
     },
-    // {
-    //     name: 'A minor',
-    //     root: A,
-    //     latinName: 'La menor',
-    //     scale: [A, B, C, D, E, F, G],
-    //     findBy: []
-    // },
+    {
+        name: 'A minor',
+        root: A,
+        latinName: 'La menor',
+        scale: [A, B, C, D, E, F, G],
+        findBy: []
+    }
 ];

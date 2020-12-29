@@ -12,5 +12,5 @@ export default {
     golden: '#d4a853',
     red: '#dc143c',
     softBlue: '#edf7fc',
-    darkBlue: '#0e2433'
+    darkBlue: '#113147'
 };

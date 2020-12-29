@@ -25,10 +25,7 @@ const ScaleFinder = () => {
     const isFocused = useIsFocused();
 
     useEffect(() => {
-        if (isFocused) {
-            getInitialData();
-            setShowAd(true);
-        }
+        if (isFocused) getInitialData();
     }, [isFocused]);
 
     const getInitialData = useCallback(async () => {

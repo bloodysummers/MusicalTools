@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { StatusBar } from 'react-native';
 import {
   ApplicationProvider,
   IconRegistry,
@@ -25,6 +26,7 @@ const Drawer = createDrawerNavigator();
 export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
+    <StatusBar backgroundColor={theme['color-primary-700']} barStyle="default" />
     <ApplicationProvider {...eva} theme={theme}>
       <NavigationContainer>
         <Drawer.Navigator
