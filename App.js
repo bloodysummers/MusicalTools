@@ -28,7 +28,7 @@ export default () => (
     <ApplicationProvider {...eva} theme={theme}>
       <NavigationContainer>
         <Drawer.Navigator
-          initialRouteName="Home"
+          initialRouteName={scaleFinder.section}
           drawerContent={(props) => <CustomDrawer {...props} />}
         >
           <Drawer.Screen
