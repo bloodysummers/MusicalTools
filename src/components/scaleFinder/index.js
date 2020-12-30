@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { useNavigation } from '@react-navigation/native';
@@ -22,6 +22,11 @@ const ScaleFinder = () => {
     const { notationType, instrumentSound } = useSelector(state => state.settings);
     const { scaleTypes } = useSelector(state => state.scaleFinder);
     const navigation = useNavigation();
+
+    useEffect(() => {
+        setFinds([]);
+        setInit(true);
+    }, [scaleTypes]);
 
     const toggleScale = useCallback(note => {
         const newScale = [...scale];
