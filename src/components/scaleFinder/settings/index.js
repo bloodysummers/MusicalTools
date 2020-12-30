@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Card, Text, Toggle, Divider } from '@ui-kitten/components';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { setScaleType } from '../../../store/actions/scaleFinder';
 import styles from './styles';
 
 const Settings = () => {
-    const [check1, setCheck1] = useState(true);
-    const [check2, setCheck2] = useState(false);
+    const dispatch = useDispatch();
+    const { regular, modes } = useSelector(state => state.scaleFinder.scaleTypes);
+
+    const setType = type => {
+        dispatch(setScaleType(type));
+    };
 
     return (
         <Layout style={styles.page} level="4">
@@ -17,16 +23,16 @@ const Settings = () => {
                 <Layout style={styles.item}>
                     <Text>Major and minor</Text>
                     <Toggle
-                        checked={check1}
-                        onChange={setCheck1}
+                        checked={regular}
+                        onChange={() => setType({ regular: !regular })}
                     />
                 </Layout>
                 <Divider />
                 <Layout style={styles.item}>
                     <Text>Modes</Text>
                     <Toggle
-                        checked={check2}
-                        onChange={setCheck2}
+                        checked={modes}
+                        onChange={() => setType({ modes: !modes })}
                     />
                 </Layout>
             </Card>
