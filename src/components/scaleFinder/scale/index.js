@@ -3,7 +3,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';
-import scales from '../../../utils/scales';
+import scales from '../../../utils/scales/regular';
 import { showToast } from '../../../utils/functions';
 
 const Scale = () => {

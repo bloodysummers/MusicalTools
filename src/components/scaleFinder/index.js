@@ -19,7 +19,8 @@ const ScaleFinder = () => {
     const [finds, setFinds] = useState([]);
     const [showAd, setShowAd] = useState(true);
     const [init, setInit] = useState(true);
-    const { notationType, instrumentSound} = useSelector(state => state.settings);
+    const { notationType, instrumentSound } = useSelector(state => state.settings);
+    const { scaleTypes } = useSelector(state => state.scaleFinder);
     const navigation = useNavigation();
 
     const toggleScale = useCallback(note => {
@@ -41,10 +42,10 @@ const ScaleFinder = () => {
             setFinds([]);
         } else {
             if (init) setInit(false);
-            const scales = findScales(scale);
+            const scales = findScales(scale, scaleTypes);
             setFinds(scales);
         }
-    }, [scale]);
+    }, [scale, scaleTypes]);
 
     const clear = useCallback(() => {
         setScale([]);
