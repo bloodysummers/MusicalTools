@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, TouchableHighlight } from 'react-native';
 import { Text } from '@ui-kitten/components';
 
 import { keys } from './helper';
@@ -17,25 +17,15 @@ const CircleOfFifths = () => {
     return (
         <View style={styles.circleWrap}>
             <View style={styles.circle}>
-                <View style={styles.innerCircle} />
-                <View style={styles.anchor}>
-                    {keys.map((key, i) => (
-                        <Pressable onPress={() => console.log(key.name)} key={key.name} style={[styles.note, {
-                            left: -distance*Math.cos(degreesToRadians((30*i) + 90)),
-                            top: -distance*Math.sin(degreesToRadians((30*i) + 90))
-                        }]}>
-                            <Text category="h5">{key.name}</Text>
-                        </Pressable>
-                    ))}
-                </View>
-                {/* {keys.map((key, i) => (
+                <View style={styles.circleColor} />
+                {keys.map((key, i) => (
                     <TouchableHighlight onPress={() => console.log(key.name)} key={key.name} style={[styles.note, {
-                        left: -distance*Math.cos(degreesToRadians((30*i) + 90)) + distance,
-                        top: -distance*Math.sin(degreesToRadians((30*i) + 90)) + distance
+                        left: -118*Math.cos(degreesToRadians((30*i) + 90)) + distance,
+                        top: -118*Math.sin(degreesToRadians((30*i) + 90)) + distance
                     }]}>
                         <Text category="h5">{key.name}</Text>
                     </TouchableHighlight>
-                ))} */}
+                ))}
                 {/* {keys.map((key, i) => (
                     <TouchableHighlight onPress={() => console.log(key.relative)} key={key.relative} style={[styles.note, {
                         left: -(distance-60)*Math.cos(degreesToRadians((30*i) + 90)) + distance,

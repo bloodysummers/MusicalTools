@@ -8,23 +8,29 @@ const ScalesList = ({ scales, notationType, onTry }) => {
         const notationArray = scale.map(note => notationType !== 'Do'? note.name : note.latinName);
         return notationArray.join(' ');
     };
+
+    const getScaleName = scale => {
+        const key = notationType !== 'Do' ? 'name' : 'latinName';
+        if (scale.alt) {
+            return `${scale.root[key]} / ${scale.alt[key]}`;
+        } else return scale[key]
+    };
   
     return (
         <Layout style={styles.list}>
-            {scales.map((item, index) => (
-                <Layout key={`${item.name}`}>
+            {scales.map((scale, index) => (
+                <Layout key={`${scale.name}`}>
                     <Layout style={styles.item}>
                         <Layout style={styles.itemText}>
                             <Text category="h6">
-                                {notationType !== 'Do' ? item.name : item.latinName}
-                                {item.alt && ` / ${item.alt.name}`}
+                                {getScaleName(scale)}
                             </Text>
                             <Text category="s1" appearance="hint">
-                                {scaleToString(item.scale)}
+                                {scaleToString(scale.scale)}
                             </Text>
-                                {item.alt && (
+                                {scale.alt && (
                                     <Text category="s1" appearance="hint">
-                                        {scaleToString(item.alt.scale)}
+                                        {scaleToString(scale.alt.scale)}
                                     </Text>
                                 )}
                         </Layout>

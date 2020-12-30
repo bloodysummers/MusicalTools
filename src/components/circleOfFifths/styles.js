@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import theme from '../../utils/theme';
 import colors from '../../utils/colors';
 
 const size = 300;
@@ -15,9 +16,16 @@ export default StyleSheet.create({
         width: size,
         height: size,
         borderRadius: size/2,
-        // borderWidth: 4,
-        borderColor: colors.black,
-        backgroundColor: 'blue'
+        backgroundColor: colors.black
+    },
+    circleColor: {
+        width: size-8,
+        height: size-8,
+        position: 'absolute',
+        left: 4,
+        top: 4,
+        borderRadius: (size-8)/2,
+        backgroundColor: colors.white
     },
     innerCircle: {
         width: 200,
@@ -44,10 +52,9 @@ export default StyleSheet.create({
         height: buttonSize,
         marginLeft: -buttonSize/2,
         marginTop: -buttonSize/2,
-        backgroundColor: 'red',
         borderRadius: buttonSize/2,
         alignItems: 'center',
         justifyContent: 'center',
-        zIndex: 10,
+        zIndex: 100,
     }
 });

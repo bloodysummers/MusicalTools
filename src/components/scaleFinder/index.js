@@ -64,6 +64,12 @@ const ScaleFinder = () => {
         }
     };
 
+    const clear = () => {
+        setScale([]);
+        setFinds([]);
+        setInit(true);
+    };
+
     const tryScale = (scale) => {
         navigation.navigate(scaleFinder.scale, {
             scale: scale.name
@@ -92,12 +98,13 @@ const ScaleFinder = () => {
                     onPress={toggleScale}
                 />
                 <Layout style={styles.titleWrap}>
-                    <Button onPress={startFinding}>Find</Button>
+                    <Button style={styles.button} onPress={startFinding}>Find</Button>
+                    <Button style={styles.button} status="basic" onPress={clear}>Clear</Button>
                 </Layout>
                 <Layout style={showAd ? styles.ad : styles.hideAd}>
                     <AdMobBanner
                         adSize="banner"
-                        adUnitID={ads.scaleFinderBanner}
+                        adUnitID={'ca-app-pub-3940256099942544/6300978111'}
                         testDevices={[AdMobBanner.simulatorId]}
                         onAdFailedToLoad={bannerError}
                         onAdLoaded={bannerSuccess}
