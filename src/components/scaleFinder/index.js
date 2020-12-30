@@ -11,7 +11,7 @@ import { findScales } from './helper';
 import { showToast } from '../../utils/functions';
 import styles from './styles';
 import routes from '../../routes';
-import ads from '../../config/ads';
+// import ads from '../../config/ads';
 const { scaleFinder } = routes;
 
 const ScaleFinder = () => {

@@ -14,6 +14,10 @@ export default {
         name: 'Scale Finder',
         section: 'ScaleFinderSection',
         screen: 'ScaleFinderScreen',
-        scale: 'Scale'
+        scale: 'Scale',
+        settings: {
+            name: 'Settings',
+            screen: 'ScaleFinderSettings'
+        }
     }
 };

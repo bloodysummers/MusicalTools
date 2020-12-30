@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { Icon, Button } from '@ui-kitten/components';
 
 import Home from '../components/home';
 import Settings from '../components/settings';
 import ScaleFinder from '../components/scaleFinder';
 import Scale from '../components/scaleFinder/scale';
+import ScaleFinderSettings from '../components/scaleFinder/settings';
 
 import routes from './';
 import styles from './styles';
@@ -30,6 +31,44 @@ const MenuButton = (props) => {
                 />
             )}
             onPress={() => navigation.openDrawer()}
+        />
+    );
+};
+
+const BackButton = (props) => {
+    const navigation = useNavigation();
+    return (
+        <Button
+            appearance="ghost"
+            status="danger"
+            accessoryLeft={() => (
+                <Icon
+                    {...props}
+                    name="arrow-back"
+                    style={styles.icon}
+                    fill={colors.white}
+                />
+            )}
+            onPress={() => navigation.goBack()}
+        />
+    );
+};
+
+const ScaleFinderSettingsButton = props => {
+    const navigation = useNavigation();
+    return (
+        <Button
+            appearance="ghost"
+            status="danger"
+            accessoryLeft={() => (
+                <Icon
+                    {...props}
+                    name="settings"
+                    style={styles.icon}
+                    fill={colors.white}
+                />
+            )}
+            onPress={() => navigation.navigate(scaleFinder.settings.screen)}
         />
     );
 };
@@ -58,14 +97,28 @@ export const ScaleFinderStack = () => (
             name={scaleFinder.screen}
             options={{
                 headerTitle: scaleFinder.name,
-                headerLeft: MenuButton
+                headerLeft: MenuButton,
+                headerRight: ScaleFinderSettingsButton
             }}
             component={ScaleFinder}
         />
         <Stack.Screen
             name={scaleFinder.scale}
-            // options={}
+            options={{
+                headerLeft: BackButton,
+                ...TransitionPresets.SlideFromRightIOS,
+                gestureDirection: 'horizontal'
+            }}
             component={Scale}
+        />
+        <Stack.Screen
+            name={scaleFinder.settings.screen}
+            options={{
+                headerLeft: BackButton,
+                ...TransitionPresets.SlideFromRightIOS,
+                gestureDirection: 'horizontal'
+            }}
+            component={ScaleFinderSettings}
         />
     </Stack.Navigator>
 );
