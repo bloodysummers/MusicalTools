@@ -1,29 +1,14 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { Button, Layout, Divider, Text, Icon, Card } from '@ui-kitten/components';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './styles';
-import { showToast } from '../../utils/functions';
+import { setNotationType, setInstrumentSound } from '../../store/actions/settings';
 
 const Settings = () => {
-    const [notationType, setNotationType] = useState('');
-    const [sound, setSound] = useState('');
-
-    useEffect(() => {
-        getInitialData();
-    }, []);
-
-    const getInitialData = useCallback(async () => {
-        try {
-            const notationType = await AsyncStorage.getItem('notation_type');
-            setNotationType(notationType || 'None');
-            const sound = await AsyncStorage.getItem('sound');
-            setSound(sound || 'on');
-        } catch(e) {
-            showToast('error', 'Sorry', 'An error ocurred while retrieving the saved data');
-        }
-    }, [setNotationType, setSound]);
+    const dispatch = useDispatch();
+    const { notationType, instrumentSound } = useSelector(state => state.settings);
 
     const activeButton = useMemo(() =>
         type => type === notationType ? 'primary' : 'basic'
@@ -32,35 +17,17 @@ const Settings = () => {
     const VolumeIcon = useCallback((props) => (
         <Icon
             {...props}
-            name={sound === 'on'
-                ? 'volume-up-outline'
-                : 'volume-off-outline'
-            }
+            name={instrumentSound ? 'volume-up-outline' : 'volume-off-outline'}
         />
-    ), [sound]);
+    ), [instrumentSound]);
 
     const saveNotationType = useCallback(async value => {
-        const oldValue = notationType;
-        try {
-            setNotationType(value);
-            await AsyncStorage.setItem('notation_type', value);
-        } catch (e) {
-            setNotationType(oldValue);
-            showToast('error', 'Sorry', 'An error ocurred while saving the data.');
-        }
-    }, [notationType, setNotationType]);
+        dispatch(setNotationType(value));
+    }, [setNotationType, dispatch]);
 
     const saveSound = useCallback(async () => {
-        const oldValue = sound;
-        try {
-            const value = sound === 'on' ? 'off' : 'on';
-            setSound(value);
-            await AsyncStorage.setItem('sound', value);
-        } catch(e) {
-            setSound(oldValue);
-            showToast('error', 'Sorry', 'An error ocurred while saving the data.');
-        }
-    }, [sound, setSound]);
+        dispatch(setInstrumentSound(!instrumentSound));
+    }, [instrumentSound, setInstrumentSound, dispatch]);
 
     return (
         <Layout style={styles.page} level="4">
@@ -89,7 +56,7 @@ const Settings = () => {
                 <Layout style={styles.section}>
                     <Text>Instrument sound</Text>
                     <Button
-                        status={sound === 'on' ? 'primary' : 'basic'}
+                        status={instrumentSound ? 'primary' : 'basic'}
                         onPress={saveSound}
                         accessoryLeft={VolumeIcon}
                     />
