@@ -4,8 +4,6 @@
 
 - [ ] Fix keyboard scale system
 
-- [ ] 
-
 ## In Progress
 
 
