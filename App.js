@@ -12,7 +12,6 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Toast from 'react-native-toast-message';
 
 import theme from './src/utils/theme';
 
@@ -50,7 +49,6 @@ export default () => (
           />
         </Drawer.Navigator>
       </NavigationContainer>
-      <Toast ref={ref => Toast.setRef(ref)} />
     </ApplicationProvider>
   </>
 );
