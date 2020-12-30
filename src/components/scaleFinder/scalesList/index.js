@@ -34,7 +34,7 @@ const ScalesList = ({ scales, notationType, onTry }) => {
                                     </Text>
                                 )}
                         </Layout>
-                        <Button status="basic" onPress={() => onTry(item)}>Try</Button>
+                        <Button status="basic" onPress={() => onTry(scale)}>Try</Button>
                     </Layout>
                     {index !== scales.length -1 && <Divider />}
                 </Layout>
