@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';
 import scales from '../../../utils/scales';
@@ -7,6 +8,7 @@ import { showToast } from '../../../utils/functions';
 
 const Scale = () => {
     const [scale, setScale] = useState();
+    const { notationType } = useSelector(state => state.settings);
     const navigation = useNavigation();
     const route = useRoute();
     const { params } = route;
@@ -24,10 +26,10 @@ const Scale = () => {
     
     return (
         <Keyboard
-            noteType={'C'}
+            noteType={notationType}
+            sound
             scale={scale}
             allow={false}
-            sound={true}
         />
     );
 };;
