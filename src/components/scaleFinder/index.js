@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
-import { useIsFocused, useNavigation } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 import { AdMobBanner } from "react-native-admob";
+import { useSelector } from 'react-redux';
 
 import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
@@ -19,28 +19,10 @@ const ScaleFinder = () => {
     const [finds, setFinds] = useState([]);
     const [showAd, setShowAd] = useState(true);
     const [init, setInit] = useState(true);
-    const [notationType, setNotationType] = useState('None');
-    const [sound, setSound] = useState('on');
+    const { notationType, instrumentSound} = useSelector(state => state.settings);
     const navigation = useNavigation();
-    const isFocused = useIsFocused();
 
-    useEffect(() => {
-        if (isFocused) getInitialData();
-    }, [isFocused]);
-
-    const getInitialData = useCallback(async () => {
-        try {
-            const notationType = await AsyncStorage.getItem('notation_type');
-            setNotationType(notationType || 'None');
-            const sound = await AsyncStorage.getItem('sound');
-            setSound(sound || 'on');
-        } catch(e) {
-            setNotationType('None');
-            setSound('on');
-        }
-    }, [setNotationType, setSound]);
-
-    const toggleScale = note => {
+    const toggleScale = useCallback(note => {
         const newScale = [...scale];
         const index = scale.indexOf(note);
         if (scale.indexOf(note) > -1) {
@@ -51,9 +33,9 @@ const ScaleFinder = () => {
         setFinds([]);
         setInit(true);
         setScale(newScale);
-    };
+    },[scale]);
 
-    const startFinding = () => {
+    const startFinding = useCallback(() => {
         if (scale.length < 3) {
             showToast('error', 'Select at least 3 notes');
             setFinds([]);
@@ -62,27 +44,19 @@ const ScaleFinder = () => {
             const scales = findScales(scale);
             setFinds(scales);
         }
-    };
+    }, [scale]);
 
-    const clear = () => {
+    const clear = useCallback(() => {
         setScale([]);
         setFinds([]);
         setInit(true);
-    };
+    }, []);
 
-    const tryScale = (scale) => {
+    const tryScale = useCallback((scale) => {
         navigation.navigate(scaleFinder.scale, {
             scale: scale.name
         });
-    };
-
-    const bannerError = (e) => {
-        setShowAd(false);
-    };
-
-    const bannerSuccess = (hey) => {
-        setShowAd(true);
-    };
+    }, [navigation]);
 
     return (
         <ScrollView>
@@ -94,7 +68,7 @@ const ScaleFinder = () => {
                     noteType={notationType}
                     scale={scale}
                     allow
-                    sound={sound === 'on'}
+                    sound={instrumentSound}
                     onPress={toggleScale}
                 />
                 <Layout style={styles.titleWrap}>
@@ -106,8 +80,8 @@ const ScaleFinder = () => {
                         adSize="banner"
                         adUnitID={ads.scaleFinderBanner}
                         testDevices={[AdMobBanner.simulatorId]}
-                        onAdFailedToLoad={bannerError}
-                        onAdLoaded={bannerSuccess}
+                        onAdFailedToLoad={() => setShowAd(false)}
+                        onAdLoaded={() => setShowAd(false)}
                     />
                 </Layout>
                 {finds.length > 0 ? (

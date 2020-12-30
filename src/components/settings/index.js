@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { Button, Layout, Divider, Text, Icon, Card } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,11 +23,11 @@ const Settings = () => {
 
     const saveNotationType = useCallback(async value => {
         dispatch(setNotationType(value));
-    }, [setNotationType, dispatch]);
+    }, [dispatch]);
 
     const saveSound = useCallback(async () => {
         dispatch(setInstrumentSound(!instrumentSound));
-    }, [instrumentSound, setInstrumentSound, dispatch]);
+    }, [instrumentSound, dispatch]);
 
     return (
         <Layout style={styles.page} level="4">
