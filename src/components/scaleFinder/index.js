@@ -11,7 +11,7 @@ import { findScales } from './helper';
 import { showToast } from '../../utils/functions';
 import styles from './styles';
 import routes from '../../routes';
-// import ads from '../../config/ads';
+import ads from '../../config/ads';
 const { scaleFinder } = routes;
 
 const ScaleFinder = () => {
@@ -104,7 +104,7 @@ const ScaleFinder = () => {
                 <Layout style={showAd ? styles.ad : styles.hideAd}>
                     <AdMobBanner
                         adSize="banner"
-                        adUnitID={'ca-app-pub-3940256099942544/6300978111'}
+                        adUnitID={ads.scaleFinderBanner}
                         testDevices={[AdMobBanner.simulatorId]}
                         onAdFailedToLoad={bannerError}
                         onAdLoaded={bannerSuccess}

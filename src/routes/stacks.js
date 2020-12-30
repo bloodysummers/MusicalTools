@@ -115,6 +115,7 @@ export const ScaleFinderStack = () => (
             name={scaleFinder.settings.screen}
             options={{
                 headerLeft: BackButton,
+                title: scaleFinder.settings.name,
                 ...TransitionPresets.SlideFromRightIOS,
                 gestureDirection: 'horizontal'
             }}
