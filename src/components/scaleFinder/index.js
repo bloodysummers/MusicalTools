@@ -78,8 +78,8 @@ const ScaleFinder = () => {
                     onPress={toggleScale}
                 />
                 <Layout style={styles.titleWrap}>
-                    <Button style={styles.button} onPress={startFinding}>Find</Button>
-                    <Button style={styles.button} status="basic" onPress={clear}>Clear</Button>
+                    <Button style={styles.leftButton} onPress={startFinding}>Find</Button>
+                    <Button style={styles.rightButton} status="basic" onPress={clear}>Clear</Button>
                 </Layout>
                 <Layout style={showAd ? styles.ad : styles.hideAd}>
                     <AdMobBanner

@@ -6,10 +6,13 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly'
     },
-    button: {
+    leftButton: {
         flex: 1,
-        marginLeft: 5,
-        marginRight: 5
+        marginRight: 8
+    },
+    rightButton: {
+        flex: 1,
+        marginLeft: 8
     },
     ad: {
         height: 50,
