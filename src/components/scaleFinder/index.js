@@ -60,7 +60,7 @@ const ScaleFinder = () => {
 
     const tryScale = useCallback((scale) => {
         navigation.navigate(scaleFinder.scale, {
-            scale: scale.name
+            scale: scale
         });
     }, [navigation]);
 
@@ -72,7 +72,7 @@ const ScaleFinder = () => {
                 </Layout>
                 <Keyboard
                     notationType={notationType}
-                    scale={scale}
+                    scale={{scale: scale, findBy: []}}
                     allow
                     sound={instrumentSound}
                     onPress={toggleScale}

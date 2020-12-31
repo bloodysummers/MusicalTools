@@ -6,14 +6,14 @@ import { Text } from '@ui-kitten/components';
 import styles from './styles';
 import colors from '../../../../utils/colors';
 
-const BlackKey = ({ style, onPressIn, notationType, noteData, mark, disabled }) => (
+const BlackKey = ({ style, onPressIn, notationType, noteData, mark, root, disabled }) => (
     <TouchableHighlight
         style={[styles.blackKey, style, disabled ? styles.disabled : {}]}
         underlayColor={colors.black}
         onPressIn={!disabled ? onPressIn : null}
     >
-        {notationType === 'None' ? <View style={mark ? styles.emptyMark : null} /> : (
-            <View style={mark ? styles.mark : null}>
+        {notationType === 'None' ? <View style={[mark ? styles.emptyMark : null, root ? styles.root : null]} /> : (
+            <View style={[mark ? styles.mark : null, root ? styles.root : null]}>
                 <Text
                     category="s1"
                     status="control"
@@ -43,10 +43,8 @@ BlackKey.propTypes = {
     onPressIn: PropTypes.func,
     notationType: PropTypes.oneOf(['C', 'Do', 'None']),
     noteData: PropTypes.shape({
-        note: PropTypes.string,
-        flatNote: PropTypes.string,
-        latin: PropTypes.string,
-        flatLatin: PropTypes.string
+        note: PropTypes.object,
+        flat: PropTypes.object
     }),
     mark: PropTypes.bool,
     disabled: PropTypes.bool

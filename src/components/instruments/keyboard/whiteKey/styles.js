@@ -28,7 +28,7 @@ export default StyleSheet.create({
         elevation: 6
     },
     mark: {
-        backgroundColor: theme['color-danger-500'],
+        backgroundColor: theme['color-primary-400'],
         paddingLeft: 5,
         paddingRight: 5,
         borderRadius: 15
@@ -36,8 +36,11 @@ export default StyleSheet.create({
     emptyMark: {
         width: 20,
         height: 20,
-        backgroundColor: theme['color-danger-500'],
+        backgroundColor: theme['color-primary-400'],
         borderRadius: 10
+    },
+    root: {
+        backgroundColor: theme['color-success-600']
     },
     disabled: {
         backgroundColor: colors.grey1

@@ -3,32 +3,32 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';
-import scales from '../../../utils/scales/regular';
 import { showToast } from '../../../utils/functions';
 
 const Scale = () => {
-    const [scale, setScale] = useState();
     const { notationType } = useSelector(state => state.settings);
     const navigation = useNavigation();
     const route = useRoute();
-    const { params } = route;
+    const { params: { scale } } = route;
+
+    const getScaleName = scale => {
+        const key = notationType !== 'Do' ? 'name' : 'latinName';
+        if (scale.alt) {
+            return `${scale.root[key]} / ${scale.alt[key]}`;
+        } else return scale[key]
+    };
 
     useEffect(() => {
         navigation.setOptions({
-            title: params.scale
+            title: getScaleName(scale)
         });
-        const scale = scales.find(scale => scale.name === params.scale);
-        if (scale) {
-            const scaleNotes = scale.scale.map(note => note.name);
-            setScale(scaleNotes);
-        } else showToast('error', 'Error loading the scale.');
-    }, [params]);
+    }, [scale]);
     
     return (
         <Keyboard
             notationType={notationType}
             sound
-            scale={scale}
+            scale={scale || {}}
             allow={false}
         />
     );

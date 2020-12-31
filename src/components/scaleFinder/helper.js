@@ -17,6 +17,6 @@ export const findScales = (subScale, scaleTypes) => {
 const checkScales = (subScale, scalesSet) => {
     return scalesSet.filter(scale => {
         const notes = [...scale.scale, ...scale.findBy];
-        return subScale.every(note => notes.findIndex(noteData => noteData.name === note) > -1);
+        return subScale.every(note => notes.findIndex(noteData => noteData.name === note.name) > -1);
     });
 };

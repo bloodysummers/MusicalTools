@@ -1,36 +1,42 @@
 import notes from '../notes';
 const { C, Cs, Db, D, Ds, Eb, E, Fs, F, Gb, G, Gs, Ab, A, As, Bb, B } = notes;
 
+const REGULAR = 'regular';
+const MAJOR = 'major';
+const MINOR = 'minor';
+const HARMONIC_MINOR = 'harmonic minor';
+const MELODIC_MINOR = 'melodic minor';
+
 export default [
     {
         name: 'C major',
         root: C,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Do mayor',
         scale: [C, D, E, F, G, A, B],
-        latinScale: [Do, Re, Mi, Fa, Sol, La, Si],
         findBy: []
     },
     {
         name: 'C# major',
         root: Cs,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'C# mayor',
         scale: [Cs, Ds, F, Fs, Gs, As, C],
-        latinScale: [Dos, Res, Fa, Fas, Sols, Las, Do],
         findBy: [Db, Eb, Gb, Ab, Bb],
         alt: {
             name: 'Db major',
             root: Db,
             latinName: 'Reb mayor',
-            scale: [Db, Eb, F, Gb, Ab, Bb, C],
-            latinScale: [Reb, Mib, Fa, Solb, Lab, Sib, Do]
+            scale: [Db, Eb, F, Gb, Ab, Bb, C]
         }
     },
     {
         name: 'D major',
         root: D,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Re mayor',
         scale: [D, E, Fs, G, A, B, Cs],
         findBy: [Gb, Db]
@@ -38,7 +44,8 @@ export default [
     {
         name: 'D# major',
         root: Ds,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Re# mayor',
         scale: [Ds, F, G, Gs, As, C, D],
         findBy: [Eb, Ab, Bb],
@@ -52,7 +59,8 @@ export default [
     {
         name: 'E major',
         root: E,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Mi mayor',
         scale: [E, Fs, Gs, A, B, Cs, Ds],
         findBy: [Gb, Ab, Eb]
@@ -60,7 +68,8 @@ export default [
     {
         name: 'F major',
         root: F,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Fa mayor',
         scale: [F, G, A, Bb, C, D, E],
         findBy: [As]
@@ -68,7 +77,8 @@ export default [
     {
         name: 'F# major',
         root: Fs,
-        category: 'major',
+        type: REGULAR,
+        category: MAJOR,
         latinName: 'Fa# mayor',
         scale: [Fs, Gs, As, B, Cs, Ds, F],
         findBy: [Gb, Ab, Bb, Db, Eb],
@@ -82,7 +92,7 @@ export default [
     {
         name: 'G major',
         root: G,
-        category: 'major',
+        category: MAJOR,
         latinName: 'Sol mayor',
         scale: [G, A, B, C, D, E, Fs],
         findBy: [Gb]
@@ -90,7 +100,7 @@ export default [
     {
         name: 'G# major',
         root: Gs,
-        category: 'major',
+        category: MAJOR,
         latinName: 'Sol# mayor',
         scale: [Gs, As, C, Cs, Ds, F, G],
         findBy: [Ab, Bb, Db, Eb],
@@ -104,7 +114,7 @@ export default [
     {
         name: 'A major',
         root: A,
-        category: 'major',
+        category: MAJOR,
         latinName: 'La mayor',
         scale: [A, B, Cs, D, E, Fs, Gs],
         findBy: [Db, Ab]
@@ -112,7 +122,7 @@ export default [
     {
         name: 'A# major',
         root: As,
-        category: 'major',
+        category: MAJOR,
         latinName: 'La# mayor',
         scale: [As, C, D, Ds, F, G, A],
         findBy: [Bb, Eb],
@@ -126,7 +136,7 @@ export default [
     {
         name: 'B major',
         root: B,
-        category: 'major',
+        category: MAJOR,
         latinName: 'Si mayor',
         scale: [B, Cs, Ds, E, Fs, Gs, As],
         findBy: [Eb, Db, Gb, Ab, Bb]
@@ -134,7 +144,8 @@ export default [
     {
         name: 'C minor',
         root: C,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Do menor',
         scale: [C, D, Eb, F, G, Ab, Bb],
         findBy: [Ds, Gs, As]
@@ -142,7 +153,8 @@ export default [
     {
         name: 'C# minor',
         root: Cs,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Do# menor',
         scale: [Cs, Ds, E, Fs, Gs, A, B],
         findBy: [Db, Eb, Gb, Ab],
@@ -156,7 +168,8 @@ export default [
     {
         name: 'D minor',
         root: D,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Re menor',
         scale: [D, E, F, G, A, Bb, C],
         findBy: [As]
@@ -164,7 +177,8 @@ export default [
     {
         name: 'D# minor',
         root: Ds,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Re# menor',
         scale: [Ds, F, Fs, Gs, As, B, Cs],
         findBy: [Eb, Gb, Ab, Bb, Db],
@@ -178,7 +192,8 @@ export default [
     {
         name: 'E minor',
         root: E,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Mi menor',
         scale: [E, Fs, G, A, B, C, D],
         findBy: []
@@ -186,7 +201,8 @@ export default [
     {
         name: 'F minor',
         root: F,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Fa menor',
         scale: [F, G, Ab, Bb, C, Db, Eb],
         findBy: [Gs, As, Cs, Ds]
@@ -194,7 +210,8 @@ export default [
     {
         name: 'F# minor',
         root: Fs,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Fa# menor',
         scale: [Fs, Gs, A, B, Cs, D, E],
         findBy: [Gb, Ab, Db],
@@ -208,7 +225,8 @@ export default [
     {
         name: 'G minor',
         root: G,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Sol menor',
         scale: [G, A, Bb, C, D, Eb, F],
         findBy: [As, Ds]
@@ -216,7 +234,8 @@ export default [
     {
         name: 'G# minor',
         root: Gs,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Sol# menor',
         scale: [Gs, As, B, Cs, Ds, E, Fs],
         findBy: [Ab, Bb, Db, Eb, Gb],
@@ -230,7 +249,8 @@ export default [
     {
         name: 'A minor',
         root: A,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'La menor',
         scale: [A, B, C, D, E, F, G],
         findBy: []
@@ -238,7 +258,8 @@ export default [
     {
         name: 'A# minor',
         root: As,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'La# menor',
         scale: [As, C, Cs, Ds, F, Fs, Gs],
         findBy: [Bb, Db, Eb, Gb, Ab],
@@ -252,7 +273,8 @@ export default [
     {
         name: 'B minor',
         root: B,
-        category: 'minor',
+        type: REGULAR,
+        category: MINOR,
         latinName: 'Si menor',
         scale: [B, Cs, D, E, Fs, G, A],
         findBy: []
@@ -260,59 +282,65 @@ export default [
     {
         name: 'C harmonic minor',
         root: C,
-        category: 'harmonic minor',
-        latinName: 'Do menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Do menor armónico',
         scale: [C, D, Eb, F, G, Ab, B],
         findBy: [Ds, Gs]
     },
     {
         name: 'C# harmonic minor',
         root: Cs,
-        category: 'harmonic minor',
-        latinName: 'Do# menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Do# menor armónico',
         scale: [Cs, Ds, E, Fs, Gs, A, C],
         findBy: [Db, Eb, Gb, Ab],
         alt: {
             name: 'Db harmonic minor',
             root: Db,
-            latinName: 'Reb menor armónica',
+            latinName: 'Reb menor armónico',
             scale: [Db, Eb, E, Gb, Ab, A, C]
         }
     },
     {
         name: 'D harmonic minor',
         root: D,
-        category: 'harmonic minor',
-        latinName: 'Re menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Re menor armónico',
         scale: [D, E, F, G, A, Bb, Cs],
         findBy: [As, Db]
     },
     {
         name: 'D# harmonic minor',
         root: Ds,
-        category: 'harmonic minor',
-        latinName: 'Re# menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Re# menor armónico',
         scale: [Ds, F, Fs, Gs, As, B, D],
         findBy: [Eb, Gb, Ab, Bb],
         alt: {
             name: 'Eb harmonic minor',
             root: Eb,
-            latinName: 'Mib menor armónica',
+            latinName: 'Mib menor armónico',
             scale: [Eb, F, Gb, Ab, Bb, B, D]
         }
     },
     {
         name: 'E harmonic minor',
         root: E,
-        category: 'harmonic minor',
-        latinName: 'Mi menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Mi menor armónico',
         scale: [E, Fs, G, A, B, C, Ds],
         findBy: [Eb]
     },
     {
         name: 'F harmonic minor',
         root: F,
-        category: 'harmonic minor',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
         latinName: 'Fa menor aromónica',
         scale: [F, G, Ab, Bb, C, Db, E],
         findBy: [Gs, As, Cs]
@@ -320,21 +348,23 @@ export default [
     {
         name: 'F# harmonic minor',
         root: Fs,
-        category: 'harmonic minor',
-        latinName: 'Fa# menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Fa# menor armónico',
         scale: [Fs, Gs, A, B, Cs, D, F],
         findBy: [Gb, Ab, Db],
         alt: {
             name: 'Gb harmonic minor',
             root: Gb,
-            latinName: 'Solb menor armónica',
+            latinName: 'Solb menor armónico',
             scale: [Gb, Ab, A, B, Db, D, F]
         }
     },
     {
         name: 'G harmonic minor',
         root: G,
-        category: 'harmonic minor',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
         latinName: 'Sol menor aromónica',
         scale: [G, A, Bb, C, D, Eb, Fs],
         findBy: [As, Ds, Gb]
@@ -342,103 +372,113 @@ export default [
     {
         name: 'G# harmonic minor',
         root: Gs,
-        category: 'harmonic minor',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
         latinName: 'Sol# menor armponica',
         scale: [Gs, As, B, Cs, Ds, E, G],
         findBy: [Ab, Bb, Db, Eb],
         alt: {
             name: 'Ab harmonic minor',
             root: Ab,
-            latinName: 'Lab menor armónica',
+            latinName: 'Lab menor armónico',
             scale: [Ab, Bb, B, Db, Eb, E, G]
         }
     },
     {
         name: 'A harmonic minor',
         root: A,
-        category: 'harmonic minor',
-        latinName: 'La menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'La menor armónico',
         scale: [A, B, C, D, E, F, Gs],
         findBy: [Ab]
     },
     {
         name: 'A# harmonic minor',
         root: As,
-        category: 'harmonic minor',
-        latinName: 'La# menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'La# menor armónico',
         scale: [As, C, Cs, Ds, F, Fs, A],
         findBy: [Bb, Db, Eb, Gb],
         alt: {
             name: 'Bb harmonic minor',
             root: Bb,
-            latinName: 'Sib menor armónica',
+            latinName: 'Sib menor armónico',
             scale: [Bb, C, Db, Eb, F, Gb, A]
         }
     },
     {
         name: 'B harmonic minor',
         root: B,
-        category: 'harmonic minor',
-        latinName: 'Si menor armónica',
+        type: REGULAR,
+        category: HARMONIC_MINOR,
+        latinName: 'Si menor armónico',
         scale: [B, Cs, D, E, Fs, G, As],
         findBy: [Bb]
     },
     {
         name: 'C melodic minor',
         root: C,
-        category: 'melodic minor',
-        latinName: 'Do menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Do menor melódico',
         scale: [C, D, Eb, F, G, A, B],
         findBy: [Ds]
     },
     {
         name: 'C# melodic minor',
         root: Cs,
-        category: 'melodic minor',
-        latinName: 'Do# menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Do# menor melódico',
         scale: [Cs, Ds, E, Fs, Gs, As, C],
         findBy: [Db, Eb, Gb, Ab, Bb],
         alt: {
             name: 'Db melodic minor',
             root: Db,
-            latinName: 'Reb menor melódica',
+            latinName: 'Reb menor melódico',
             scale: [Db, Eb, E, Gb, Ab, Bb, C]
         }
     },
     {
         name: 'D melodic minor',
         root: D,
-        category: 'melodic minor',
-        latinName: 'Re menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Re menor melódico',
         scale: [D, E, F, G, A, B, Cs],
         findBy: [Db]
     },
     {
         name: 'D# melodic minor',
         root: Ds,
-        category: 'melodic minor',
-        latinName: 'Re# menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Re# menor melódico',
         scale: [Ds, F, Fs, Gs, As, C, D],
         findBy: [Eb, Gb, Ab, Bb],
         alt: {
             name: 'Eb melodic minor',
             root: Eb,
-            latinName: 'Mib menor melódica',
+            latinName: 'Mib menor melódico',
             scale: [Eb, F, Gb, Ab, Bb, C, D]
         }
     },
     {
         name: 'E melodic minor',
         root: E,
-        category: 'melodic minor',
-        latinName: 'Mi menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Mi menor melódico',
         scale: [E, Fs, G, A, B, Cs, Ds],
         findBy: [Eb, Db]
     },
     {
         name: 'F melodic minor',
         root: F,
-        category: 'melodic minor',
+        type: REGULAR,
+        category: MELODIC_MINOR,
         latinName: 'Fa menor aromónica',
         scale: [F, G, Ab, Bb, C, D, E],
         findBy: [Gs, As]
@@ -446,21 +486,23 @@ export default [
     {
         name: 'F# melodic minor',
         root: Fs,
-        category: 'melodic minor',
-        latinName: 'Fa# menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Fa# menor melódico',
         scale: [Fs, Gs, A, B, Cs, Ds, F],
         findBy: [Gb, Ab, Db, Eb],
         alt: {
             name: 'Gb melodic minor',
             root: Gb,
-            latinName: 'Solb menor melódica',
+            latinName: 'Solb menor melódico',
             scale: [Gb, Ab, A, B, Db, Eb, F]
         }
     },
     {
         name: 'G melodic minor',
         root: G,
-        category: 'melodic minor',
+        type: REGULAR,
+        category: MELODIC_MINOR,
         latinName: 'Sol menor aromónica',
         scale: [G, A, Bb, C, D, E, Fs],
         findBy: [As, Gb]
@@ -468,44 +510,48 @@ export default [
     {
         name: 'G# melodic minor',
         root: Gs,
-        category: 'melodic minor',
+        type: REGULAR,
+        category: MELODIC_MINOR,
         latinName: 'Sol# menor armponica',
         scale: [Gs, As, B, Cs, Ds, F, G],
         findBy: [Ab, Bb, Db, Eb],
         alt: {
             name: 'Ab melodic minor',
             root: Ab,
-            latinName: 'Lab menor melódica',
+            latinName: 'Lab menor melódico',
             scale: [Ab, Bb, B, Db, Eb, F, G]
         }
     },
     {
         name: 'A melodic minor',
         root: A,
-        category: 'melodic minor',
-        latinName: 'La menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'La menor melódico',
         scale: [A, B, C, D, E, Fs, Gs],
         findBy: [Gb, Ab]
     },
     {
         name: 'A# melodic minor',
         root: As,
-        category: 'melodic minor',
-        latinName: 'La# menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'La# menor melódico',
         scale: [As, C, Cs, Ds, F, G, A],
         findBy: [Bb, Db, Eb],
         alt: {
             name: 'Bb melodic minor',
             root: Bb,
-            latinName: 'Sib menor melódica',
+            latinName: 'Sib menor melódico',
             scale: [Bb, C, Db, Eb, F, G, A]
         }
     },
     {
         name: 'B melodic minor',
         root: B,
-        category: 'melodic minor',
-        latinName: 'Si menor melódica',
+        type: REGULAR,
+        category: MELODIC_MINOR,
+        latinName: 'Si menor melódico',
         scale: [B, Cs, D, E, Fs, Gs, As],
         findBy: [Ab, Bb]
     }

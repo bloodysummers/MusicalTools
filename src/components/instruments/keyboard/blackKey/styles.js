@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../../utils/colors';
+import theme from '../../../../utils/theme';
 
 export default StyleSheet.create({
     blackKey: {
@@ -24,7 +25,7 @@ export default StyleSheet.create({
         elevation: 8
     },
     mark: {
-        backgroundColor: colors.red,
+        backgroundColor: theme['color-primary-400'],
         paddingLeft: 2,
         paddingRight: 2,
         borderRadius: 15
@@ -32,8 +33,11 @@ export default StyleSheet.create({
     emptyMark: {
         width: 20,
         height: 20,
-        backgroundColor: colors.red,
+        backgroundColor: theme['color-primary-400'],
         borderRadius: 10
+    },
+    root: {
+        backgroundColor: theme['color-success-600']
     },
     disabled: {
         backgroundColor: colors.black3
