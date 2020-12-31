@@ -6,27 +6,27 @@ import { Text } from '@ui-kitten/components';
 import styles from './styles';
 import colors from '../../../../utils/colors';
 
-const BlackKey = ({ style, onPressIn, noteType, noteData, mark, disabled }) => (
+const BlackKey = ({ style, onPressIn, notationType, noteData, mark, disabled }) => (
     <TouchableHighlight
         style={[styles.blackKey, style, disabled ? styles.disabled : {}]}
         underlayColor={colors.black}
         onPressIn={!disabled ? onPressIn : null}
     >
-        {noteType === 'None' ? <View style={mark ? styles.emptyMark : null} /> : (
+        {notationType === 'None' ? <View style={mark ? styles.emptyMark : null} /> : (
             <View style={mark ? styles.mark : null}>
                 <Text
                     category="s1"
                     status="control"
                     style={styles.blackKeyText}
                 >
-                    {noteType === 'C' ? noteData.note : noteData.latin}
+                    {notationType === 'C' ? noteData.note.name : noteData.note.latinName}
                 </Text>
                 <Text
                     category="s1"
                     status="control"
                     style={styles.blackKeyText}
                 >
-                    {noteType === 'C' ? noteData.flatNote : noteData.flatLatin}
+                    {notationType === 'C' ? noteData.flat.name : noteData.flat.latinName}
                 </Text>
             </View>
         )}
@@ -34,14 +34,14 @@ const BlackKey = ({ style, onPressIn, noteType, noteData, mark, disabled }) => (
 );
 
 BlackKey.defaultProps = {
-    noteType: 'None',
+    notationType: 'None',
     noteData: {}
 };
 
 BlackKey.propTypes = {
     style: PropTypes.object,
     onPressIn: PropTypes.func,
-    noteType: PropTypes.oneOf(['C', 'Do', 'None']),
+    notationType: PropTypes.oneOf(['C', 'Do', 'None']),
     noteData: PropTypes.shape({
         note: PropTypes.string,
         flatNote: PropTypes.string,

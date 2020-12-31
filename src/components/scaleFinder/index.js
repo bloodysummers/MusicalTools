@@ -71,7 +71,7 @@ const ScaleFinder = () => {
                     <Text category="h5">Select the notes</Text>
                 </Layout>
                 <Keyboard
-                    noteType={notationType}
+                    notationType={notationType}
                     scale={scale}
                     allow
                     sound={instrumentSound}

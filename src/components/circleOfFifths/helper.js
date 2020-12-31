@@ -1,5 +1,5 @@
 import notes from '../../utils/notes';
-const { C, Cs, Db, D, Ds, Eb, E, Fb, Fs, F, Gb, G, Gs, Ab, A, As, Bb, B } = notes;
+const { C, Cs, Db, D, Ds, Eb, E, Fs, F, Gb, G, Gs, Ab, A, As, Bb, B } = notes;
 const
 c = 'c',
 cs = 'c#',

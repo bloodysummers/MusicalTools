@@ -11,7 +11,7 @@ import { keys, sounds } from './helper';
 const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
 
-const Keyboard = ({ noteType, allow, sound, scale, onPress }) => {
+const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
 
     const playSound = useCallback(key => {
         if (onPress) onPress(key.note);
@@ -29,11 +29,11 @@ const Keyboard = ({ noteType, allow, sound, scale, onPress }) => {
                     const disabled = !allow && scale.indexOf(key.note) === -1;
                     return (
                         <WhiteKey
-                            key={key.note}
+                            key={key.note.name}
                             disabled={disabled}
                             mark={scale.indexOf(key.note) > -1}
                             onPressIn={!disabled ? () => playSound(key) : null}
-                            noteType={noteType}
+                            notationType={notationType}
                             noteData={key}
                         />
                     );
@@ -44,12 +44,12 @@ const Keyboard = ({ noteType, allow, sound, scale, onPress }) => {
                     const disabled = !allow && scale.indexOf(key.note) === -1;
                     return (
                         <BlackKey
-                            key={key.note}
+                            key={key.note.name}
                             disabled={disabled}
                             mark={scale.indexOf(key.note) > -1}
                             style={styles[`blackKey${i+1}`]}
                             onPressIn={!disabled ? () => playSound(key) : null}
-                            noteType={noteType}
+                            notationType={notationType}
                             noteData={key}
                         />
                     );
@@ -60,12 +60,12 @@ const Keyboard = ({ noteType, allow, sound, scale, onPress }) => {
 };
 
 Keyboard.defaultProps = {
-    noteType: 'None',
+    notationType: 'None',
     scale: []
 };
 
 Keyboard.propTypes = {
-    noteType: PropTypes.oneOf(['C', 'Do', 'None']),
+    notationType: PropTypes.oneOf(['C', 'Do', 'None']),
     scale: PropTypes.array,
     allow: PropTypes.bool,
     sound: PropTypes.bool,

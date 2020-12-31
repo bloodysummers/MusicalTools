@@ -21,7 +21,7 @@ const InstrumentPanel = () => {
         <>
             {instrument === 'Piano' ? (
                 <Keyboard
-                    noteType={noteType}
+                    notation={noteType}
                     scale={['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']}
                     allow={allow}
                     onPress={note => console.log(note)}

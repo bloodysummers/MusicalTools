@@ -1,18 +1,20 @@
 import Sound from 'react-native-sound';
+import notes from '../../../utils/notes';
+const { C, Cs, Db, D, Ds, Eb, E, Fs, F, Gb, G, Gs, Ab, A, As, Bb, B } = notes;
 
 export const keys = [
-    { note: 'C', latin: 'Do', whole: true, sound: 'c4' },
-    { note: 'C#', flatNote: 'D♭', latin: 'Do#', flatLatin: 'Re♭', sound: 'db4' },
-    { note: 'D', latin: 'Re', whole: true, sound: 'd4' },
-    { note: 'D#', flatNote: 'E♭', latin: 'Re#', flatLatin: 'Mi♭', sound: 'eb4' },
-    { note: 'E', latin: 'Mi', whole: true, sound: 'e4' },
-    { note: 'F', latin: 'Fa', whole: true, sound: 'f4' },
-    { note: 'F#', flatNote: 'G♭', latin: 'Fa#', flatLatin: 'Sol♭', sound: 'gb4' },
-    { note: 'G', latin: 'Sol', whole: true, sound: 'g4' },
-    { note: 'G#', flatNote: 'A♭', latin: 'Sol#', flatLatin: 'La♭', sound: 'ab4' },
-    { note: 'A', latin: 'La', whole: true, sound: 'a4' },
-    { note: 'A#', flatNote: 'B♭', latin: 'La#', flatLatin: 'Si♭', sound: 'bb4' },
-    { note: 'B', latin: 'Si', whole: true, sound: 'b4' }
+    { note: C, whole: true, sound: 'c4' },
+    { note: Cs, flat: Db, sound: 'db4' },
+    { note: D, whole: true, sound: 'd4' },
+    { note: Ds, flat: Eb, sound: 'eb4' },
+    { note: E, whole: true, sound: 'e4' },
+    { note: F, whole: true, sound: 'f4' },
+    { note: Fs, flat: Gb, sound: 'gb4' },
+    { note: G, whole: true, sound: 'g4' },
+    { note: Gs, flat: Ab, sound: 'ab4' },
+    { note: A, whole: true, sound: 'a4' },
+    { note: As, flat: Bb, sound: 'bb4' },
+    { note: B, whole: true, sound: 'b4' }
 ];
 
 export const sounds = keys.reduce((all, key) => {

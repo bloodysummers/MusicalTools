@@ -26,7 +26,7 @@ const Scale = () => {
     
     return (
         <Keyboard
-            noteType={notationType}
+            notationType={notationType}
             sound
             scale={scale}
             allow={false}
