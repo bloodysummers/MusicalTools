@@ -1,5 +1,3 @@
-import regular from '../../utils/scales/regular';
-import modes from '../../utils/scales/modes';
 import { regularScales, modeScales } from '../../utils/scales';
 
 export const findScales = (subScale, scaleTypes) => {
