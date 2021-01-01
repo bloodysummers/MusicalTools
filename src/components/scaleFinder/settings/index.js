@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
+import { View } from 'react-native';
 import { Layout, Card, Text, Toggle, Divider } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,21 +8,21 @@ import styles from './styles';
 
 const Settings = () => {
     const dispatch = useDispatch();
-    const { regular, modes, pentatonic, blues, harmonicMinorModes, melodicMinorModes, augmentedDiminished } = useSelector(state => state.scaleFinder.scaleTypes);
+    const scaleTypes = useSelector(state => state.scaleFinder.scaleTypes);
     
-    const types = [
-        { name: 'Major and minor', key: 'regular', type: regular },
-        { name: 'Modes', key: 'modes', type: modes },
-        { name: 'Harmonic minor modes', key: 'harmonicMinorModes', type: harmonicMinorModes },
-        { name: 'Melodic minor modes', key: 'melodicMinorModes', type: melodicMinorModes },
-        { name: 'Pentatonic', key: 'pentatonic', type: pentatonic },
-        { name: 'Blues', key: 'blues', type: blues },
-        { name: 'Augmented and diminished', key: 'augmentedDiminished', type: augmentedDiminished }
-    ];
+    const types = useMemo(() => [
+        { name: 'Major and minor', key: 'regular', type: scaleTypes.regular },
+        { name: 'Modes', key: 'modes', type: scaleTypes.modes },
+        { name: 'Harmonic minor modes', key: 'harmonicMinorModes', type: scaleTypes.harmonicMinorModes },
+        { name: 'Melodic minor modes', key: 'melodicMinorModes', type: scaleTypes.melodicMinorModes },
+        { name: 'Pentatonic', key: 'pentatonic', type: scaleTypes.pentatonic },
+        { name: 'Blues', key: 'blues', type: scaleTypes.blues },
+        { name: 'Augmented and diminished', key: 'augmentedDiminished', type: scaleTypes.augmentedDiminished }
+    ], [scaleTypes]);
 
-    const setType = type => {
+    const setType = useCallback(type => {
         dispatch(setScaleType(type));
-    };
+    }, [dispatch]);
 
     return (
         <Layout style={styles.page} level="4">
@@ -31,8 +32,8 @@ const Settings = () => {
                 </Layout>
             )}>
                 {types.map((item, i) => (
-                    <>
-                        <Layout key={item.name} style={styles.item}>
+                    <View>
+                        <Layout style={styles.item}>
                             <Text>{item.name}</Text>
                             <Toggle
                                 checked={item.type}
@@ -40,7 +41,7 @@ const Settings = () => {
                             />
                         </Layout>
                         {i < types.length-1 && <Divider />}
-                    </>
+                    </View>
                 ))}
             </Card>
         </Layout>

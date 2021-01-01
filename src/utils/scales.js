@@ -87,13 +87,15 @@ export const majorAugmentedScales = scaleBuilder('major augmented');
 export const dorian4Scales = scaleBuilder('dorian #4');
 export const phrygianDominantScales = scaleBuilder('phrygian dominant');
 export const lydian9Scales = scaleBuilder('lydian #9');
+export const ultraLocrianScales = scaleBuilder('ultralocrian');
 export const harmonicMinorModeScales = [
     ...harmonicMinorScales,
     ...locrian6Scales,
     ...majorAugmentedScales,
     ...dorian4Scales,
     ...phrygianDominantScales,
-    ...lydian9Scales
+    ...lydian9Scales,
+    ...ultraLocrianScales
 ];
 // Melodic minor modes
 export const dorianb2Scales = scaleBuilder('dorian b2');
