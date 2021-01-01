@@ -1,22 +1,21 @@
 import regular from '../../utils/scales/regular';
 import modes from '../../utils/scales/modes';
+import { regularScales, modeScales } from '../../utils/scales';
 
 export const findScales = (subScale, scaleTypes) => {
     let scales = [];
     if (scaleTypes.regular) {
-        const regularScales = checkScales(subScale, regular);
-        scales = scales.concat(regularScales);
+        const regular = checkScales(subScale, regularScales);
+        scales = scales.concat(regular);
     }
     if (scaleTypes.modes) {
-        const modesScales = checkScales(subScale, modes);
-        scales = scales.concat(modesScales);
+        const modes = checkScales(subScale, modeScales);
+        scales = scales.concat(modes);
     }
     return scales;
 };
 
-const checkScales = (subScale, scalesSet) => {
-    return scalesSet.filter(scale => {
-        const notes = [...scale.scale, ...scale.findBy];
-        return subScale.every(note => notes.findIndex(noteData => noteData.name === note.name) > -1);
-    });
-};
+const checkScales = (subScale, scalesSet) =>
+    scalesSet.filter(scale =>
+        subScale.every(note =>
+            scale.findBy.indexOf(note) > -1));

@@ -16,7 +16,6 @@ const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
     const notesInScale = useMemo(() => [...scale.scale, ...scale.findBy], [scale]);
 
     const playSound = useCallback(key => {
-        debugger;
         if (onPress) onPress(key.note);
         if (sound && (allow || notesInScale.indexOf(key.note) > -1)) {
             const player = sounds[key.sound];
@@ -44,7 +43,7 @@ const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
                     const disabled = checkDisabled(key.note);
                     return (
                         <WhiteKey
-                            key={key.note.name}
+                            key={key.note}
                             disabled={disabled}
                             mark={markKey(key.note)}
                             root={checkRoot(key.note)}
@@ -55,12 +54,12 @@ const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
                     );
                 })}
             </View>
-            {/* <View style={styles.blackKeys}>
+            <View style={styles.blackKeys}>
                 {blackKeys.map((key, i) => {
                     const disabled = checkDisabled(key.note);
                     return (
                         <BlackKey
-                            key={key.note.name}
+                            key={key.note}
                             disabled={disabled}
                             mark={markKey(key.note)}
                             root={checkRoot(key.note)}
@@ -71,7 +70,7 @@ const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
                         />
                     );
                 })}
-            </View> */}
+            </View>
         </View>
     );
 };

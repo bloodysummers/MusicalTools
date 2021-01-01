@@ -21,8 +21,22 @@ const scaleBuilder = type => {
     });
 };
 
+const revertNameWithAlias = scales => {
+    return scales.map(scale => {
+        const alias = scale.aliases[0];
+        const { type, tonic } = scale;
+        return {
+            ...scale,
+            name: `${tonic} ${alias}`,
+            aliases: [type],
+            type: alias
+        };
+    });
+};
+
 export const majorScales = scaleBuilder('major');
-export const minorScales = scaleBuilder('minor');
+const minors = scaleBuilder('minor');
+export const minorScales = revertNameWithAlias(minors);
 export const harmonicMinorScales = scaleBuilder('harmonic minor');
 export const melodicMinorScales = scaleBuilder('melodic minor');
 export const regularScales = [
@@ -31,7 +45,8 @@ export const regularScales = [
     ...harmonicMinorScales,
     ...melodicMinorScales
 ];
-export const ionianScales = scaleBuilder('ionian');
+const ionians = scaleBuilder('ionian')
+export const ionianScales = revertNameWithAlias(ionians);
 export const dorianScales = scaleBuilder('dorian');
 export const phrygianScales = scaleBuilder('phrygian');
 export const lydianScales = scaleBuilder('lydian');

@@ -1,19 +1,22 @@
 import React from 'react';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
 import styles from './styles';
+import { latinNotes } from '../../../utils/notes';
 
 const ScalesList = ({ scales, notationType, onTry }) => {
 
     const scaleToString = scale => {
-        const notationArray = scale.map(note => notationType !== 'Do'? note.name : note.latinName);
+        const notationArray = scale.map(note => notationType !== 'Do' ? note : latinNotes[note]);
         return notationArray.join(' ');
     };
 
     const getScaleName = scale => {
-        const key = notationType !== 'Do' ? 'name' : 'latinName';
+        const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
         if (scale.alt) {
-            return `${scale.root[key]} / ${scale.alt[key]}`;
-        } else return scale[key]
+            const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
+            return `${key} / ${altKey} ${scale.type}`;
+        }
+        return `${key} ${scale.type}`;
     };
   
     return (
@@ -26,11 +29,11 @@ const ScalesList = ({ scales, notationType, onTry }) => {
                                 {getScaleName(scale)}
                             </Text>
                             <Text category="s1" appearance="hint">
-                                {scaleToString(scale.scale)}
+                                {scaleToString(scale.notes)}
                             </Text>
                                 {scale.alt && (
                                     <Text category="s1" appearance="hint">
-                                        {scaleToString(scale.alt.scale)}
+                                        {scaleToString(scale.alt.notes)}
                                     </Text>
                                 )}
                         </Layout>

@@ -36,11 +36,21 @@ Si = 'Si';
 
 export const latinNotes = {
     C: 'Do',
+    ['C#']: 'Do#',
+    ['Db']: 'Reb',
     D: 'Re',
+    ['D#']: 'Re#',
+    ['Eb']: 'Mib',
     E: 'Mi',
     F: 'Fa',
+    ['F#']: 'Fa#',
+    ['Gb']: 'Solb',
     G: 'Sol',
+    ['G#']: 'Sol#',
+    ['Ab']: 'Lab',
     A: 'La',
+    ['A#']: 'La#',
+    ['Bb']: 'Sib',
     B: 'Si'
 };
 
