@@ -1,4 +1,4 @@
-import { Scale, Note } from '@tonaljs/tonal';
+import { Scale, Note, ScaleType } from '@tonaljs/tonal';
 
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
@@ -45,7 +45,8 @@ export const regularScales = [
     ...harmonicMinorScales,
     ...melodicMinorScales
 ];
-const ionians = scaleBuilder('ionian')
+
+const ionians = scaleBuilder('ionian');
 export const ionianScales = revertNameWithAlias(ionians);
 export const dorianScales = scaleBuilder('dorian');
 export const phrygianScales = scaleBuilder('phrygian');
@@ -62,15 +63,24 @@ export const modeScales = [
     ...aeolianScales,
     ...locrianScales
 ];
+
 export const majorPentatonicScales = scaleBuilder('pentatonic');
 export const minorPentatonicScales = scaleBuilder('minor pentatonic');
 export const pentatonicScales = [
     ...majorPentatonicScales,
     ...minorPentatonicScales
 ];
+
 export const majorBluesScales = scaleBuilder('major blues');
 export const minorBluesScales = scaleBuilder('minor blues');
 export const bluesScales = [
     ...majorBluesScales,
     ...minorBluesScales
+];
+
+export const augmentedScales = scaleBuilder('augmented');
+export const diminishedScales = scaleBuilder('diminished');
+export const augmentedAndDiminishedScales = [
+    ...augmentedScales,
+    ...diminishedScales
 ];
