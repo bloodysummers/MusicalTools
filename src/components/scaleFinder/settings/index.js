@@ -7,7 +7,7 @@ import styles from './styles';
 
 const Settings = () => {
     const dispatch = useDispatch();
-    const { regular, modes } = useSelector(state => state.scaleFinder.scaleTypes);
+    const { regular, modes, pentatonic, blues } = useSelector(state => state.scaleFinder.scaleTypes);
 
     const setType = type => {
         dispatch(setScaleType(type));
@@ -33,6 +33,21 @@ const Settings = () => {
                     <Toggle
                         checked={modes}
                         onChange={() => setType({ modes: !modes })}
+                    />
+                </Layout>
+                <Divider />
+                <Layout style={styles.item}>
+                    <Text>Pentatonic</Text>
+                    <Toggle
+                        checked={pentatonic}
+                        onChange={() => setType({ pentatonic: !pentatonic })}
+                    />
+                </Layout>
+                <Layout style={styles.item}>
+                    <Text>Blues</Text>
+                    <Toggle
+                        checked={blues}
+                        onChange={() => setType({ blues: !blues })}
                     />
                 </Layout>
             </Card>

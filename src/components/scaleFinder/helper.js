@@ -1,4 +1,4 @@
-import { regularScales, modeScales } from '../../utils/scales';
+import { regularScales, modeScales, pentatonicScales, bluesScales } from '../../utils/scales';
 
 export const findScales = (subScale, scaleTypes) => {
     let scales = [];
@@ -9,6 +9,14 @@ export const findScales = (subScale, scaleTypes) => {
     if (scaleTypes.modes) {
         const modes = checkScales(subScale, modeScales);
         scales = scales.concat(modes);
+    }
+    if (scaleTypes.pentatonic) {
+        const pentatonics = checkScales(subScale, pentatonicScales);
+        scales = scales.concat(pentatonics);
+    }
+    if (scaleTypes.blues) {
+        const blues = checkScales(subScale, bluesScales);
+        scales = scales.concat(blues);
     }
     return scales;
 };

@@ -62,3 +62,15 @@ export const modeScales = [
     ...aeolianScales,
     ...locrianScales
 ];
+export const majorPentatonicScales = scaleBuilder('pentatonic');
+export const minorPentatonicScales = scaleBuilder('minor pentatonic');
+export const pentatonicScales = [
+    ...majorPentatonicScales,
+    ...minorPentatonicScales
+];
+export const majorBluesScales = scaleBuilder('major blues');
+export const minorBluesScales = scaleBuilder('minor blues');
+export const bluesScales = [
+    ...majorBluesScales,
+    ...minorBluesScales
+];
