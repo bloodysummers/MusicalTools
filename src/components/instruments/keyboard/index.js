@@ -80,19 +80,7 @@ Keyboard.defaultProps = {
 
 Keyboard.propTypes = {
     notationType: PropTypes.oneOf(['C', 'Do', 'None']),
-    scale: PropTypes.shape({
-        name: PropTypes.string,
-        root: PropTypes.shape({
-            name: PropTypes.string,
-            latinName: PropTypes.string,
-            homonym: PropTypes.string
-        }),
-        category: PropTypes.string,
-        latinName: PropTypes.string,
-        scale: PropTypes.array,
-        findBy: PropTypes.array,
-        alt: PropTypes.object
-    }),
+    scale: PropTypes.object,
     allow: PropTypes.bool,
     sound: PropTypes.bool,
     onPress: PropTypes.func

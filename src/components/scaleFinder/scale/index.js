@@ -3,7 +3,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';
-import { showToast } from '../../../utils/functions';
+import { latinNotes } from '../../../utils/notes';
 
 const Scale = () => {
     const { notationType } = useSelector(state => state.settings);
@@ -12,10 +12,12 @@ const Scale = () => {
     const { params: { scale } } = route;
 
     const getScaleName = scale => {
-        const key = notationType !== 'Do' ? 'name' : 'latinName';
+        const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
         if (scale.alt) {
-            return `${scale.root[key]} / ${scale.alt[key]}`;
-        } else return scale[key]
+            const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
+            return `${key} / ${altKey} ${scale.type}`;
+        }
+        return `${key} ${scale.type}`;
     };
 
     useEffect(() => {
