@@ -72,7 +72,7 @@ const ScaleFinder = () => {
                 </Layout>
                 <Keyboard
                     notationType={notationType}
-                    scale={{scale: scale, findBy: []}}
+                    scale={{findBy: scale}}
                     allow
                     sound={instrumentSound}
                     onPress={toggleScale}
