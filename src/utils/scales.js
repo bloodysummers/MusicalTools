@@ -1,4 +1,5 @@
-import { Scale, Note, ScaleType } from '@tonaljs/tonal';
+import * as tonal from '@tonaljs/tonal';
+const { Scale, Note } = tonal;
 
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
@@ -34,6 +35,7 @@ const revertNameWithAlias = scales => {
     });
 };
 
+// Regular
 export const majorScales = scaleBuilder('major');
 const minors = scaleBuilder('minor');
 export const minorScales = revertNameWithAlias(minors);
@@ -45,7 +47,7 @@ export const regularScales = [
     ...harmonicMinorScales,
     ...melodicMinorScales
 ];
-
+// Modes
 const ionians = scaleBuilder('ionian');
 export const ionianScales = revertNameWithAlias(ionians);
 export const dorianScales = scaleBuilder('dorian');
@@ -63,21 +65,53 @@ export const modeScales = [
     ...aeolianScales,
     ...locrianScales
 ];
-
+// Pentatonic
 export const majorPentatonicScales = scaleBuilder('pentatonic');
 export const minorPentatonicScales = scaleBuilder('minor pentatonic');
 export const pentatonicScales = [
     ...majorPentatonicScales,
     ...minorPentatonicScales
 ];
-
+// Blues
 export const majorBluesScales = scaleBuilder('major blues');
 export const minorBluesScales = scaleBuilder('minor blues');
+export const compositeBluesScales = scaleBuilder('composite blues');
 export const bluesScales = [
     ...majorBluesScales,
-    ...minorBluesScales
+    ...minorBluesScales,
+    ...compositeBluesScales
 ];
-
+// Harmonic minor modes
+export const locrian6Scales = scaleBuilder('locrian 6');
+export const majorAugmentedScales = scaleBuilder('major augmented');
+export const dorian4Scales = scaleBuilder('dorian #4');
+export const phrygianDominantScales = scaleBuilder('phrygian dominant');
+export const lydian9Scales = scaleBuilder('lydian #9');
+export const harmonicMinorModeScales = [
+    ...harmonicMinorScales,
+    ...locrian6Scales,
+    ...majorAugmentedScales,
+    ...dorian4Scales,
+    ...phrygianDominantScales,
+    ...lydian9Scales
+];
+// Melodic minor modes
+export const dorianb2Scales = scaleBuilder('dorian b2');
+export const lydianAugmentedScales = scaleBuilder('lydian augmented');
+export const lydianDominantScales = scaleBuilder('lydian dominant');
+export const mixolydianb6Scales = scaleBuilder('mixolydian b6');
+export const locrian2Scales = scaleBuilder('locrian #2');
+export const alteredScales = scaleBuilder('altered');
+export const melodicMinorModeScales = [
+    ...melodicMinorScales,
+    ...dorianb2Scales,
+    ...lydianAugmentedScales,
+    ...lydianDominantScales,
+    ...mixolydianb6Scales,
+    ...locrian2Scales,
+    ...alteredScales
+];
+// Augmented and diminished
 export const augmentedScales = scaleBuilder('augmented');
 export const diminishedScales = scaleBuilder('diminished');
 export const augmentedAndDiminishedScales = [

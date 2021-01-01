@@ -1,4 +1,4 @@
-import { regularScales, modeScales, pentatonicScales, bluesScales } from '../../utils/scales';
+import { regularScales, modeScales, pentatonicScales, bluesScales, harmonicMinorModeScales, melodicMinorModeScales, augmentedAndDiminishedScales } from '../../utils/scales';
 
 export const findScales = (subScale, scaleTypes) => {
     let scales = [];
@@ -17,6 +17,18 @@ export const findScales = (subScale, scaleTypes) => {
     if (scaleTypes.blues) {
         const blues = checkScales(subScale, bluesScales);
         scales = scales.concat(blues);
+    }
+    if (scaleTypes.harmonicMinorModes) {
+        const harmonicMinorModes = checkScales(subScale, harmonicMinorModeScales);
+        scales = scales.concat(harmonicMinorModes);
+    }
+    if (scaleTypes.melodicMinorModes) {
+        const melodicMinorModes = checkScales(subScale, melodicMinorModeScales);
+        scales = scales.concat(melodicMinorModes);
+    }
+    if (scaleTypes.augmentedDiminished) {
+        const augmentedDiminished = checkScales(subScale, augmentedAndDiminishedScales);
+        scales = scales.concat(augmentedDiminished);
     }
     return scales;
 };

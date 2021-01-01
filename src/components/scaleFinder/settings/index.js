@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Layout, Card, Text, Toggle, Divider } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,7 +7,17 @@ import styles from './styles';
 
 const Settings = () => {
     const dispatch = useDispatch();
-    const { regular, modes, pentatonic, blues } = useSelector(state => state.scaleFinder.scaleTypes);
+    const { regular, modes, pentatonic, blues, harmonicMinorModes, melodicMinorModes, augmentedDiminished } = useSelector(state => state.scaleFinder.scaleTypes);
+    
+    const types = [
+        { name: 'Major and minor', key: 'regular', type: regular },
+        { name: 'Modes', key: 'modes', type: modes },
+        { name: 'Harmonic minor modes', key: 'harmonicMinorModes', type: harmonicMinorModes },
+        { name: 'Melodic minor modes', key: 'melodicMinorModes', type: melodicMinorModes },
+        { name: 'Pentatonic', key: 'pentatonic', type: pentatonic },
+        { name: 'Blues', key: 'blues', type: blues },
+        { name: 'Augmented and diminished', key: 'augmentedDiminished', type: augmentedDiminished }
+    ];
 
     const setType = type => {
         dispatch(setScaleType(type));
@@ -20,36 +30,18 @@ const Settings = () => {
                     <Text category="h6">Scale types</Text>
                 </Layout>
             )}>
-                <Layout style={styles.item}>
-                    <Text>Major and minor</Text>
-                    <Toggle
-                        checked={regular}
-                        onChange={() => setType({ regular: !regular })}
-                    />
-                </Layout>
-                <Divider />
-                <Layout style={styles.item}>
-                    <Text>Modes</Text>
-                    <Toggle
-                        checked={modes}
-                        onChange={() => setType({ modes: !modes })}
-                    />
-                </Layout>
-                <Divider />
-                <Layout style={styles.item}>
-                    <Text>Pentatonic</Text>
-                    <Toggle
-                        checked={pentatonic}
-                        onChange={() => setType({ pentatonic: !pentatonic })}
-                    />
-                </Layout>
-                <Layout style={styles.item}>
-                    <Text>Blues</Text>
-                    <Toggle
-                        checked={blues}
-                        onChange={() => setType({ blues: !blues })}
-                    />
-                </Layout>
+                {types.map((item, i) => (
+                    <>
+                        <Layout key={item.name} style={styles.item}>
+                            <Text>{item.name}</Text>
+                            <Toggle
+                                checked={item.type}
+                                onChange={() => setType({ [item.key]: !item.type })}
+                            />
+                        </Layout>
+                        {i < types.length-1 && <Divider />}
+                    </>
+                ))}
             </Card>
         </Layout>
     );
