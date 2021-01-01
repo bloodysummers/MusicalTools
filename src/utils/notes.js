@@ -34,6 +34,16 @@ Las = 'La#',
 Sib = 'Sib',
 Si = 'Si';
 
+export const latinNotes = {
+    C: 'Do',
+    D: 'Re',
+    E: 'Mi',
+    F: 'Fa',
+    G: 'Sol',
+    A: 'La',
+    B: 'Si'
+};
+
 export default {
     C: { name: C, latinName: Do },
     Cs: { name: Cs, latinName: Dos, homonym: Db },
