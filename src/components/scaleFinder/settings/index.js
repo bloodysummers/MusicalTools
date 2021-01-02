@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setScaleType } from '../../../store/actions/scaleFinder';
 import styles from './styles';
+import { showToast } from '../../../utils/functions';
 
 const Settings = () => {
     const dispatch = useDispatch();
@@ -20,9 +21,14 @@ const Settings = () => {
         { name: 'Augmented and diminished', key: 'augmentedDiminished', type: scaleTypes.augmentedDiminished }
     ], [scaleTypes]);
 
-    const setType = useCallback(type => {
-        dispatch(setScaleType(type));
-    }, [dispatch]);
+    const setType = useCallback((key, value) => {
+        const activeTypes = Object.values(scaleTypes).filter(type => type).length;
+        if (activeTypes <= 1 && !value) {
+            showToast('error', 'There must be at least one type selected');
+            return;
+        }
+        dispatch(setScaleType({ [key]: value }));
+    }, [dispatch, scaleTypes]);
 
     return (
         <Layout style={styles.page} level="4">
@@ -37,7 +43,7 @@ const Settings = () => {
                             <Text>{item.name}</Text>
                             <Toggle
                                 checked={item.type}
-                                onChange={() => setType({ [item.key]: !item.type })}
+                                onChange={() => setType(item.key, !item.type)}
                             />
                         </Layout>
                         {i < types.length-1 && <Divider />}
