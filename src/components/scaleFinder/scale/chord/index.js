@@ -36,7 +36,7 @@ const Chord = () => {
             if (sound.isPlaying()) sound.stop();
             setTimeout(() => {
                 sound.play(() => sound.stop());
-            }, 500*i);
+            }, 400*i);
         });
     }, [scale]);
     
