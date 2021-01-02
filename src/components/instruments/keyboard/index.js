@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { useSelector } from 'react-redux';
+import { Note } from '@tonaljs/tonal';
 
 import WhiteKey from './whiteKey';
 import BlackKey from './blackKey';
@@ -34,7 +35,7 @@ const Keyboard = ({ allow, scale, onPress }) => {
     }, [scale, allow]);
 
     const checkRoot = useCallback(note => {
-        return scale.tonic === note;
+        return scale.tonic === note || Note.enharmonic(scale.tonic) === note;
     }, [scale.tonic]);
 
     return (

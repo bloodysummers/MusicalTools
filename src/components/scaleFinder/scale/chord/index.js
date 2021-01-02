@@ -42,7 +42,12 @@ const Chord = () => {
     
     const getNotesToPlay = useCallback(() => {
         const notes = getNotesWithOctave(scale.notes);
-        return notes.map(note => sounds[note.toLowerCase()]);
+        return notes.map(note => {
+            if (note.indexOf('#') > -1) {
+                const enharmonic = tonal.Note.enharmonic(note);
+                return sounds[enharmonic.toLocaleLowerCase()];
+            } else return sounds[note.toLowerCase()]
+        });
     }, [scale])
 
     useEffect(() => {

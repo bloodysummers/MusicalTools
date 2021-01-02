@@ -25,7 +25,7 @@ const ScaleFinder = () => {
     useEffect(() => {
         setFinds([]);
         setInit(true);
-    }, [scaleTypes]);
+    }, [scaleTypes, notationType]);
 
     const toggleScale = useCallback(note => {
         const newScale = [...scale];
@@ -44,7 +44,7 @@ const ScaleFinder = () => {
         if (init) setInit(false);
         const scales = findScales(scale, scaleTypes, notationType);
         setFinds(scales);
-    }, [scale, scaleTypes]);
+    }, [scale, scaleTypes, notationType]);
 
     const clear = useCallback(() => {
         setScale([]);
