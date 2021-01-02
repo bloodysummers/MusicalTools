@@ -3,8 +3,17 @@
 ## Todo
 
 - [ ] Add exotic scales
+- [ ] Fix the chords navigation
+- [ ] Fix bugs with latin notation
+- [ ] Fix mute in the scale screen
+- [ ] Implement a player for chords and arpeggios
+- [ ] Implement a Chord progression store feature
+- [ ] Implement a full keyboard
+- [ ] Implement chord inversions
 
 ## In Progress
+
+- [ ] Circle of fifths' screen
 
 ## Done
 

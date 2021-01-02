@@ -19,5 +19,10 @@ export default {
             name: 'Settings',
             screen: 'ScaleFinderSettings'
         }
+    },
+    circleOfFifths: {
+        name: 'Circle of Fifths',
+        section: 'CircleSection',
+        screen: 'CircleScreen'
     }
 };

@@ -8,11 +8,12 @@ import Settings from '../components/settings';
 import ScaleFinder from '../components/scaleFinder';
 import Scale from '../components/scaleFinder/scale';
 import ScaleFinderSettings from '../components/scaleFinder/settings';
+import CircleOfFifths from '../components/circleOfFifths';
 
 import routes from './';
 import styles from './styles';
 import colors from '../utils/colors';
-const { home, settings, scaleFinder } = routes;
+const { home, settings, scaleFinder, circleOfFifths } = routes;
 
 const Stack = createStackNavigator();
 
@@ -123,16 +124,29 @@ export const ScaleFinderStack = () => (
         />
     </Stack.Navigator>
 );
+
+export const CircleOfFifthsStack = () => (
+    <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen
+            name={circleOfFifths.screen}
+            options={{
+                headerTitle: circleOfFifths.name,
+                headerLeft: MenuButton
+            }}
+            component={CircleOfFifths}
+        />
+    </Stack.Navigator>
+);
   
 export const SettingsStack = () => (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen
-        name={settings.screen}
-        options={{
-            headerTitle: settings.name,
-            headerLeft: MenuButton
-        }}
-        component={Settings}
-      />
-      </Stack.Navigator>
+        <Stack.Screen
+            name={settings.screen}
+            options={{
+                headerTitle: settings.name,
+                headerLeft: MenuButton
+            }}
+            component={Settings}
+        />
+    </Stack.Navigator>
 );
