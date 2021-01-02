@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
 import { findScales } from './helper';
-import { showToast } from '../../utils/functions';
 import styles from './styles';
 import routes from '../../routes';
 import ads from '../../config/ads';
@@ -42,14 +41,9 @@ const ScaleFinder = () => {
     },[scale]);
 
     const startFinding = useCallback(() => {
-        if (scale.length < 3) {
-            showToast('error', 'Select at least 3 notes');
-            setFinds([]);
-        } else {
-            if (init) setInit(false);
-            const scales = findScales(scale, scaleTypes, notationType);
-            setFinds(scales);
-        }
+        if (init) setInit(false);
+        const scales = findScales(scale, scaleTypes, notationType);
+        setFinds(scales);
     }, [scale, scaleTypes]);
 
     const clear = useCallback(() => {
@@ -69,7 +63,7 @@ const ScaleFinder = () => {
         <ScrollView>
             <Layout level="1">
                 <Layout style={styles.titleWrap}>
-                    <Text category="h5">Select the notes</Text>
+                    <Text category="h6">Select at least 3 notes</Text>
                 </Layout>
                 <Keyboard
                     scale={{findBy: scale}}
@@ -77,8 +71,21 @@ const ScaleFinder = () => {
                     onPress={toggleScale}
                 />
                 <Layout style={styles.titleWrap}>
-                    <Button style={styles.leftButton} onPress={startFinding}>Find</Button>
-                    <Button style={styles.rightButton} status="basic" onPress={clear}>Clear</Button>
+                    <Button
+                        style={styles.leftButton}
+                        disabled={scale.length < 3}
+                        onPress={startFinding}
+                    >
+                        Find
+                    </Button>
+                    <Button
+                        style={styles.rightButton}
+                        status="basic"
+                        disabled={!scale.length}
+                        onPress={clear}
+                    >
+                        Clear
+                    </Button>
                 </Layout>
                 <Layout style={showAd ? styles.ad : styles.hideAd}>
                     <AdMobBanner

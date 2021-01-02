@@ -4,7 +4,6 @@ import { Layout } from '@ui-kitten/components';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { AdMobBanner } from "react-native-admob";
 import { useSelector } from 'react-redux';
-import * as tonal from '@tonaljs/tonal';
 
 import Keyboard from '../../instruments/keyboard';
 import ScalesList from '../scalesList';
@@ -37,22 +36,24 @@ const Scale = () => {
     
     return (
         <ScrollView>
-            <Keyboard
-                scale={scale || {}}
-                allow={false}
-            />
-            <Layout style={showAd ? styles.ad : styles.hideAd}>
-                <AdMobBanner
-                    adSize="banner"
-                    adUnitID={ads.scaleBanner}
-                    testDevices={[AdMobBanner.simulatorId]}
-                    onAdFailedToLoad={() => setShowAd(false)}
-                    onAdLoaded={() => setShowAd(false)}
+            <Layout level="1">
+                <Keyboard
+                    scale={scale || {}}
+                    allow={false}
                 />
+                <Layout style={showAd ? styles.ad : styles.hideAd}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID={ads.scaleBanner}
+                        testDevices={[AdMobBanner.simulatorId]}
+                        onAdFailedToLoad={() => setShowAd(false)}
+                        onAdLoaded={() => setShowAd(false)}
+                    />
+                </Layout>
+                {chords.length > 0 && (
+                    <ScalesList scales={chords} notationType={notationType} onTry={tryChord} />
+                )}
             </Layout>
-            {chords.length > 0 && (
-                <ScalesList scales={chords} notationType={notationType} onTry={tryChord} />
-            )}
         </ScrollView>
     );
 };;
