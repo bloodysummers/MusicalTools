@@ -13,7 +13,7 @@ const ScalesList = ({ scales, notationType, onTry }) => {
     return (
         <Layout style={styles.list}>
             {scales.map((scale, index) => (
-                <Layout key={`${scale.nameToDisplay}`}>
+                <Layout key={index}>
                     <Layout style={styles.item}>
                         <Layout style={styles.itemText}>
                             <Text category="h6">

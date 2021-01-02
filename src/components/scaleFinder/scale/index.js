@@ -37,7 +37,13 @@ const Scale = () => {
                 const { symbol, name, tonic, notes } = chordData;
                 chordData.nameToDisplay = symbol;
                 chordData.subtitle = name !== `${tonic} ` && `(${name})`;
-                chordData.findBy = notes;
+                chordData.findBy = notes.reduce((notes, note) => {
+                    const regularNote = tonal.Note.simplify(note);
+                    notes.push(regularNote);
+                    const enharmonic = tonal.Note.simplify(tonal.Note.enharmonic(note));
+                    if (regularNote !== enharmonic) notes.push(enharmonic);
+                    return notes;
+                }, []);;
                 return chordData;
             });
             const newChords = chords.concat(chordsData);
