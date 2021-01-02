@@ -32,7 +32,7 @@ const Settings = () => {
                 </Layout>
             )}>
                 {types.map((item, i) => (
-                    <View>
+                    <View key={item.name}>
                         <Layout style={styles.item}>
                             <Text>{item.name}</Text>
                             <Toggle

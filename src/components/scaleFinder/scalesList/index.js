@@ -9,24 +9,15 @@ const ScalesList = ({ scales, notationType, onTry }) => {
         const notationArray = scale.map(note => notationType !== 'Do' ? note : latinNotes[note]);
         return notationArray.join(' ');
     };
-
-    const getScaleName = scale => {
-        const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
-        if (scale.alt) {
-            const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
-            return `${key} / ${altKey} ${scale.type}`;
-        }
-        return `${key} ${scale.type}`;
-    };
   
     return (
         <Layout style={styles.list}>
             {scales.map((scale, index) => (
-                <Layout key={`${scale.name}`}>
+                <Layout key={`${scale.nameToDisplay}`}>
                     <Layout style={styles.item}>
                         <Layout style={styles.itemText}>
                             <Text category="h6">
-                                {getScaleName(scale)}
+                                {scale.nameToDisplay} {scale.subtitle && <Text appearance="hint">{scale.subtitle}</Text>}
                             </Text>
                             <Text category="s1" appearance="hint">
                                 {scaleToString(scale.notes)}
