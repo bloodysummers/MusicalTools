@@ -7,7 +7,8 @@ import WhiteKey from './whiteKey';
 import BlackKey from './blackKey';
 
 import styles from './styles';
-import { keys, sounds } from './helper';
+import { keys } from './helper';
+import { sounds } from '../../../utils/sounds';
 
 const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
