@@ -1,4 +1,5 @@
 import { regularScales, modeScales, pentatonicScales, bluesScales, harmonicMinorModeScales, melodicMinorModeScales, augmentedAndDiminishedScales } from '../../utils/scales';
+import { latinNotes } from '../../utils/notes';
 
 export const findScales = (subScale, scaleTypes, notationType) => {
     let scales = [];

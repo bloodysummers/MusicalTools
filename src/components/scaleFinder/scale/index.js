@@ -16,7 +16,7 @@ const { scaleFinder } = routes;
 
 const Scale = () => {
     const [showAd, setShowAd] = useState(true);
-    const { notationType } = useSelector(state => state.settings);
+    const { notationType, instrumentSound } = useSelector(state => state.settings);
     const navigation = useNavigation();
     const route = useRoute();
     const { params: { scale, isChord } } = route;
@@ -63,7 +63,7 @@ const Scale = () => {
         <ScrollView>
             <Keyboard
                 notationType={notationType}
-                sound
+                sound={instrumentSound}
                 scale={scale || {}}
                 allow={false}
             />
