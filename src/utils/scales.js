@@ -3,17 +3,21 @@ const { Scale, Note } = tonal;
 
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
+export const getNotesAndEnharmonics = scaleNotes => {
+    return scaleNotes.reduce((notes, note) => {
+        const regularNote = Note.simplify(note);
+        notes.push(regularNote);
+        const enharmonic = Note.simplify(Note.enharmonic(note));
+        if (regularNote !== enharmonic) notes.push(enharmonic);
+        return notes;
+    }, []);
+};
+
 const scaleBuilder = type => {
     return notes.map(note => {
         const scale = Scale.get(`${note} ${type}`);
         const enharmonic = Note.enharmonic(note);
-        scale.findBy = scale.notes.reduce((notes, note) => {
-            const regularNote = Note.simplify(note);
-            notes.push(regularNote);
-            const enharmonic = Note.simplify(Note.enharmonic(note));
-            if (regularNote !== enharmonic) notes.push(enharmonic);
-            return notes;
-        }, []);
+        scale.findBy = getNotesAndEnharmonics(scale.notes);
         if (enharmonic !== note) {
             const alt = Scale.get(`${enharmonic} ${type}`);
             scale.alt = alt;

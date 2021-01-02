@@ -1,10 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
+import Keyboard from '../../../instruments/keyboard';
 
 const Chord = () => {
+    const route = useRoute();
+    const { params: { scale } } = useRoute();
+
     return (
         <View>
-            <Text>Chord view</Text>
+            <Keyboard
+                scale={scale}
+                allow={false}
+            />
         </View>
     );
 };

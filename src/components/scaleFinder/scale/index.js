@@ -8,6 +8,7 @@ import * as tonal from '@tonaljs/tonal';
 
 import Keyboard from '../../instruments/keyboard';
 import ScalesList from '../scalesList';
+import { findChords } from './helper';
 import styles from './styles';
 import routes from '../../../routes';
 import ads from '../../../config/ads';
@@ -16,7 +17,7 @@ const { scaleFinder } = routes;
 const Scale = () => {
     const navigation = useNavigation();
     const route = useRoute();
-    const { params: { scale, isChord } } = route;
+    const { params: { scale } } = route;
     const [showAd, setShowAd] = useState(true);
     const { notationType } = useSelector(state => state.settings);
 
@@ -26,35 +27,11 @@ const Scale = () => {
         });
     }, [scale]);
 
-    const chords = useMemo(() => {
-        if (isChord) return [];
-        const modes = tonal.Scale.modeNames(scale.name);
-        const chords = modes.reduce((chords, mode) => {
-            const chordsInTonic = tonal.Scale.scaleChords(mode.join(' '));
-            const chordsData = chordsInTonic.map(chord => {
-                const chordData = tonal.Chord.getChord(chord, mode[0]);
-                const { symbol, name, tonic, notes } = chordData;
-                chordData.nameToDisplay = symbol;
-                chordData.subtitle = name !== `${tonic} ` && `(${name})`;
-                chordData.findBy = notes.reduce((notes, note) => {
-                    const regularNote = tonal.Note.simplify(note);
-                    notes.push(regularNote);
-                    const enharmonic = tonal.Note.simplify(tonal.Note.enharmonic(note));
-                    if (regularNote !== enharmonic) notes.push(enharmonic);
-                    return notes;
-                }, []);;
-                return chordData;
-            });
-            const newChords = chords.concat(chordsData);
-            return newChords;
-        }, []);
-        return chords;
-    }, [scale]);
+    const chords = useMemo(() => findChords(scale.name), [scale]);
 
     const tryChord = useCallback((chord) => {
         navigation.navigate(scaleFinder.scale.chord, {
-            scale: chord,
-            isChord: true
+            scale: chord
         });
     }, [navigation]);
     
