@@ -4,7 +4,6 @@
 
 - [ ] Add exotic scales
 - [ ] Reload found scales on notationType change
-- [ ] Fix the chords navigation
 - [ ] Implement a player for chords and arpeggios
 - [ ] Implement a Chord progression store feature
 - [ ] Implement a full keyboard
@@ -12,6 +11,7 @@
 
 ## In Progress
 
+- [ ] Fix the chords navigation
 - [ ] Circle of fifths' screen
 
 ## Done

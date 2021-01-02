@@ -7,6 +7,7 @@ import Home from '../components/home';
 import Settings from '../components/settings';
 import ScaleFinder from '../components/scaleFinder';
 import Scale from '../components/scaleFinder/scale';
+import Chord from '../components/scaleFinder/scale/chord';
 import ScaleFinderSettings from '../components/scaleFinder/settings';
 import CircleOfFifths from '../components/circleOfFifths';
 
@@ -81,14 +82,35 @@ const screenOptions = {
 
 export const HomeStack = () => (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen
-        name={home.screen}
-        options={{
-            headerTitle: home.headerName,
-            headerLeft: MenuButton
-        }}
-        component={Home}
-      />
+        <Stack.Screen
+            name={home.screen}
+            options={{
+                headerTitle: home.headerName,
+                headerLeft: MenuButton
+            }}
+            component={Home}
+        />
+    </Stack.Navigator>
+);
+
+const ScaleStack = () => (
+    <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen
+            name={scaleFinder.scale.screen}
+            options={{
+                headerLeft: BackButton
+            }}
+            component={Scale}
+        />
+        <Stack.Screen
+            name={scaleFinder.scale.chord}
+            options={{
+                headerLeft: BackButton,
+                ...TransitionPresets.SlideFromRightIOS,
+                gestureDirection: 'horizontal'
+            }}
+            component={Chord}
+        />
     </Stack.Navigator>
 );
 
@@ -104,13 +126,13 @@ export const ScaleFinderStack = () => (
             component={ScaleFinder}
         />
         <Stack.Screen
-            name={scaleFinder.scale}
+            name={scaleFinder.scale.section}
             options={{
-                headerLeft: BackButton,
+                headerShown: false,
                 ...TransitionPresets.SlideFromRightIOS,
                 gestureDirection: 'horizontal'
             }}
-            component={Scale}
+            component={ScaleStack}
         />
         <Stack.Screen
             name={scaleFinder.settings.screen}

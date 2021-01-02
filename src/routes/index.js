@@ -14,7 +14,11 @@ export default {
         name: 'Scale Finder',
         section: 'ScaleFinderSection',
         screen: 'ScaleFinderScreen',
-        scale: 'Scale',
+        scale: {
+            section: 'ScaleSection',
+            screen: 'ScaleScreen',
+            chord: 'ChordScreen'
+        },
         settings: {
             name: 'Settings',
             screen: 'ScaleFinderSettings'

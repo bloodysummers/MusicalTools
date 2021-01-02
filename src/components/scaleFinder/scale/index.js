@@ -9,17 +9,16 @@ import * as tonal from '@tonaljs/tonal';
 import Keyboard from '../../instruments/keyboard';
 import ScalesList from '../scalesList';
 import styles from './styles';
-import { latinNotes } from '../../../utils/notes';
 import routes from '../../../routes';
 import ads from '../../../config/ads';
 const { scaleFinder } = routes;
 
 const Scale = () => {
-    const [showAd, setShowAd] = useState(true);
-    const { notationType, instrumentSound } = useSelector(state => state.settings);
     const navigation = useNavigation();
     const route = useRoute();
     const { params: { scale, isChord } } = route;
+    const [showAd, setShowAd] = useState(true);
+    const { notationType } = useSelector(state => state.settings);
 
     useEffect(() => {
         navigation.setOptions({
@@ -53,7 +52,7 @@ const Scale = () => {
     }, [scale]);
 
     const tryChord = useCallback((chord) => {
-        navigation.navigate(scaleFinder.scale, {
+        navigation.navigate(scaleFinder.scale.chord, {
             scale: chord,
             isChord: true
         });
@@ -62,8 +61,6 @@ const Scale = () => {
     return (
         <ScrollView>
             <Keyboard
-                notationType={notationType}
-                sound={instrumentSound}
                 scale={scale || {}}
                 allow={false}
             />

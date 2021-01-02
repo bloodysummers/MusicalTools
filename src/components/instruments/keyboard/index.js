@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import WhiteKey from './whiteKey';
 import BlackKey from './blackKey';
@@ -11,11 +12,12 @@ import { keys, sounds } from './helper';
 const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
 
-const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
+const Keyboard = ({ allow, scale, onPress }) => {
+    const { notationType, instrumentSound } = useSelector(state => state.settings);
 
     const playSound = useCallback(key => {
         if (onPress) onPress(key.note);
-        if (sound && (allow || scale.findBy.indexOf(key.note) > -1)) {
+        if (instrumentSound && (allow || scale.findBy.indexOf(key.note) > -1)) {
             const player = sounds[key.sound];
             if (player.isPlaying()) player.stop();
             player.play(() => player.stop());
@@ -74,15 +76,12 @@ const Keyboard = ({ notationType, allow, sound, scale, onPress }) => {
 };
 
 Keyboard.defaultProps = {
-    notationType: 'None',
     scale: {}
 };
 
 Keyboard.propTypes = {
-    notationType: PropTypes.oneOf(['C', 'Do', 'None']),
     scale: PropTypes.object,
     allow: PropTypes.bool,
-    sound: PropTypes.bool,
     onPress: PropTypes.func
 };
 

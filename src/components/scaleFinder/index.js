@@ -19,7 +19,7 @@ const ScaleFinder = () => {
     const [finds, setFinds] = useState([]);
     const [showAd, setShowAd] = useState(true);
     const [init, setInit] = useState(true);
-    const { notationType, instrumentSound } = useSelector(state => state.settings);
+    const { notationType } = useSelector(state => state.settings);
     const { scaleTypes } = useSelector(state => state.scaleFinder);
     const navigation = useNavigation();
 
@@ -59,8 +59,9 @@ const ScaleFinder = () => {
     }, []);
 
     const tryScale = useCallback((scale) => {
-        navigation.navigate(scaleFinder.scale, {
-            scale: scale
+        navigation.navigate(scaleFinder.scale.section, {
+            screen: scaleFinder.scale.screen,
+            params: { scale }
         });
     }, [navigation]);
 
@@ -71,10 +72,8 @@ const ScaleFinder = () => {
                     <Text category="h5">Select the notes</Text>
                 </Layout>
                 <Keyboard
-                    notationType={notationType}
                     scale={{findBy: scale}}
                     allow
-                    sound={instrumentSound}
                     onPress={toggleScale}
                 />
                 <Layout style={styles.titleWrap}>
