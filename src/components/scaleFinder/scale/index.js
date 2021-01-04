@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from 'react';
+import React, { useEffect, useMemo, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -17,7 +17,6 @@ const Scale = () => {
     const navigation = useNavigation();
     const route = useRoute();
     const { params: { scale } } = route;
-    const [showAd, setShowAd] = useState(true);
     const { notationType } = useSelector(state => state.settings);
 
     useEffect(() => {
@@ -41,13 +40,10 @@ const Scale = () => {
                     scale={scale || {}}
                     allow={false}
                 />
-                <Layout style={showAd ? styles.ad : styles.hideAd}>
+                <Layout style={styles.ad}>
                     <AdMobBanner
                         adSize="banner"
                         adUnitID={ads.scaleBanner}
-                        testDevices={[AdMobBanner.simulatorId]}
-                        onAdFailedToLoad={() => setShowAd(false)}
-                        onAdLoaded={() => setShowAd(false)}
                     />
                 </Layout>
                 {chords.length > 0 && (

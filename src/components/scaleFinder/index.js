@@ -16,7 +16,6 @@ const { scaleFinder } = routes;
 const ScaleFinder = () => {
     const [scale, setScale] = useState([]);
     const [finds, setFinds] = useState([]);
-    const [showAd, setShowAd] = useState(true);
     const [init, setInit] = useState(true);
     const { notationType } = useSelector(state => state.settings);
     const { scaleTypes } = useSelector(state => state.scaleFinder);
@@ -87,13 +86,10 @@ const ScaleFinder = () => {
                         Clear
                     </Button>
                 </Layout>
-                <Layout style={showAd ? styles.ad : styles.hideAd}>
+                <Layout style={styles.ad}>
                     <AdMobBanner
                         adSize="banner"
                         adUnitID={ads.scaleFinderBanner}
-                        testDevices={[AdMobBanner.simulatorId]}
-                        onAdFailedToLoad={() => setShowAd(false)}
-                        onAdLoaded={() => setShowAd(false)}
                     />
                 </Layout>
                 {finds.length > 0 ? (

@@ -18,8 +18,5 @@ export default StyleSheet.create({
         height: 50,
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    hideAd: {
-        height: 0
     }
 })
