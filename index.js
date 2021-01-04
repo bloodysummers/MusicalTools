@@ -13,7 +13,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import Toast from 'react-native-toast-message';
 
 import App from './App';
-import Splash from './src/components/splash';
 import {name as appName} from './app.json';
 import reducers from './src/store/reducers';
 
@@ -36,7 +35,7 @@ const ReduxApp = () => (
     <Provider store={store}>
         <PersistGate
             persistor={persistedStore}
-            loading={<Splash />}
+            loading={null}
             onBeforeLift={() => new Promise(resolve => setTimeout(resolve, 2000))}
         >
             <App />
