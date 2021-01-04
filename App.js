@@ -29,7 +29,7 @@ export default () => (
     <ApplicationProvider {...eva} theme={theme}>
       <NavigationContainer>
         <Drawer.Navigator
-          initialRouteName={scaleFinder.section}
+          initialRouteName={circleOfFifths.section}
           drawerContent={(props) => <CustomDrawer {...props} />}
         >
           <Drawer.Screen

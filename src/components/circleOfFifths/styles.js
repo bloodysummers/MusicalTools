@@ -12,49 +12,35 @@ export default StyleSheet.create({
         marginTop: 32,
         marginBottom: 32
     },
-    circle: {
-        width: size,
-        height: size,
-        borderRadius: size/2,
-        backgroundColor: colors.black
+    externalCircleWrap: {
+        position: 'relative',
+        width: 300,
+        height: 300
     },
-    circleColor: {
-        width: size-8,
-        height: size-8,
+    externalCircle: {
+        height: 300,
+        transform: [{rotate: '-15deg'}]
+    },
+    midCircleWrap: {
         position: 'absolute',
-        left: 4,
-        top: 4,
-        borderRadius: (size-8)/2,
-        backgroundColor: colors.white
+        top: 44,
+        width: 212,
+        height: 212,
+        borderRadius: 100
+    },
+    midCircle: {
+        height: 212,
+        transform: [{rotate: '-15deg'}]
+    },
+    innerCircleWrap: {
+        position: 'absolute',
+        top: 82,
+        width: 136,
+        height: 136,
+        borderRadius: 75
     },
     innerCircle: {
-        width: 200,
-        height: 200,
-        borderRadius: 100,
-        borderWidth: 4,
-        borderColor: colors.black,
-        backgroundColor: colors.white,
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        marginLeft: -100,
-        marginTop: -100
-    },
-    anchor: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        zIndex: 10
-    },
-    note: {
-        position: 'absolute',
-        width: buttonSize,
-        height: buttonSize,
-        marginLeft: -buttonSize/2,
-        marginTop: -buttonSize/2,
-        borderRadius: buttonSize/2,
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 100,
+        height: 136,
+        transform: [{rotate: '-15deg'}]
     }
 });
