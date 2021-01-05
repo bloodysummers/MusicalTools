@@ -6,7 +6,9 @@ import { AdMobBanner } from "react-native-admob";
 
 import Circle from './circle';
 import styles from './styles';
+import { getTriads } from './helper';
 import Keyboard from '../instruments/keyboard';
+import ChordsList from './chordsList';
 import { majorScales } from '../../utils/scales';
 import ads from '../../config/ads';
 import { keys } from './circle/helper';
@@ -16,12 +18,19 @@ const CircleOfFifths = () => {
     const [tab, setTab] = useState(0);
     const { lockCircle } = useSelector(state => state.circleOfFifths);
 
-    const currentScale = useMemo(() => {
-        const note = keys[currentKey];
+    const note = useMemo(() => keys[currentKey], [currentKey]);
+
+    const scale = useMemo(() => {
         return majorScales.find(scale => {
             return scale.tonic === note.default || (scale.alt && scale.alt.tonic === note.default);
         })
-    }, [currentKey]);
+    }, [note]);
+
+    const triads = useMemo(() => 
+        getTriads(tab === 0 ? note.default : note.minor, tab === 0 ? 'major' : 'minor')
+    , [note, tab]);
+
+    console.log(triads);
     
     return (
         <ScrollView>
@@ -39,7 +48,7 @@ const CircleOfFifths = () => {
                 </Layout>
                 <Keyboard
                     allow={false}
-                    scale={currentScale}
+                    scale={scale}
                 />
             </Layout>
             <TabBar
@@ -50,7 +59,7 @@ const CircleOfFifths = () => {
                 <Tab title='MINOR'/>
             </TabBar>
             <Layout level="1">
-
+                <ChordsList chords={triads} />
             </Layout>
         </ScrollView>
     );
