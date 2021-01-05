@@ -1,82 +1,105 @@
-import React, { useState } from 'react';
-import { View, Pressable } from 'react-native';
-import { Text, Layout } from '@ui-kitten/components';
+import React, { useState, useCallback } from 'react';
+import { View } from 'react-native';
+import { Layout, Icon, Button } from '@ui-kitten/components';
 import { PieChart } from 'react-native-svg-charts';
-import { Text as TextSvg } from 'react-native-svg';
+import { useSelector } from 'react-redux';
+import { Note } from '@tonaljs/tonal';
 
-import { keys, pieData } from './helper';
+import Labels from './labels';
+import { keys, getColor, getArc, chords } from './helper';
 import styles from './styles';
 
-const distance = 300/2;
+const sharedProps = {
+    padAngle: 0,
+    spacing: 0
+};
+
+const postFix = {
+    major: '',
+    minor: 'm',
+    dim: '°'
+};
+
+const postFixSound = {
+    default: 'M',
+    minor: 'm',
+    dim: 'd'
+};
 
 const CircleOfFifths = () => {
-    const [key, setKey] = useState(0);
+    const [lock, setLock] = useState(false);
+    const { instrumentSound } = useSelector(state => state.settings);
+    const [currentKey, setCurrentKey] = useState(0);
 
-    const degreesToRadians = (degrees) => {
-        const pi = Math.PI;
-        return degrees * (pi/180);
-    };
+    const pieData = useCallback((type) => {
+        return keys.map((key, i) => ({
+            name: `${key[type]}${postFix[type]}`,
+            value: 30,
+            svg: {
+                fill: getColor(i, currentKey, type),
+                onPress: () => onPress(i, type === 'major' ? 'default' : type)
+            },
+            arc: type === 'major' ? getArc(i, currentKey) : null,
+            key: `pie-${key[type]}`
+        }));
+    }, [currentKey, lock, instrumentSound]);
 
-    const Labels = ({ slices, fontSize }) => {
-        return slices.map((slice, index) => {
-            const { labelCentroid, pieCentroid, data } = slice;
-            return (
-                <TextSvg
-                    key={index}
-                    x={pieCentroid[0]}
-                    y={pieCentroid[1]}
-                    fill="white"
-                    textAnchor="middle"
-                    alignmentBaseline="middle"
-                    fontWeight="bold"
-                    fontSize={fontSize || 16}
-                    transform={`rotate(15, ${labelCentroid[0]}, ${labelCentroid[1]})`}
-                    onPress={data.svg.onPress}
-                >
-                    {data.name}
-                </TextSvg>
-            )
-        })
-    }
+    const onPress = useCallback((pressedIndex, type) => {
+        if (!lock) setCurrentKey(pressedIndex);
+        if (instrumentSound) playChord(pressedIndex, type);
+    }, [lock, instrumentSound]);
+
+    const playChord = useCallback((pressedIndex, type) => {
+        const note = noteName = keys[pressedIndex][type];
+        let chordKeyNote;
+        if (note.indexOf('#') > -1) {
+            chordKeyNote = Note.enharmonic(note);
+        } else chordKeyNote = note;
+        const chordName = `${noteName}${postFixSound[type]}`;
+        const chord = chords[chordName];
+        chord.forEach(sound => {
+            if (sound.isPlaying()) sound.stop();
+            sound.play(() => sound.stop());
+        });
+    }, []);
 
     return (
         <Layout level="1">
+            <Button onPress={() => setLock(!lock)} accessoryLeft={props => (
+                <Icon {...props} name={lock ? 'lock' : 'unlock'} />
+            )}>
+                {lock ? 'Lock circle' : 'Unlock circle'}
+            </Button>
             <Layout style={styles.circleWrap}>
                 <View style={styles.externalCircleWrap}>
                     <PieChart
-                        padAngle={0}
-                        valueAccessor={({ item }) => item.value}
+                        {...sharedProps}
                         style={styles.externalCircle}
                         outerRadius="97%"
                         innerRadius="70%"
-                        data={pieData(key, (i) => setKey(i), 'major')}
-                        spacing={0}
+                        data={pieData('major')}
                     >
                         <Labels />
                     </PieChart>
                 </View>
                 <View style={styles.midCircleWrap}>
                     <PieChart
-                        padAngle={0}
-                        valueAccessor={({ item }) => item.value}
+                        {...sharedProps}
                         style={styles.midCircle}
                         outerRadius="100%"
                         innerRadius="64%"
-                        data={pieData(key, (i) => setKey(i), 'minor')}
-                        spacing={0}
+                        data={pieData('minor')}
                     >
                         <Labels fontSize={14} />
                     </PieChart>
                 </View>
                 <View style={styles.innerCircleWrap}>
                     <PieChart
-                        padAngle={0}
-                        valueAccessor={({ item }) => item.value}
+                        {...sharedProps}
                         style={styles.innerCircle}
                         outerRadius="100%"
                         innerRadius="56%"
-                        data={pieData(key, (i) => setKey(i), 'dim')}
-                        spacing={0}
+                        data={pieData('dim')}
                     >
                         <Labels fontSize={13} />
                     </PieChart>

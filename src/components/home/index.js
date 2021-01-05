@@ -1,14 +1,12 @@
 import React from 'react';
-import { Layout, Card } from '@ui-kitten/components';
-
-import CircleOfFifths from '../circleOfFifths';
+import { Layout, Card, Text } from '@ui-kitten/components';
 
 const Home = () => {
 
     return (
         <Layout level="4">
             <Card>
-                <CircleOfFifths />
+                <Text>Hey</Text>
             </Card>
         </Layout>
     );

@@ -1,94 +1,119 @@
-import notes from '../../utils/notes';
-import theme from '../../utils/theme';
+import { Chord, Note } from '@tonaljs/tonal';
 
-const { C, Cs, Db, D, Ds, Eb, E, Fs, F, Gb, G, Gs, Ab, A, As, Bb, B } = notes;
-const
-c = 'c',
-cs = 'c#',
-db = 'db',
-d = 'd',
-ds = 'd#',
-eb = 'eb',
-e = 'e',
-f = 'f',
-fs = 'f#',
-gb = 'gb',
-g = 'g',
-gs = 'g#',
-ab = 'ab',
-a = 'a',
-as = 'a#',
-bb = 'bb',
-b = 'b';
+import theme from '../../utils/theme';
+import { sounds } from '../../utils/sounds';
 
 export const keys = [
     {
         major: 'C',
-        minor: 'Am',
-        dim: 'B°'
+        default: 'C',
+        minor: 'A',
+        dim: 'B'
     },
     {
         major: 'G',
-        minor: 'Em',
-        dim: 'F#°'
+        default: 'G',
+        minor: 'E',
+        dim: 'F#'
     },
     {
         major: 'D',
-        minor: 'Bm',
-        dim: 'C#°'
+        default: 'D',
+        minor: 'B',
+        dim: 'C#'
     },
     {
         major: 'A',
-        minor: 'F#m',
-        dim: 'G#°'
+        default: 'A',
+        minor: 'F#',
+        dim: 'G#'
     },
     {
         major: 'E',
-        minor: 'C#m',
-        dim: 'D#°'
+        default: 'E',
+        minor: 'C#',
+        dim: 'D#'
     },
     {
         major: 'B/Cb',
-        minor: 'G#m',
-        dim: 'A#°'
+        default: 'B',
+        minor: 'G#',
+        dim: 'A#'
     },
     {
         major: 'Gb/F#',
-        minor: 'Ebm',
-        dim: 'F°'
+        default: 'Gb',
+        minor: 'Eb',
+        dim: 'F'
     },
     {
         major: 'Db/C#',
-        minor: 'Bbm',
-        dim: 'C°'
+        default: 'Db',
+        minor: 'Bb',
+        dim: 'C'
     },
     {
         major: 'Ab',
-        minor: 'Fm',
-        dim: 'G°'
+        default: 'Ab',
+        minor: 'F',
+        dim: 'G'
     },
     {
         major: 'Eb',
-        minor: 'Cm',
-        dim: 'D°'
+        default: 'Eb',
+        minor: 'C',
+        dim: 'D'
     },
     {
         major: 'Bb',
-        minor: 'Gm',
-        dim: 'A°'
+        default: 'Bb',
+        minor: 'G',
+        dim: 'A'
     },
     {
         major: 'F',
-        minor: 'Dm',
-        dim: 'E°'
+        default: 'F',
+        minor: 'D',
+        dim: 'E'
     }
 ];
+
+export const getNotesWithOctave = notes => {
+    let octave = 4;
+    let lastItemIndex = -1;
+    const notesWithOctave = notes.reduce((notes, note) => {
+        const { step } = Note.get(note);
+        if (step < lastItemIndex) octave++;
+        lastItemIndex = step;
+        notes.push(`${note}${octave}`);
+        return notes;
+    }, []);
+    return notesWithOctave;
+};
+
+const getChordSounds = (type, key) => {
+    const chord = Chord.getChord(type, key);
+    const notesWithOctave = getNotesWithOctave(chord.notes);
+    return notesWithOctave.map(note => {
+        if (note.indexOf('#') > -1 || note.indexOf('Cb') > -1) {
+            const enharmonic = Note.enharmonic(note);
+            return sounds[enharmonic.toLowerCase()];
+        } else return sounds[note.toLowerCase()]
+    });
+};
+
+export const chords = keys.reduce((chords, key) => {
+    chords[`${key.default}M`] = getChordSounds('major', key.default);
+    chords[`${key.minor}m`] = getChordSounds('minor', key.minor);
+    chords[`${key.dim}d`] = getChordSounds('diminished', key.dim);
+    return chords;
+}, {});
 
 const keysLength = 12;
 
 const getPosition = (selected, i) => (selected+i+keysLength)%keysLength;
 
-const getColor = (index, selected, type) => {
+export const getColor = (index, selected, type) => {
     if (type === 'major') {
         if (index === selected) return theme['color-success-500'];
         else if (index === getPosition(selected, -1)) return theme['color-primary-500'];
@@ -105,23 +130,10 @@ const getColor = (index, selected, type) => {
     }
 };
 
-const getArc = (index, selected) => {
+export const getArc = (index, selected) => {
     if (index === selected) return {
         innerRadius: '67%',
         outerRadius: '103%',
         cornerRadius: 4
     };
 };
-
-export const pieData = (selected, onPress, type) => keys.map((key, i) => {
-    return {
-        name: key[type],
-        value: 30,
-        svg: {
-            fill: getColor(i, selected, type),
-            onPress: () => onPress(i, key)
-        },
-        arc: type === 'major' ? getArc(i, selected) : null,
-        key: `pie-${key[type]}`
-    };
-});

@@ -44,7 +44,7 @@ const Chord = () => {
         return notes.map(note => {
             if (note.indexOf('#') > -1) {
                 const enharmonic = tonal.Note.enharmonic(note);
-                return sounds[enharmonic.toLocaleLowerCase()];
+                return sounds[enharmonic.toLowerCase()];
             } else return sounds[note.toLowerCase()]
         });
     }, [scale])
