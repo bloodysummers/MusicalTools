@@ -18,6 +18,7 @@ export default StyleSheet.create({
     },
     lockIcon: {
         width: 32,
-        height: 32
+        height: 32,
+        marginRight: 5
     }
 });
