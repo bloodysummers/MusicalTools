@@ -61,6 +61,10 @@ const CircleOfFifths = () => {
                         adUnitID={ads.circleOfFifthsBanner}
                     />
                 </Layout>
+                <Keyboard
+                    allow={false}
+                    scale={scale}
+                />
             </Layout>
             <Layout style={styles.list}>
                 <TabBar
@@ -71,10 +75,6 @@ const CircleOfFifths = () => {
                     <Tab title="MINOR" />
                 </TabBar>
                 <ChordsList chords={triads} onTry={tryChord} />
-                <Keyboard
-                    allow={false}
-                    scale={scale}
-                />
             </Layout>
         </ScrollView>
     );
