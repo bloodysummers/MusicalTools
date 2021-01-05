@@ -2,9 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import { Icon, Toggle } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
+import { TransitionPresets } from '@react-navigation/stack';
 
-import { Stack, MenuButton, screenOptions } from './common';
+import { Stack, BackButton, MenuButton, screenOptions } from './common';
 import CircleOfFifths from '../../components/circleOfFifths';
+import Chord from '../../components/scaleFinder/scale/chord';
 import { setLockCircle } from '../../store/actions/circleOfFifths';
 import routes from '../../routes';
 import colors from '../../utils/colors';
@@ -39,6 +41,15 @@ const CircleOfFifthsStack = () => (
                 headerRight: ToggleButton
             }}
             component={CircleOfFifths}
+        />
+        <Stack.Screen
+            name={circleOfFifths.triad}
+            options={{
+                headerLeft: BackButton,
+                ...TransitionPresets.SlideFromRightIOS,
+                gestureDirection: 'horizontal'
+            }}
+            component={Chord}
         />
     </Stack.Navigator>
 );

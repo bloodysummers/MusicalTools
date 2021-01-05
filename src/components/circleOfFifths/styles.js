@@ -6,5 +6,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 16
+    },
+    list: {
+        paddingTop: 16
     }
 });

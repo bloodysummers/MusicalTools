@@ -47,7 +47,7 @@ const ChordsList = ({ chords, notationType, onTry }) => {
                                     {chordToString(chord.notes)}
                                 </Text>
                             </Layout>
-                            <Button status="basic">Try</Button>
+                            <Button status="basic" onPress={() => onTry(chord)}>Try</Button>
                         </Layout>
                     </Layout>
                     {index !== chords.length -1 && <Divider />}

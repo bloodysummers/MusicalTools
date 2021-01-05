@@ -27,6 +27,7 @@ export default {
     circleOfFifths: {
         name: 'Circle of Fifths',
         section: 'CircleSection',
-        screen: 'CircleScreen'
+        screen: 'CircleScreen',
+        triad: 'TriadScreen'
     }
 };
