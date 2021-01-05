@@ -1,14 +1,12 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
-import { Layout, Icon, Toggle } from '@ui-kitten/components';
+import { Layout } from '@ui-kitten/components';
 import { PieChart } from 'react-native-svg-charts';
 import { useSelector } from 'react-redux';
-import { Note } from '@tonaljs/tonal';
 
 import Labels from './labels';
-import { keys, getColor, getArc, chords } from './helper';
+import { keys, getColor, getArc, playChord } from './helper';
 import styles from './styles';
-import theme from '../../../utils/theme';
 
 const sharedProps = {
     padAngle: 0,
@@ -21,15 +19,8 @@ const postFix = {
     dim: '°'
 };
 
-const postFixSound = {
-    default: 'M',
-    minor: 'm',
-    dim: 'd'
-};
-
-const Circle = ({ lock }) => {
+const Circle = ({ lock, currentKey, setCurrentKey }) => {
     const { instrumentSound } = useSelector(state => state.settings);
-    const [currentKey, setCurrentKey] = useState(0);
 
     const pieData = useCallback((type) => {
         return keys.map((key, i) => ({
@@ -48,20 +39,6 @@ const Circle = ({ lock }) => {
         if (!lock) setCurrentKey(pressedIndex);
         if (instrumentSound) playChord(pressedIndex, type);
     }, [lock, instrumentSound]);
-
-    const playChord = useCallback((pressedIndex, type) => {
-        const note = noteName = keys[pressedIndex][type];
-        let chordKeyNote;
-        if (note.indexOf('#') > -1) {
-            chordKeyNote = Note.enharmonic(note);
-        } else chordKeyNote = note;
-        const chordName = `${noteName}${postFixSound[type]}`;
-        const chord = chords[chordName];
-        chord.forEach(sound => {
-            if (sound.isPlaying()) sound.stop();
-            sound.play(() => sound.stop());
-        });
-    }, []);
 
     return (
         <Layout level="1">

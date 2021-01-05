@@ -137,3 +137,23 @@ export const getArc = (index, selected) => {
         cornerRadius: 4
     };
 };
+
+const postFix = {
+    default: 'M',
+    minor: 'm',
+    dim: 'd'
+};
+
+export const playChord = (pressedIndex, type) => {
+    const note = noteName = keys[pressedIndex][type];
+    let chordKeyNote;
+    if (note.indexOf('#') > -1) {
+        chordKeyNote = Note.enharmonic(note);
+    } else chordKeyNote = note;
+    const chordName = `${noteName}${postFix[type]}`;
+    const chord = chords[chordName];
+    chord.forEach(sound => {
+        if (sound.isPlaying()) sound.stop();
+        sound.play(() => sound.stop());
+    });
+};
