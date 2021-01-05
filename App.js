@@ -16,7 +16,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import theme from './src/utils/theme';
 
-import { HomeStack, SettingsStack, ScaleFinderStack, CircleOfFifthsStack } from './src/routes/stacks';
+import { Home, ScaleFinder, CircleOfFifths, Settings } from './src/routes/stacks';
 import { CustomDrawer } from './src/routes/drawer';
 import routes from './src/routes';
 const { home, settings, scaleFinder, circleOfFifths } = routes;
@@ -42,22 +42,22 @@ export default () => {
             <Drawer.Screen
               name={home.section}
               options={{ title: home.name }}
-              component={HomeStack}
+              component={Home}
             />
             <Drawer.Screen
               name={scaleFinder.section}
               options={{ title: scaleFinder.name }}
-              component={ScaleFinderStack}
+              component={ScaleFinder}
             />
             <Drawer.Screen
               name={circleOfFifths.section}
               options={{ title: circleOfFifths.name }}
-              component={CircleOfFifthsStack}
+              component={CircleOfFifths}
             />
             <Drawer.Screen
               name={settings.section}
               options={{ title: settings.name }}
-              component={SettingsStack}
+              component={Settings}
             />
           </Drawer.Navigator>
         </NavigationContainer>
