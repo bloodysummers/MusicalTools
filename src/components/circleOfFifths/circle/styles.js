@@ -4,8 +4,8 @@ export default StyleSheet.create({
     circleWrap: {
         width: '100%',
         alignItems: 'center',
-        marginTop: 32,
-        marginBottom: 32
+        marginTop: 16,
+        marginBottom: 16
     },
     externalCircleWrap: {
         position: 'relative',

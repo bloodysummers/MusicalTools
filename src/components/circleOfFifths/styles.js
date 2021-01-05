@@ -1,14 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    lock: {
-        flexDirection: 'row',
+    ad: {
+        height: 50,
         alignItems: 'center',
-        justifyContent: 'flex-end',
-        marginRight: 15
-    },
-    lockIcon: {
-        width: 32,
-        height: 32
+        justifyContent: 'center',
+        marginBottom: 16
     }
 });
