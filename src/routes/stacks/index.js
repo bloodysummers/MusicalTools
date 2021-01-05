@@ -1,19 +1,23 @@
 import React from 'react';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
-import { Icon, Button } from '@ui-kitten/components';
+import { Icon, Button, Toggle } from '@ui-kitten/components';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Home from '../components/home';
-import Settings from '../components/settings';
-import ScaleFinder from '../components/scaleFinder';
-import Scale from '../components/scaleFinder/scale';
-import Chord from '../components/scaleFinder/scale/chord';
-import ScaleFinderSettings from '../components/scaleFinder/settings';
-import CircleOfFifths from '../components/circleOfFifths';
+import Home from '../../components/home';
+import Settings from '../../components/settings';
+import ScaleFinder from '../../components/scaleFinder';
+import Scale from '../../components/scaleFinder/scale';
+import Chord from '../../components/scaleFinder/scale/chord';
+import ScaleFinderSettings from '../../components/scaleFinder/settings';
+import CircleOfFifths from '../../components/circleOfFifths';
 
-import routes from './';
+import { setLockCircle } from '../../store/actions/circleOfFifths';
+
+import routes from '../';
 import styles from './styles';
-import colors from '../utils/colors';
+import colors from '../../utils/colors';
 const { home, settings, scaleFinder, circleOfFifths } = routes;
 
 const Stack = createStackNavigator();
@@ -147,18 +151,40 @@ export const ScaleFinderStack = () => (
     </Stack.Navigator>
 );
 
-export const CircleOfFifthsStack = () => (
-    <Stack.Navigator screenOptions={screenOptions}>
-        <Stack.Screen
-            name={circleOfFifths.screen}
-            options={{
-                headerTitle: circleOfFifths.name,
-                headerLeft: MenuButton
-            }}
-            component={CircleOfFifths}
-        />
-    </Stack.Navigator>
-);
+const ToggleButton = () => {
+    const dispatch = useDispatch();
+    const { lockCircle } = useSelector(state => state.circleOfFifths);
+    return (
+        <View style={styles.lock}>
+            <Icon
+                fill={colors.white}
+                style={styles.lockIcon}
+                name={lockCircle ? 'lock' : 'unlock'}
+            />
+            <Toggle
+                checked={lockCircle}
+                onChange={() => dispatch(setLockCircle(!lockCircle))}
+            />
+        </View>
+    );
+};
+
+export const CircleOfFifthsStack = () => {
+
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name={circleOfFifths.screen}
+                options={{
+                    headerTitle: circleOfFifths.name,
+                    headerLeft: MenuButton,
+                    headerRight: ToggleButton
+                }}
+                component={CircleOfFifths}
+            />
+        </Stack.Navigator>
+    );
+};
   
 export const SettingsStack = () => (
     <Stack.Navigator screenOptions={screenOptions}>

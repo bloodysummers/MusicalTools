@@ -1,7 +1,7 @@
 import { Chord, Note } from '@tonaljs/tonal';
 
-import theme from '../../utils/theme';
-import { sounds } from '../../utils/sounds';
+import theme from '../../..//utils/theme';
+import { sounds } from '../../../utils/sounds';
 
 export const keys = [
     {

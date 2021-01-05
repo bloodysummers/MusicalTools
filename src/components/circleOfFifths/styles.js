@@ -1,46 +1,14 @@
 import { StyleSheet } from 'react-native';
-import theme from '../../utils/theme';
-import colors from '../../utils/colors';
-
-const size = 300;
-const buttonSize = 64;
 
 export default StyleSheet.create({
-    circleWrap: {
-        width: '100%',
+    lock: {
+        flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 32,
-        marginBottom: 32
+        justifyContent: 'flex-end',
+        marginRight: 15
     },
-    externalCircleWrap: {
-        position: 'relative',
-        width: 300,
-        height: 300
-    },
-    externalCircle: {
-        height: 300,
-        transform: [{rotate: '-15deg'}]
-    },
-    midCircleWrap: {
-        position: 'absolute',
-        top: 44,
-        width: 212,
-        height: 212,
-        borderRadius: 100
-    },
-    midCircle: {
-        height: 212,
-        transform: [{rotate: '-15deg'}]
-    },
-    innerCircleWrap: {
-        position: 'absolute',
-        top: 82,
-        width: 136,
-        height: 136,
-        borderRadius: 75
-    },
-    innerCircle: {
-        height: 136,
-        transform: [{rotate: '-15deg'}]
+    lockIcon: {
+        width: 32,
+        height: 32
     }
 });
