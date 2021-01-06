@@ -7,13 +7,14 @@
 - [ ] Implement a full keyboard
 - [ ] Implement chord inversions
 - [ ] Fix chord builder for missing modes
+- [ ] Apply latin names to chords and circle of fifths
 
 ## In Progress
 
-- [ ] Circle of fifths' screen
 
 ## Done
 
+- [x] Circle of fifths' screen
 - [x] Fix the chords navigation
 - [x] Implement a player for chords and arpeggios
 - [x] Reload found scales on notationType change
