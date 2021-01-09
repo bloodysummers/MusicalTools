@@ -11,7 +11,7 @@ export default {
         screen: 'SettingsScreen'
     },
     scaleFinder: {
-        name: 'Scale Finder',
+        name: 'Scale finder',
         section: 'ScaleFinderSection',
         screen: 'ScaleFinderScreen',
         scale: {
@@ -25,9 +25,14 @@ export default {
         }
     },
     circleOfFifths: {
-        name: 'Circle of Fifths',
+        name: 'Circle of fifths',
         section: 'CircleSection',
         screen: 'CircleScreen',
         triad: 'TriadScreen'
+    },
+    progressions: {
+        name: 'Chord progressions',
+        section: 'ProgressionsSection',
+        screen: 'ProgressionsScreen'
     }
 };

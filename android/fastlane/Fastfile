@@ -1,0 +1,66 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Increment build number and push to repository - Build number in this case is the android version code"
+  lane :ibn do |options|
+    should_commit = options.fetch(:should_commit, true)
+    commit_message = options.fetch(:commit_message, "android: bump build number (version code) [skip ci]")
+    should_push = options.fetch(:should_push, true)
+
+    ensure_git_status_clean if should_commit
+
+    params = {
+      :app_project_dir => 'app'
+    }
+    if options[:build_number]
+      params[:version_code] = options[:build_number].to_i
+    end
+
+    android_increment_version_code(params)
+    new_version_code = Actions.lane_context[Actions::SharedValues::ANDROID_VERSION_CODE]
+    UI.important("Incremented android version code to #{new_version_code}")
+
+    if should_commit
+      path = "android/app/build.gradle"
+      git_add(path: path)
+      git_commit(path: path, message: commit_message)
+      # Push the new commit and tag back to your git remote
+      push_to_git_remote if should_push
+    end
+  end
+end
