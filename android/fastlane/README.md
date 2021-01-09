@@ -16,26 +16,36 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## Android
-### android test
+### android alpha
 ```
-fastlane android test
+fastlane android alpha
 ```
-Runs all the tests
+Build and push a new alpha build to the Play Store
 ### android beta
 ```
 fastlane android beta
 ```
-Submit a new Beta Build to Crashlytics Beta
-### android deploy
+promote the current alpha build to the beta track
+### android production
 ```
-fastlane android deploy
+fastlane android production
 ```
-Deploy a new version to the Google Play
+promote the current beta build to the production track
+### android build
+```
+fastlane android build
+```
+Build a version of the app
 ### android ibn
 ```
 fastlane android ibn
 ```
 Increment build number and push to repository - Build number in this case is the android version code
+### android ivn
+```
+fastlane android ivn
+```
+Increment version number and push to repository - Version number in this case is the android version name
 
 ----
 
