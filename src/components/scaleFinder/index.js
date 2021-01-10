@@ -43,7 +43,7 @@ const ScaleFinder = () => {
 
     const startFinding = useCallback(() => {
         if (init) setInit(false);
-        const scales = findScales(scale, scaleTypes, notationType);
+        const scales = findScales(scale, scaleTypes, notationType, t);
         setFinds(scales);
     }, [scale, scaleTypes, notationType]);
 

@@ -69,22 +69,6 @@ export const modeScales = [
     ...aeolianScales,
     ...locrianScales
 ];
-// Pentatonic
-export const majorPentatonicScales = scaleBuilder('pentatonic');
-export const minorPentatonicScales = scaleBuilder('minor pentatonic');
-export const pentatonicScales = [
-    ...majorPentatonicScales,
-    ...minorPentatonicScales
-];
-// Blues
-export const majorBluesScales = scaleBuilder('major blues');
-export const minorBluesScales = scaleBuilder('minor blues');
-export const compositeBluesScales = scaleBuilder('composite blues');
-export const bluesScales = [
-    ...majorBluesScales,
-    ...minorBluesScales,
-    ...compositeBluesScales
-];
 // Harmonic minor modes
 export const locrian6Scales = scaleBuilder('locrian 6');
 export const majorAugmentedScales = scaleBuilder('major augmented');
@@ -116,6 +100,22 @@ export const melodicMinorModeScales = [
     ...mixolydianb6Scales,
     ...locrian2Scales,
     ...alteredScales
+];
+// Pentatonic
+export const majorPentatonicScales = scaleBuilder('pentatonic');
+export const minorPentatonicScales = scaleBuilder('minor pentatonic');
+export const pentatonicScales = [
+    ...majorPentatonicScales,
+    ...minorPentatonicScales
+];
+// Blues
+export const majorBluesScales = scaleBuilder('major blues');
+export const minorBluesScales = scaleBuilder('minor blues');
+export const compositeBluesScales = scaleBuilder('composite blues');
+export const bluesScales = [
+    ...majorBluesScales,
+    ...minorBluesScales,
+    ...compositeBluesScales
 ];
 // Augmented and diminished
 export const augmentedScales = scaleBuilder('augmented');

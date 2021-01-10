@@ -1,7 +1,7 @@
 import { regularScales, modeScales, pentatonicScales, bluesScales, harmonicMinorModeScales, melodicMinorModeScales, augmentedAndDiminishedScales } from '../../utils/scales';
 import { latinNotes } from '../../utils/notes';
 
-export const findScales = (subScale, scaleTypes, notationType) => {
+export const findScales = (subScale, scaleTypes, notationType, t) => {
     let scales = [];
     if (scaleTypes.regular) {
         const regular = checkScales(subScale, regularScales);
@@ -32,18 +32,18 @@ export const findScales = (subScale, scaleTypes, notationType) => {
         scales = scales.concat(augmentedDiminished);
     }
     return scales.map(scale => {
-        scale.nameToDisplay = getScaleName(scale, notationType);
+        scale.nameToDisplay = getScaleName(scale, notationType, t);
         return scale;
     });
 };
 
-const getScaleName = (scale, notationType) => {
+const getScaleName = (scale, notationType, t) => {
     const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
     if (scale.alt) {
         const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
-        return `${key} / ${altKey} ${scale.type}`;
+        return `${key} / ${altKey} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
     }
-    return `${key} ${scale.type}`;
+    return `${key} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
 };
 
 const checkScales = (subScale, scalesSet) =>
