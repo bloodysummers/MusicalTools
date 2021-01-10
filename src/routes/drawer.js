@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Button } from 'react-native';
 import { Drawer, DrawerItem, Text, IndexPath } from '@ui-kitten/components';
+import {useTranslation} from 'react-i18next';
 
 export const CustomDrawer = ({ navigation, descriptors, state }) => {
+    const { t } = useTranslation();
     return (
         <>
             <Text category="h4" style={styles.title}>MusicalTools</Text>
@@ -13,7 +15,7 @@ export const CustomDrawer = ({ navigation, descriptors, state }) => {
                 {state.routes.map(item => (
                     <DrawerItem
                         key={item.key}
-                        title={descriptors[item.key].options.title}
+                        title={t(descriptors[item.key].options.title)}
                         onPress={() => navigation.navigate(item.name)}
                     />
                 ))}

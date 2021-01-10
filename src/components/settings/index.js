@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { Button, Layout, Divider, Text, Icon, Card } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import styles from './styles';
 import { setNotationType, setInstrumentSound } from '../../store/actions/settings';
@@ -9,6 +10,7 @@ import { setNotationType, setInstrumentSound } from '../../store/actions/setting
 const Settings = () => {
     const dispatch = useDispatch();
     const { notationType, instrumentSound } = useSelector(state => state.settings);
+    const { t } = useTranslation();
 
     const activeButton = useMemo(() =>
         type => type === notationType ? 'primary' : 'basic'
@@ -33,7 +35,7 @@ const Settings = () => {
         <Layout style={styles.page} level="4">
             <Card disabled>
                 <Layout style={styles.section}>
-                    <Text>Notation</Text>
+                    <Text>{t('settings:notation')}</Text>
                     <View style={styles.notesButtons}>
                         <Button
                             status={activeButton('C')}
@@ -49,12 +51,12 @@ const Settings = () => {
                             status={activeButton('None')}
                             style={styles.lastButton}
                             onPress={() => saveNotationType('None')}
-                        >None</Button>
+                        >{t('settings:none')}</Button>
                     </View>
                 </Layout>
                 <Divider />
                 <Layout style={styles.section}>
-                    <Text>Instrument sound</Text>
+                    <Text>{t('settings:instrumentSound')}</Text>
                     <Button
                         status={instrumentSound ? 'primary' : 'basic'}
                         onPress={saveSound}

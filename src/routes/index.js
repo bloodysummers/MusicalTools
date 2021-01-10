@@ -1,17 +1,17 @@
 export default {
     home: {
-        name: 'Home',
+        name: 'home',
         headerName: 'MusicalTools',
         section: 'HomeSection',
         screen: 'HomeScreen'
     },
     settings: {
-        name: 'Settings',
+        name: 'settings',
         section: 'SettingsSection',
         screen: 'SettingsScreen'
     },
     scaleFinder: {
-        name: 'Scale finder',
+        name: 'scaleFinder',
         section: 'ScaleFinderSection',
         screen: 'ScaleFinderScreen',
         scale: {
@@ -20,18 +20,18 @@ export default {
             chord: 'ChordScreen'
         },
         settings: {
-            name: 'Settings',
+            name: 'settings',
             screen: 'ScaleFinderSettings'
         }
     },
     circleOfFifths: {
-        name: 'Circle of fifths',
+        name: 'circleOfFifths',
         section: 'CircleSection',
         screen: 'CircleScreen',
         triad: 'TriadScreen'
     },
     progressions: {
-        name: 'Chord progressions',
+        name: 'chordProgressions',
         section: 'ProgressionsSection',
         screen: 'ProgressionsScreen'
     }
