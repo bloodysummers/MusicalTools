@@ -1,9 +1,12 @@
 import React from 'react';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
+import { useTranslation } from 'react-i18next';
+
 import styles from './styles';
 import { latinNotes } from '../../../utils/notes';
 
 const ScalesList = ({ scales, notationType, onTry }) => {
+    const { t } = useTranslation();
 
     const scaleToString = scale => {
         const notationArray = scale.map(note => notationType !== 'Do' ? note : latinNotes[note]);
@@ -28,7 +31,7 @@ const ScalesList = ({ scales, notationType, onTry }) => {
                                     </Text>
                                 )}
                         </Layout>
-                        <Button status="basic" onPress={() => onTry(scale)}>Try</Button>
+                        <Button status="basic" onPress={() => onTry(scale)}>{t('try')}</Button>
                     </Layout>
                     {index !== scales.length -1 && <Divider />}
                 </Layout>
