@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { AdMobBanner } from "react-native-admob";
+import { AdMobBanner } from 'react-native-admob';
 import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';

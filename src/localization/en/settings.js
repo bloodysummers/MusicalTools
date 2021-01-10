@@ -1,5 +1,6 @@
 export default {
     notation: 'Notation',
     instrumentSound: 'Instrument sound',
-    none: 'None'
+    none: 'None',
+    language: 'Language'
 };

@@ -2,8 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ScrollView } from 'react-native';
 import { Layout, Text, Button } from '@ui-kitten/components';
 import { useNavigation } from '@react-navigation/native';
-import { AdMobBanner } from "react-native-admob";
+import { AdMobBanner } from 'react-native-admob';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
@@ -20,6 +21,7 @@ const ScaleFinder = () => {
     const { notationType } = useSelector(state => state.settings);
     const { scaleTypes } = useSelector(state => state.scaleFinder);
     const navigation = useNavigation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         setFinds([]);
@@ -62,7 +64,7 @@ const ScaleFinder = () => {
         <ScrollView>
             <Layout level="1">
                 <Layout style={styles.titleWrap}>
-                    <Text category="h6">Select at least 3 notes</Text>
+                    <Text category="h6">{t('scaleFinder:select3notes')}</Text>
                 </Layout>
                 <Keyboard
                     scale={{findBy: scale}}
@@ -75,7 +77,7 @@ const ScaleFinder = () => {
                         disabled={scale.length < 3}
                         onPress={startFinding}
                     >
-                        Find
+                        {t('find')}
                     </Button>
                     <Button
                         style={styles.rightButton}
@@ -83,7 +85,7 @@ const ScaleFinder = () => {
                         disabled={!scale.length}
                         onPress={clear}
                     >
-                        Clear
+                        {t('clear')}
                     </Button>
                 </Layout>
                 <Layout style={styles.ad}>

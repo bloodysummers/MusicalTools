@@ -25,5 +25,8 @@ export default StyleSheet.create({
     lastButton: {
         borderTopLeftRadius: 0,
         borderBottomLeftRadius: 0
+    },
+    language: {
+        minWidth: 150
     }
 });
