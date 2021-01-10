@@ -7,5 +7,8 @@ export default {
     playChord: 'Tocar acorde',
     playArpeggio: 'Tocar arpegio',
     find: 'Buscar',
-    clear: 'Limpiar'
+    clear: 'Limpiar',
+    major: 'Mayor',
+    minor: 'Menor',
+    diminished: 'Disminuido'
 };

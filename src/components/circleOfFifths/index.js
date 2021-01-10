@@ -4,6 +4,7 @@ import { Layout, Tab, TabBar } from '@ui-kitten/components';
 import { useSelector } from 'react-redux';
 import { AdMobBanner } from 'react-native-admob';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
 
 import Circle from './circle';
 import styles from './styles';
@@ -21,6 +22,7 @@ const CircleOfFifths = () => {
     const [currentKey, setCurrentKey] = useState(0);
     const [tab, setTab] = useState(0);
     const { lockCircle } = useSelector(state => state.circleOfFifths);
+    const { t } = useTranslation();
 
     const note = useMemo(() => keys[currentKey], [currentKey]);
 
@@ -71,8 +73,8 @@ const CircleOfFifths = () => {
                     selectedIndex={tab}
                     onSelect={index => setTab(index)}
                 >
-                    <Tab title="MAJOR" />
-                    <Tab title="MINOR" />
+                    <Tab title={t('major').toUpperCase()} />
+                    <Tab title={t('minor').toUpperCase()} />
                 </TabBar>
                 <ChordsList chords={triads} onTry={tryChord} />
             </Layout>

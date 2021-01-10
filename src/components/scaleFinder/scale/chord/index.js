@@ -4,6 +4,7 @@ import { Layout, Button, Icon } from '@ui-kitten/components';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { AdMobBanner } from 'react-native-admob';
 import * as tonal from '@tonaljs/tonal';
+import { useTranslation } from 'react-i18next';
 
 window.tonal = tonal;
 
@@ -17,6 +18,7 @@ const PlayIcon = props =>
     <Icon {...props} name="play-circle-outline" />;
 
 const Chord = () => {
+    const { t } = useTranslation();
     const navigation = useNavigation();
     const route = useRoute();
     const { params: { scale } } = route;
@@ -69,7 +71,7 @@ const Chord = () => {
                         accessoryLeft={PlayIcon}
                         onPress={playChord}
                     >
-                        Play chord
+                        {t('playChord')}
                     </Button>
                     <Button
                         appearance="outline"
@@ -77,7 +79,7 @@ const Chord = () => {
                         accessoryLeft={PlayIcon}
                         onPress={playArpeggio}
                     >
-                        Play arpeggio
+                        {t('playArpeggio')}
                     </Button>
                 </Layout>
                 <Layout style={styles.ad}>
