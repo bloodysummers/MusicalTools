@@ -27,9 +27,7 @@ const Drawer = createDrawerNavigator();
 
 export default () => {
   useEffect(() => {
-    setTimeout(() => {
-      RNBootSplash.hide({ fade: true });
-    }, 500);
+    RNBootSplash.hide({ fade: true });
   }, []);
   return (
     <>
