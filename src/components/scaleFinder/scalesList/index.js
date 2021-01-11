@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
 import { useTranslation } from 'react-i18next';
 
@@ -8,10 +8,10 @@ import { latinNotes } from '../../../utils/notes';
 const ScalesList = ({ scales, notationType, onTry }) => {
     const { t } = useTranslation();
 
-    const scaleToString = scale => {
+    const scaleToString = useCallback(scale => {
         const notationArray = scale.map(note => notationType !== 'Do' ? note : latinNotes[note]);
         return notationArray.join(' ');
-    };
+    }, [notationType]);
   
     return (
         <Layout style={styles.list}>

@@ -16,6 +16,7 @@ const Settings = () => {
     const dispatch = useDispatch();
     const { notationType, instrumentSound } = useSelector(state => state.settings);
     const { t, i18n } = useTranslation();
+    
     const selectedLanguage = useMemo(() => {
         const currentLanguage = i18n.language;
         return languages.find(language => language.code === currentLanguage);

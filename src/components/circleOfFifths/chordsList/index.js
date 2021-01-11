@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
 import { useTranslation } from 'react-i18next';
 
@@ -18,12 +18,12 @@ export const romanNumerals = [
 const ChordsList = ({ chords, notationType, onTry }) => {
     const { t } = useTranslation();
 
-    const chordToString = chord => {
+    const chordToString = useCallback(chord => {
         const notationArray = chord.map(note => notationType !== 'Do' ? note : latinNotes[note]);
         return notationArray.join(' ');
-    };
+    }, [notationType]);
 
-    const getRomanNumeral = (i, quality) => {
+    const getRomanNumeral = useCallback((i, quality) => {
         const roman = romanNumerals[i];
         switch(quality) {
             case 'Major':
@@ -33,7 +33,7 @@ const ChordsList = ({ chords, notationType, onTry }) => {
             case 'Diminished':
                 return `${roman}°`;
         }
-    };
+    }, []);
   
     return (
         <Layout style={styles.list}>
