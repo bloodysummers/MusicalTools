@@ -29,15 +29,13 @@ export default StyleSheet.create({
     },
     mark: {
         backgroundColor: theme['color-primary-400'],
-        paddingLeft: 5,
-        paddingRight: 5,
-        borderRadius: 15
-    },
-    emptyMark: {
         width: 20,
         height: 20,
-        backgroundColor: theme['color-primary-400'],
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 5
+    },
+    emptyMark: {
+        height: 25
     },
     root: {
         backgroundColor: theme['color-success-600']

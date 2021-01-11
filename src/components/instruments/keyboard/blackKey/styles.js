@@ -25,16 +25,14 @@ export default StyleSheet.create({
         elevation: 8
     },
     mark: {
-        backgroundColor: theme['color-primary-400'],
-        paddingLeft: 2,
-        paddingRight: 2,
-        borderRadius: 15
-    },
-    emptyMark: {
         width: 20,
         height: 20,
         backgroundColor: theme['color-primary-400'],
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 5
+    },
+    emptyMark: {
+        height: 25
     },
     root: {
         backgroundColor: theme['color-success-600']

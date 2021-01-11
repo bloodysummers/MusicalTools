@@ -13,15 +13,12 @@ const WhiteKey = ({ onPressIn, notationType, noteData, mark, root, disabled }) =
         underlayColor={colors.softBlue}
         onPressIn={!disabled ? onPressIn : null}
     >
-        {notationType === 'None' ? (
-            <View style={[mark ? styles.emptyMark : null, root ? styles.root : null]} />
-        ) : (
-            <View style={[mark ? styles.mark : null, root ? styles.root : null]}>
-                <Text category="h6" status={!mark ? 'basic' : 'control'}>
-                    {notationType === 'C' ? noteData.note : latinNotes[noteData.note]}
-                </Text>
-            </View>
-        )}
+        <>
+            <Text category="h6">
+                {notationType === 'C' ? noteData.note : latinNotes[noteData.note]}
+            </Text>
+            <View style={[mark ? styles.mark : styles.emptyMark, root ? styles.root : null]} />
+        </>
     </TouchableHighlight>
 );
 
