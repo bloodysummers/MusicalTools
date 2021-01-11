@@ -4,6 +4,7 @@ import { Layout } from '@ui-kitten/components';
 import { PieChart } from 'react-native-svg-charts';
 import { useSelector } from 'react-redux';
 
+import { latinNotes } from '../../../utils/notes';
 import Labels from './labels';
 import { keys, getColor, getArc, playChord } from './helper';
 import styles from './styles';
@@ -20,20 +21,26 @@ const postFix = {
 };
 
 const Circle = ({ lock, currentKey, setCurrentKey }) => {
-    const { instrumentSound } = useSelector(state => state.settings);
+    const { notationType, instrumentSound } = useSelector(state => state.settings);
 
     const pieData = useCallback((type) => {
-        return keys.map((key, i) => ({
-            name: `${key[type]}${postFix[type]}`,
-            value: 30,
-            svg: {
-                fill: getColor(i, currentKey, type),
-                onPress: () => onPress(i, type === 'major' ? 'default' : type)
-            },
-            arc: type === 'major' ? getArc(i, currentKey) : null,
-            key: `pie-${key[type]}`
-        }));
-    }, [currentKey, lock, instrumentSound]);
+        return keys.map((key, i) => {
+            const notes = key[type].split('/');
+            const inNotation = notes.map(note => {
+                return notationType !== 'Do' ? note : latinNotes[note];
+            });
+            return {
+                name: `${inNotation.join('/')}${postFix[type]}`,
+                value: 30,
+                svg: {
+                    fill: getColor(i, currentKey, type),
+                    onPress: () => onPress(i, type === 'major' ? 'default' : type)
+                },
+                arc: type === 'major' ? getArc(i, currentKey) : null,
+                key: `pie-${key[type]}`
+            }
+        });
+    }, [currentKey, lock, notationType, instrumentSound]);
 
     const onPress = useCallback((pressedIndex, type) => {
         if (!lock) setCurrentKey(pressedIndex);

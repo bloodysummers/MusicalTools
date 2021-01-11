@@ -35,6 +35,7 @@ Sib = 'Sib',
 Si = 'Si';
 
 export const latinNotes = {
+    ['Cb']: 'Dob',
     C: 'Do',
     ['C#']: 'Do#',
     ['Db']: 'Reb',
