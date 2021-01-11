@@ -39,8 +39,6 @@ const ChordsList = ({ chords, notationType, onTry }) => {
         const note = notationType !== 'Do' ? chord.tonic : latinNotes[chord.tonic];
         return `${note}${chord.aliases[0]}`;
     }, []);
-
-    console.log(chords);
   
     return (
         <Layout style={styles.list}>

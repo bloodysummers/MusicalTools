@@ -14,6 +14,7 @@ import ChordsList from './chordsList';
 import { majorScales, getNotesAndEnharmonics } from '../../utils/scales';
 import ads from '../../config/ads';
 import { keys } from './circle/helper';
+import { latinNotes } from '../../utils/notes';
 import routes from '../../routes';
 const { circleOfFifths } = routes;
 
@@ -36,7 +37,9 @@ const CircleOfFifths = () => {
     const triads = useMemo(() => {
         const triads = getTriads(tab === 0 ? note.default : note.minor, tab === 0 ? 'major' : 'minor');
         const triadsWithFindBy = triads.map(triad => {
-            triad.findBy = getNotesAndEnharmonics(triad.notes);
+            const { notes, tonic, aliases } = triad;
+            triad.findBy = getNotesAndEnharmonics(notes);
+            triad.nameToDisplay = `${notationType !== 'Do' ? tonic : latinNotes[tonic]}${aliases[0]}`;;
             return triad;
         });
         return triadsWithFindBy;
