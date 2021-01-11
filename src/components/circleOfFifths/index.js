@@ -22,6 +22,7 @@ const CircleOfFifths = () => {
     const [currentKey, setCurrentKey] = useState(0);
     const [tab, setTab] = useState(0);
     const { lockCircle } = useSelector(state => state.circleOfFifths);
+    const { notationType } = useSelector(state => state.settings);
     const { t } = useTranslation();
 
     const note = useMemo(() => keys[currentKey], [currentKey]);
@@ -74,7 +75,11 @@ const CircleOfFifths = () => {
                     <Tab title={t('major').toUpperCase()} />
                     <Tab title={t('minor').toUpperCase()} />
                 </TabBar>
-                <ChordsList chords={triads} onTry={tryChord} />
+                <ChordsList
+                    chords={triads}
+                    onTry={tryChord}
+                    notationType={notationType}
+                />
             </Layout>
         </ScrollView>
     );

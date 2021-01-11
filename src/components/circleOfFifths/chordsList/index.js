@@ -34,6 +34,13 @@ const ChordsList = ({ chords, notationType, onTry }) => {
                 return `${roman}°`;
         }
     }, []);
+
+    const getChordName = useCallback(chord => {
+        const note = notationType !== 'Do' ? chord.tonic : latinNotes[chord.tonic];
+        return `${note}${chord.aliases[0]}`;
+    }, []);
+
+    console.log(chords);
   
     return (
         <Layout style={styles.list}>
@@ -44,7 +51,7 @@ const ChordsList = ({ chords, notationType, onTry }) => {
                         <Layout style={styles.item}>
                             <Layout style={styles.itemText}>
                                 <Text category="h6">
-                                    {chord.symbol} <Text appearance="hint">({t(chord.quality.toLowerCase())})</Text>
+                                    {getChordName(chord)} <Text appearance="hint">({t(chord.quality.toLowerCase())})</Text>
                                 </Text>
                                 <Text category="s1" appearance="hint">
                                     {chordToString(chord.notes)}
