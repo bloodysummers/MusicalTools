@@ -25,7 +25,7 @@ const Scale = () => {
         });
     }, [scale]);
 
-    const chords = useMemo(() => findChords(scale.name), [scale]);
+    const chords = useMemo(() => findChords(scale.name, notationType), [scale, notationType]);
 
     const tryChord = useCallback((chord) => {
         navigation.navigate(scaleFinder.scale.chord, {

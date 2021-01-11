@@ -20,7 +20,7 @@ const ScalesList = ({ scales, notationType, onTry }) => {
                     <Layout style={styles.item}>
                         <Layout style={styles.itemText}>
                             <Text category="h6">
-                                {scale.nameToDisplay} {scale.subtitle && <Text appearance="hint">{scale.subtitle}</Text>}
+                                {scale.nameToDisplay}
                             </Text>
                             <Text category="s1" appearance="hint">
                                 {scaleToString(scale.notes)}

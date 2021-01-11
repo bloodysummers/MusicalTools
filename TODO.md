@@ -7,10 +7,10 @@
 - [ ] Implement a full keyboard
 - [ ] Implement chord inversions
 - [ ] Fix chord builder for missing modes
-- [ ] Apply latin names to chords and circle of fifths
 
 ## In Progress
 
+- [ ] Apply latin names to chords and circle of fifths
 
 ## Done
 
