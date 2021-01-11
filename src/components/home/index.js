@@ -1,12 +1,17 @@
 import React from 'react';
 import { View, Linking } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Layout, Card, Text, Button } from '@ui-kitten/components';
 import { useTranslation } from 'react-i18next';
+
+import routes from '../../routes';
+const { scaleFinder, circleOfFifths } = routes;
 
 import styles from './styles';
 
 const Home = () => {
     const { t } = useTranslation();
+    const navigation = useNavigation();
 
     return (
         <Layout level="4" style={styles.home}>
@@ -30,10 +35,20 @@ const Home = () => {
                 )}
             >
                 <View>
-                    <Button style={styles.button} size="large" appearance="ghost">
+                    <Button
+                        style={styles.button}
+                        size="large"
+                        appearance="ghost"
+                        onPress={() => navigation.navigate(scaleFinder.section)}
+                    >
                         {t('scaleFinder')}
                     </Button>
-                    <Button style={styles.button} size="large" appearance="ghost">
+                    <Button
+                        style={styles.button}
+                        size="large"
+                        appearance="ghost"
+                        onPress={() => navigation.navigate(circleOfFifths.section)}
+                    >
                         {t('circleOfFifths')}
                     </Button>
                 </View>
