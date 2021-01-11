@@ -1,3 +1,4 @@
 export default {
-    welcome: 'Hey, welcome'
+    usefulTools: 'Useful tools for musicians',
+    leaveComments: 'Leave your comments and rate the app'
 };

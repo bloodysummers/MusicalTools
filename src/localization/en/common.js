@@ -3,6 +3,7 @@ export default {
     scaleFinder: 'Scale finder',
     circleOfFifths: 'Circle of fifths',
     settings: 'Settings',
+    rateUs: 'Rate the app',
     try: 'Try',
     playChord: 'Play chord',
     playArpeggio: 'Play arpeggio',

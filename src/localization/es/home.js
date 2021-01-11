@@ -1,3 +1,4 @@
 export default {
-    welcome: 'Hey, bienvenido'
+    usefulTools: 'Útiles herramientas para músicos',
+    leaveComments: 'Deja tus comentarios y califica la app'
 };

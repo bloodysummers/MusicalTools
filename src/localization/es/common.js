@@ -3,6 +3,7 @@ export default {
     scaleFinder: 'Buscador de escalas',
     circleOfFifths: 'Círculo de quintas',
     settings: 'Configuración',
+    rateUs: 'Califica la app',
     try: 'Probar',
     playChord: 'Tocar acorde',
     playArpeggio: 'Tocar arpegio',

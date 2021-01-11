@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button } from 'react-native';
+import { StyleSheet, Linking } from 'react-native';
 import { Drawer, DrawerItem, Text, IndexPath } from '@ui-kitten/components';
 import {useTranslation} from 'react-i18next';
 
@@ -19,6 +19,10 @@ export const CustomDrawer = ({ navigation, descriptors, state }) => {
                         onPress={() => navigation.navigate(item.name)}
                     />
                 ))}
+                <DrawerItem
+                    title={t('rateUs')}
+                    onPress={() => Linking.openURL(`market://details?id=com.musicaltools`)}
+                />
             </Drawer>
         </>
     );

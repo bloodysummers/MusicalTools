@@ -41,8 +41,6 @@ const CircleOfFifths = () => {
         return triadsWithFindBy;
     }, [note, tab]);
 
-    console.log(triads);
-
     const tryChord = useCallback((chord) => {
         navigation.navigate(circleOfFifths.triad, {
             scale: chord
