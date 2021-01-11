@@ -8,5 +8,6 @@ export default {
     melodicMinorModes: 'Modos de menor melódica',
     pentatonic: 'Pentatónica',
     blues: 'Blues',
-    augmentedAndDiminished: 'Aumentada y disminuida'
+    augmentedAndDiminished: 'Aumentada y disminuida',
+    scaleTypesError: 'Debe haber al menos un tipo de escala seleccionado'
 };

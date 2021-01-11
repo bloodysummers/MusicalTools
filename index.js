@@ -10,7 +10,6 @@ import thunk from 'redux-thunk';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import Toast from 'react-native-toast-message';
 
 import App from './App';
 import {name as appName} from './app.json';
@@ -39,7 +38,6 @@ const ReduxApp = () => (
             onBeforeLift={() => new Promise(resolve => setTimeout(resolve, 2000))}
         >
             <App />
-            <Toast ref={ref => Toast.setRef(ref)} />
         </PersistGate>
     </Provider>
 );

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { setScaleType } from '../../../store/actions/scaleFinder';
 import styles from './styles';
-import { showToast } from '../../../utils/functions';
+import { showToast } from '../../../utils/toast';
 
 const Settings = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Settings = () => {
     const setType = useCallback((key, value) => {
         const activeTypes = Object.values(scaleTypes).filter(type => type).length;
         if (activeTypes <= 1 && !value) {
-            showToast('error', 'There must be at least one type selected');
+            showToast('error', t('scaleFinder:scaleTypesError'));
             return;
         }
         dispatch(setScaleType({ [key]: value }));

@@ -13,6 +13,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Toast from 'react-native-toast-message';
 
 import theme from './src/utils/theme';
 import { Home, ScaleFinder, CircleOfFifths, Settings } from './src/routes/stacks';
@@ -20,6 +21,7 @@ import { CustomDrawer } from './src/routes/drawer';
 import routes from './src/routes';
 const { home, settings, scaleFinder, circleOfFifths } = routes;
 import './src/localization';
+import { toastConfig } from './src/utils/toast';
 
 const Drawer = createDrawerNavigator();
 
@@ -61,6 +63,7 @@ export default () => {
             />
           </Drawer.Navigator>
         </NavigationContainer>
+        <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
       </ApplicationProvider>
     </>
   );

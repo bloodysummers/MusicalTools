@@ -1,5 +1,13 @@
 import Toast from 'react-native-toast-message';
 
+import ToastComponent from '../components/common/toast';
+
+export const toastConfig = {
+    success: ToastComponent,
+    error: ToastComponent,
+    info: ToastComponent
+};
+
 export const showToast = (type, text1, text2) => {
     switch(type) {
         case 'success':
