@@ -14,6 +14,7 @@
 
 ## Done
 
+- [x] Fix missing notes in enharmonic scales
 - [x] Circle of fifths' screen
 - [x] Fix the chords navigation
 - [x] Implement a player for chords and arpeggios

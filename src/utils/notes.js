@@ -35,27 +35,41 @@ Sib = 'Sib',
 Si = 'Si';
 
 export const latinNotes = {
+    ['Cbb']: 'Dobb',
     ['Cb']: 'Dob',
     C: 'Do',
     ['C#']: 'Do#',
+    ['C##']: 'Do##',
+    ['Dbb']: 'Rebb',
     ['Db']: 'Reb',
     D: 'Re',
     ['D#']: 'Re#',
+    ['D##']: 'Re##',
+    ['Ebb']: 'Mibb',
     ['Eb']: 'Mib',
     E: 'Mi',
     ['E#']: 'Mi#',
+    ['E##']: 'Mi##',
+    ['Fbb']: 'Fabb',
     ['Fb']: 'Fab',
     F: 'Fa',
     ['F#']: 'Fa#',
+    ['F##']: 'Fa##',
+    ['Gbb']: 'Solbb',
     ['Gb']: 'Solb',
     G: 'Sol',
     ['G#']: 'Sol#',
+    ['G##']: 'Sol##',
+    ['Abb']: 'Labb',
     ['Ab']: 'Lab',
     A: 'La',
     ['A#']: 'La#',
+    ['A##']: 'La##',
+    ['Bbb']: 'Sibb',
     ['Bb']: 'Sib',
     B: 'Si',
-    ['B#']: 'Si#'
+    ['B#']: 'Si#',
+    ['B##']: 'Si##'
 };
 
 export default {
