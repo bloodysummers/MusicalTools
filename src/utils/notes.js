@@ -43,6 +43,8 @@ export const latinNotes = {
     ['D#']: 'Re#',
     ['Eb']: 'Mib',
     E: 'Mi',
+    ['E#']: 'Mi#',
+    ['Fb']: 'Fab',
     F: 'Fa',
     ['F#']: 'Fa#',
     ['Gb']: 'Solb',
@@ -52,7 +54,8 @@ export const latinNotes = {
     A: 'La',
     ['A#']: 'La#',
     ['Bb']: 'Sib',
-    B: 'Si'
+    B: 'Si',
+    ['B#']: 'Si#'
 };
 
 export default {
