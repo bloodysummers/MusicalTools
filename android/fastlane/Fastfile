@@ -26,8 +26,7 @@ platform :android do
 
     supply_params = {
       track: "alpha",
-      # defaults to completed
-      release_status: "draft",
+      release_status: "completed",
     }
     supply(supply_params)
   end
