@@ -6,8 +6,6 @@ import { AdMobBanner } from 'react-native-admob';
 import * as tonal from '@tonaljs/tonal';
 import { useTranslation } from 'react-i18next';
 
-window.tonal = tonal;
-
 import Keyboard from '../../../instruments/keyboard';
 import styles from './style';
 import ads from '../../../../config/ads';
@@ -47,9 +45,9 @@ const Chord = () => {
             if (note.indexOf('#') > -1) {
                 const enharmonic = tonal.Note.enharmonic(note);
                 return sounds[enharmonic.toLowerCase()];
-            } else return sounds[note.toLowerCase()]
+            } else return sounds[note.toLowerCase()];
         });
-    }, [scale])
+    }, [scale]);
 
     useEffect(() => {
         navigation.setOptions({

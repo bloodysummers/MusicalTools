@@ -19,7 +19,7 @@ const Labels = ({ slices, fontSize }) => {
             >
                 {data.name}
             </Text>
-        )
+        );
     });
 };
 

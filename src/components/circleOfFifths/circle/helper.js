@@ -98,7 +98,7 @@ const getChordSounds = (type, key) => {
         if (note.indexOf('#') > -1 || note.indexOf('Cb') > -1) {
             const enharmonic = Note.enharmonic(note);
             return sounds[enharmonic.toLowerCase()];
-        } else return sounds[note.toLowerCase()]
+        } else return sounds[note.toLowerCase()];
     });
 };
 
@@ -126,7 +126,7 @@ export const getColor = (index, selected, type) => {
         else return '#b3b2bb';
     } else if (type === 'dim') {
         if (index === selected) return theme['color-primary-200'];
-        else return '#c3c2cb'
+        else return '#c3c2cb';
     }
 };
 
@@ -145,12 +145,12 @@ const postFix = {
 };
 
 export const playChord = (pressedIndex, type) => {
-    const note = noteName = keys[pressedIndex][type];
-    let chordKeyNote;
-    if (note.indexOf('#') > -1) {
-        chordKeyNote = Note.enharmonic(note);
-    } else chordKeyNote = note;
-    const chordName = `${noteName}${postFix[type]}`;
+    const note = keys[pressedIndex][type];
+    // let chordKeyNote;
+    // if (note.indexOf('#') > -1) {
+    //   chordKeyNote = Note.enharmonic(note);
+    // } else chordKeyNote = note;
+    const chordName = `${note}${postFix[type]}`;
     const chord = chords[chordName];
     chord.forEach(sound => {
         if (sound.isPlaying()) sound.stop();

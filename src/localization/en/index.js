@@ -10,4 +10,4 @@ export default {
     circleOfFifths,
     settings,
     common
-}
+};

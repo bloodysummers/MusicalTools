@@ -32,5 +32,6 @@ export const getNoteByFret = (string, fret, octave) => {
     return note;
 };
 
-export const getOctaveByFret = (string, fret, octave) => {
+export const getOctaveByFret = () => {
+    // ...
 };

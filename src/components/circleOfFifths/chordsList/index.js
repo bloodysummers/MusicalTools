@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
 import { useTranslation } from 'react-i18next';
 
@@ -64,6 +65,12 @@ const ChordsList = ({ chords, notationType, onTry }) => {
             ))}
         </Layout>
     );
+};
+
+ChordsList.propTypes = {
+    chords: PropTypes.array,
+    notationType: PropTypes.oneOf(['C', 'Do', 'None']),
+    onTry: PropTypes.func
 };
 
 export default ChordsList;

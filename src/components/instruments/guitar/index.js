@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TouchableHighlight, ScrollView, View } from 'react-native';
 import { Text } from '@ui-kitten/components';
 
@@ -49,7 +50,7 @@ const Guitar = ({ tuning }) => {
                                     >
                                         <Text category="h6" style={styles.noteName}>{noteByFret.note}</Text>
                                     </TouchableHighlight>
-                                )
+                                );
                             })}
                         </View>
                     ))}
@@ -68,6 +69,10 @@ Guitar.defaultProps = {
         { note: 'A', octave: 2 },
         { note: 'E', octave: 2 }
     ]
+};
+
+Guitar.propTypes = {
+    tuning: PropTypes.array
 };
 
 export default Guitar;

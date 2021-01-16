@@ -1,6 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
-import { Button, Layout, Divider, Text, Icon, Card, Select, SelectItem, IndexPath } from '@ui-kitten/components';
+import { Button, Layout, Divider, Text, Icon, Card, Select, SelectItem } from '@ui-kitten/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +10,7 @@ import { setNotationType, setInstrumentSound } from '../../store/actions/setting
 const languages = [
     {code: 'en', label: 'English'},
     {code: 'es', label: 'Español'},
-  ];
+];
 
 const Settings = () => {
     const dispatch = useDispatch();

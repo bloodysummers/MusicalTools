@@ -18,4 +18,4 @@ export default StyleSheet.create({
     itemText: {
         justifyContent: 'center'
     }
-})
+});

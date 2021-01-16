@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Divider, Button, Layout, Text } from '@ui-kitten/components';
 import { useTranslation } from 'react-i18next';
 
@@ -25,11 +26,11 @@ const ScalesList = ({ scales, notationType, onTry }) => {
                             <Text category="s1" appearance="hint">
                                 {scaleToString(scale.notes)}
                             </Text>
-                                {scale.alt && (
-                                    <Text category="s1" appearance="hint">
-                                        {scaleToString(scale.alt.notes)}
-                                    </Text>
-                                )}
+                            {scale.alt && (
+                                <Text category="s1" appearance="hint">
+                                    {scaleToString(scale.alt.notes)}
+                                </Text>
+                            )}
                         </Layout>
                         <Button status="basic" onPress={() => onTry(scale)}>{t('try')}</Button>
                     </Layout>
@@ -38,6 +39,12 @@ const ScalesList = ({ scales, notationType, onTry }) => {
             ))}
         </Layout>
     );
+};
+
+ScalesList.propTypes = {
+    scales: PropTypes.array,
+    notationType: PropTypes.string,
+    onTry: PropTypes.func
 };
 
 export default ScalesList;

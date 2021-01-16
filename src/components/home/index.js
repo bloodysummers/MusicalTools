@@ -27,7 +27,7 @@ const Home = () => {
                         <Text
                             style={styles.rate}
                             status='primary'
-                            onPress={() => Linking.openURL(`market://details?id=com.musicaltools`)}
+                            onPress={() => Linking.openURL('market://details?id=com.musicaltools')}
                         >
                             {t('home:leaveComments')}
                         </Text>

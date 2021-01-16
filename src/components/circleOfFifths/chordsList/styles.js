@@ -24,6 +24,5 @@ export default StyleSheet.create({
         width: 45,
         marginRight: 10,
         textAlign: 'center'
-        // fontFamily: 'serif'
     }
-})
+});

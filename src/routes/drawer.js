@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, Linking } from 'react-native';
 import { Drawer, DrawerItem, Text, IndexPath } from '@ui-kitten/components';
 import {useTranslation} from 'react-i18next';
@@ -21,11 +22,17 @@ export const CustomDrawer = ({ navigation, descriptors, state }) => {
                 ))}
                 <DrawerItem
                     title={t('rateUs')}
-                    onPress={() => Linking.openURL(`market://details?id=com.musicaltools`)}
+                    onPress={() => Linking.openURL('market://details?id=com.musicaltools')}
                 />
             </Drawer>
         </>
     );
+};
+
+CustomDrawer.propTypes = {
+    navigation: PropTypes.object,
+    descriptors: PropTypes.object,
+    state: PropTypes.object
 };
 
 const styles = StyleSheet.create({

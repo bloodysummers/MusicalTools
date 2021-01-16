@@ -34,7 +34,8 @@ WhiteKey.propTypes = {
         note: PropTypes.string
     }),
     mark: PropTypes.bool,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    root: PropTypes.bool
 };
 
 export default WhiteKey;

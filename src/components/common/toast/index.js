@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Text, Icon, Button } from '@ui-kitten/components';
 
@@ -28,5 +29,12 @@ const Toast = ({text1, text2, hide, type }) => (
         </View>
     </View>
 );
+
+Toast.propTypes = {
+    text1: PropTypes.string,
+    text2: PropTypes.string,
+    hide: PropTypes.func,
+    type: PropTypes.string
+};
 
 export default Toast;

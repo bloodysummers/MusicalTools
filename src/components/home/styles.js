@@ -21,4 +21,4 @@ export default StyleSheet.create({
     rate: {
         textAlign: 'center'
     }
-})
+});

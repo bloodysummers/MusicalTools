@@ -63,6 +63,6 @@ const Scale = () => {
             </Layout>
         </ScrollView>
     );
-};;
+};
 
 export default Scale;

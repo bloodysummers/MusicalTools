@@ -31,7 +31,7 @@ const CircleOfFifths = () => {
     const scale = useMemo(() => {
         return majorScales.find(scale => {
             return scale.tonic === note.default || (scale.alt && scale.alt.tonic === note.default);
-        })
+        });
     }, [note]);
 
     const triads = useMemo(() => {
@@ -39,7 +39,7 @@ const CircleOfFifths = () => {
         const triadsWithFindBy = triads.map(triad => {
             const { notes, tonic, aliases } = triad;
             triad.findBy = getNotesAndEnharmonics(notes);
-            triad.nameToDisplay = `${notationType !== 'Do' ? tonic : latinNotes[tonic]}${aliases[0]}`;;
+            triad.nameToDisplay = `${notationType !== 'Do' ? tonic : latinNotes[tonic]}${aliases[0]}`;
             return triad;
         });
         return triadsWithFindBy;

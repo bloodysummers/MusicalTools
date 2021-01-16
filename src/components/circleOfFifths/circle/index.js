@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 import { PieChart } from 'react-native-svg-charts';
@@ -38,7 +39,7 @@ const Circle = ({ lock, currentKey, setCurrentKey }) => {
                 },
                 arc: type === 'major' ? getArc(i, currentKey) : null,
                 key: `pie-${key[type]}`
-            }
+            };
         });
     }, [currentKey, lock, notationType, instrumentSound]);
 
@@ -86,6 +87,12 @@ const Circle = ({ lock, currentKey, setCurrentKey }) => {
             </Layout>
         </Layout>
     );
+};
+
+Circle.propTypes = {
+    lock: PropTypes.bool,
+    currentKey: PropTypes.number,
+    setCurrentKey: PropTypes.func
 };
 
 export default Circle;

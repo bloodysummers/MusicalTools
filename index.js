@@ -20,9 +20,9 @@ const persistConfig = {
     storage: AsyncStorage
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers)
+const persistedReducer = persistReducer(persistConfig, reducers);
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     persistedReducer,
     composeEnhancers(applyMiddleware(thunk))
