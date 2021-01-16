@@ -16,7 +16,7 @@ const { scaleFinder } = routes;
 
 const ScaleFinder = () => {
     const [scale, setScale] = useState([]);
-    const [finds, setFinds] = useState([]);
+    const [scales, setScales] = useState([]);
     const [init, setInit] = useState(true);
     const { notationType } = useSelector(state => state.settings);
     const { scaleTypes } = useSelector(state => state.scaleFinder);
@@ -24,7 +24,7 @@ const ScaleFinder = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        setFinds([]);
+        setScales([]);
         setInit(true);
     }, [scaleTypes, notationType]);
 
@@ -36,20 +36,23 @@ const ScaleFinder = () => {
         } else {
             newScale.push(note);
         }
-        setFinds([]);
+        setScales([]);
         setInit(true);
         setScale(newScale);
     },[scale]);
 
     const startFinding = useCallback(() => {
         if (init) setInit(false);
-        const scales = findScales(scale, scaleTypes, notationType, t);
-        setFinds(scales);
+        const foundScales = new Promise((resolve) => {
+            const scales = findScales(scale, scaleTypes, notationType, t);
+            resolve(scales);
+        });
+        foundScales.then(scales => setScales(scales));
     }, [scale, scaleTypes, notationType]);
 
     const clear = useCallback(() => {
         setScale([]);
-        setFinds([]);
+        setScales([]);
         setInit(true);
     }, []);
 
@@ -94,8 +97,12 @@ const ScaleFinder = () => {
                         adUnitID={ads.scaleFinderBanner}
                     />
                 </Layout>
-                {finds.length > 0 ? (
-                    <ScalesList scales={finds} notationType={notationType} onTry={tryScale} />
+                {scales.length > 0 ? (
+                    <ScalesList
+                        scales={scales}
+                        notationType={notationType}
+                        onTry={tryScale}
+                    />
                 ) : !init && (
                     <Text>No scales found</Text>
                 )}
