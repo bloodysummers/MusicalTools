@@ -5,11 +5,7 @@ import Toast from './';
 test('form submits two answers', () => {
 	const hide = jest.fn();
 
-	const { getAllByA11yLabel, getByText } = render(
-		<Toast text1="Text1" text2="Text2" hide={hide} type="success" />
-	);
-
-	// const answerInputs = getAllByA11yLabel('answer input');
+	const { getByText } = render(<Toast text1="Text1" text2="Text2" hide={hide} type="success" />);
 
 	fireEvent.press(getByText('Submit'));
 
