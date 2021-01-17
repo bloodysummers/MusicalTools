@@ -49,7 +49,8 @@ const ScalesList = ({ scales, notationType, onTry }) => {
 ScalesList.propTypes = {
 	scales: PropTypes.array,
 	notationType: PropTypes.string,
-	onTry: PropTypes.func
+	onTry: PropTypes.func,
+	loading: PropTypes.bool
 };
 
 export default ScalesList;

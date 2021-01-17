@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 
 import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
+import DummyList from '../common/dummyList';
+import NotFound from '../common/notFound';
 import { findScales } from './helper';
 import styles from './styles';
 import routes from '../../routes';
@@ -17,6 +19,7 @@ const { scaleFinder } = routes;
 const ScaleFinder = () => {
 	const [scale, setScale] = useState([]);
 	const [scales, setScales] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const [init, setInit] = useState(true);
 	const { notationType } = useSelector(state => state.settings);
 	const { scaleTypes } = useSelector(state => state.scaleFinder);
@@ -46,11 +49,17 @@ const ScaleFinder = () => {
 
 	const startFinding = useCallback(() => {
 		if (init) setInit(false);
+		setLoading(true);
 		const foundScales = new Promise(resolve => {
-			const scales = findScales(scale, scaleTypes, notationType, t);
-			resolve(scales);
+			setTimeout(() => {
+				const scales = findScales(scale, scaleTypes, notationType, t);
+				resolve(scales);
+			}, 0);
 		});
-		foundScales.then(scales => setScales(scales));
+		foundScales.then(scales => {
+			setScales(scales);
+			setLoading(false);
+		});
 	}, [scale, scaleTypes, notationType]);
 
 	const clear = useCallback(() => {
@@ -94,14 +103,16 @@ const ScaleFinder = () => {
 				<Layout style={styles.ad}>
 					<AdMobBanner adSize="banner" adUnitID={ads.scaleFinderBanner} />
 				</Layout>
-				{scales.length > 0 ? (
+				{loading ? (
+					<DummyList />
+				) : scales.length > 0 ? (
 					<ScalesList
 						scales={scales}
 						notationType={notationType}
 						onTry={tryScale}
 					/>
 				) : (
-					!init && <Text>No scales found</Text>
+					!init && <NotFound>No scales found</NotFound>
 				)}
 			</Layout>
 		</ScrollView>

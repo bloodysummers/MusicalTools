@@ -6826,6 +6826,14 @@ react-native-localize@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-2.0.1.tgz#a5bf2f2910260ac2574d5ca5d5f95dc8bbc4ac1f"
   integrity sha512-Tuf26iH7/pHd+yCAORD2EPLhkHdGTMEUXMiiKb4Pz69dE48R7C+MA30EqubE6qTlvAs6gHM+2E5dzLAxcGH5UA==
 
+react-native-masked-loader@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-masked-loader/-/react-native-masked-loader-1.1.4.tgz#5984afdbc780f2bd9f1dc45f93062b5b3d71b9a7"
+  integrity sha512-paNp0x0uHThPiIOaOahsVmmvZW65rx0ZfNZJ0VowBU/uPgtE1I47NomBr/7sW/giUin1RPHEb7YQ9jL52QyX6w==
+  dependencies:
+    "@react-native-community/masked-view" "^0.1.10"
+    react-native-svg "^12.1.0"
+
 react-native-reanimated@^1.13.2:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.13.2.tgz#1ae5457b24b4913d173a5a064bb28eae7783d293"
@@ -6867,7 +6875,7 @@ react-native-svg-charts@^5.4.0:
     d3-shape "^1.0.6"
     prop-types "^15.6.0"
 
-react-native-svg@^9.13.6:
+react-native-svg@^12.1.0, react-native-svg@^9.13.6:
   version "9.13.6"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.13.6.tgz#5365fba2bc460054b90851e71f2a71006a5d373f"
   integrity sha512-vjjuJhEhQCwWjqsgWyGy6/C/LIBM2REDxB40FU1PMhi8T3zQUwUHnA6M15pJKlQG8vaZyA+QnLyIVhjtujRgig==

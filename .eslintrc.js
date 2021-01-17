@@ -15,14 +15,15 @@ module.exports = {
 	plugins: ['react', 'react-hooks', 'prettier'],
 	rules: {
 		'prettier/prettier': [
-			'error',
+			'warn',
 			{
 				jsxBracketSameLine: true,
 				singleQuote: true,
 				trailingComma: 'none',
 				printWidth: 80,
 				useTabs: true,
-				arrowParens: 'avoid'
+				arrowParens: 'avoid',
+				endOfLine: 'auto'
 			}
 		]
 	},
