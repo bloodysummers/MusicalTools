@@ -8,45 +8,33 @@ import colors from '../../utils/colors';
 
 export const Stack = createStackNavigator();
 
-export const MenuButton = (props) => {
-    const navigation = useNavigation();
-    return (
-        <Button
-            appearance="ghost"
-            status="danger"
-            accessoryLeft={() => (
-                <Icon
-                    {...props}
-                    name="menu"
-                    style={styles.icon}
-                    fill={colors.white}
-                />
-            )}
-            onPress={() => navigation.openDrawer()}
-        />
-    );
+export const MenuButton = props => {
+	const navigation = useNavigation();
+	return (
+		<Button
+			appearance="ghost"
+			status="danger"
+			accessoryLeft={() => <Icon {...props} name="menu" style={styles.icon} fill={colors.white} />}
+			onPress={() => navigation.openDrawer()}
+		/>
+	);
 };
 
-export const BackButton = (props) => {
-    const navigation = useNavigation();
-    return (
-        <Button
-            appearance="ghost"
-            status="danger"
-            accessoryLeft={() => (
-                <Icon
-                    {...props}
-                    name="arrow-back"
-                    style={styles.icon}
-                    fill={colors.white}
-                />
-            )}
-            onPress={() => navigation.goBack()}
-        />
-    );
+export const BackButton = props => {
+	const navigation = useNavigation();
+	return (
+		<Button
+			appearance="ghost"
+			status="danger"
+			accessoryLeft={() => (
+				<Icon {...props} name="arrow-back" style={styles.icon} fill={colors.white} />
+			)}
+			onPress={() => navigation.goBack()}
+		/>
+	);
 };
 
 export const screenOptions = {
-    headerTintColor: colors.white,
-    headerStyle: styles.header
+	headerTintColor: colors.white,
+	headerStyle: styles.header
 };

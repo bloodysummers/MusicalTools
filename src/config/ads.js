@@ -1,6 +1,6 @@
 export default {
-    scaleFinderBanner: 'ca-app-pub-3581605331286700/3039075198',
-    scaleBanner: 'ca-app-pub-3581605331286700/6410170531',
-    chordBanner: 'ca-app-pub-3581605331286700/2246730097',
-    circleOfFifthsBanner: 'ca-app-pub-3581605331286700/5272364594'
+	scaleFinderBanner: 'ca-app-pub-3581605331286700/3039075198',
+	scaleBanner: 'ca-app-pub-3581605331286700/6410170531',
+	chordBanner: 'ca-app-pub-3581605331286700/2246730097',
+	circleOfFifthsBanner: 'ca-app-pub-3581605331286700/5272364594'
 };

@@ -1,52 +1,58 @@
-import { regularScales, modeScales, pentatonicScales, bluesScales, harmonicMinorModeScales, melodicMinorModeScales, augmentedAndDiminishedScales } from '../../utils/scales';
+import {
+	regularScales,
+	modeScales,
+	pentatonicScales,
+	bluesScales,
+	harmonicMinorModeScales,
+	melodicMinorModeScales,
+	augmentedAndDiminishedScales
+} from '../../utils/scales';
 import { latinNotes } from '../../utils/notes';
 
 export const findScales = (subScale, scaleTypes, notationType, t) => {
-    let scales = [];
-    if (scaleTypes.regular) {
-        const regular = checkScales(subScale, regularScales);
-        scales = scales.concat(regular);
-    }
-    if (scaleTypes.modes) {
-        const modes = checkScales(subScale, modeScales);
-        scales = scales.concat(modes);
-    }
-    if (scaleTypes.pentatonic) {
-        const pentatonics = checkScales(subScale, pentatonicScales);
-        scales = scales.concat(pentatonics);
-    }
-    if (scaleTypes.blues) {
-        const blues = checkScales(subScale, bluesScales);
-        scales = scales.concat(blues);
-    }
-    if (scaleTypes.harmonicMinorModes) {
-        const harmonicMinorModes = checkScales(subScale, harmonicMinorModeScales);
-        scales = scales.concat(harmonicMinorModes);
-    }
-    if (scaleTypes.melodicMinorModes) {
-        const melodicMinorModes = checkScales(subScale, melodicMinorModeScales);
-        scales = scales.concat(melodicMinorModes);
-    }
-    if (scaleTypes.augmentedDiminished) {
-        const augmentedDiminished = checkScales(subScale, augmentedAndDiminishedScales);
-        scales = scales.concat(augmentedDiminished);
-    }
-    return scales.map(scale => {
-        scale.nameToDisplay = getScaleName(scale, notationType, t);
-        return scale;
-    });
+	let scales = [];
+	if (scaleTypes.regular) {
+		const regular = checkScales(subScale, regularScales);
+		scales = scales.concat(regular);
+	}
+	if (scaleTypes.modes) {
+		const modes = checkScales(subScale, modeScales);
+		scales = scales.concat(modes);
+	}
+	if (scaleTypes.pentatonic) {
+		const pentatonics = checkScales(subScale, pentatonicScales);
+		scales = scales.concat(pentatonics);
+	}
+	if (scaleTypes.blues) {
+		const blues = checkScales(subScale, bluesScales);
+		scales = scales.concat(blues);
+	}
+	if (scaleTypes.harmonicMinorModes) {
+		const harmonicMinorModes = checkScales(subScale, harmonicMinorModeScales);
+		scales = scales.concat(harmonicMinorModes);
+	}
+	if (scaleTypes.melodicMinorModes) {
+		const melodicMinorModes = checkScales(subScale, melodicMinorModeScales);
+		scales = scales.concat(melodicMinorModes);
+	}
+	if (scaleTypes.augmentedDiminished) {
+		const augmentedDiminished = checkScales(subScale, augmentedAndDiminishedScales);
+		scales = scales.concat(augmentedDiminished);
+	}
+	return scales.map(scale => {
+		scale.nameToDisplay = getScaleName(scale, notationType, t);
+		return scale;
+	});
 };
 
 const getScaleName = (scale, notationType, t) => {
-    const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
-    if (scale.alt) {
-        const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
-        return `${key} / ${altKey} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
-    }
-    return `${key} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
+	const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
+	if (scale.alt) {
+		const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
+		return `${key} / ${altKey} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
+	}
+	return `${key} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
 };
 
 const checkScales = (subScale, scalesSet) =>
-    scalesSet.filter(scale =>
-        subScale.every(note =>
-            scale.findBy.indexOf(note) > -1));
+	scalesSet.filter(scale => subScale.every(note => scale.findBy.indexOf(note) > -1));

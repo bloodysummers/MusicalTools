@@ -7,19 +7,19 @@ import routes from '../../routes';
 const { home } = routes;
 
 const HomeStack = () => {
-    const { t } = useTranslation();
-    return (
-        <Stack.Navigator screenOptions={screenOptions}>
-            <Stack.Screen
-                name={home.screen}
-                options={{
-                    headerTitle: t(home.name),
-                    headerLeft: MenuButton
-                }}
-                component={Home}
-            />
-        </Stack.Navigator>
-    );
+	const { t } = useTranslation();
+	return (
+		<Stack.Navigator screenOptions={screenOptions}>
+			<Stack.Screen
+				name={home.screen}
+				options={{
+					headerTitle: t(home.name),
+					headerLeft: MenuButton
+				}}
+				component={Home}
+			/>
+		</Stack.Navigator>
+	);
 };
 
 export default HomeStack;

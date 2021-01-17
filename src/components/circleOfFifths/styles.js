@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    ad: {
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 16
-    },
-    list: {
-        paddingTop: 16
-    }
+	ad: {
+		height: 50,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginBottom: 16
+	},
+	list: {
+		paddingTop: 16
+	}
 });

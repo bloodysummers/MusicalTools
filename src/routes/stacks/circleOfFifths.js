@@ -15,49 +15,42 @@ import styles from './styles';
 const { circleOfFifths } = routes;
 
 const ToggleButton = () => {
-    const dispatch = useDispatch();
-    const { lockCircle } = useSelector(state => state.circleOfFifths);
+	const dispatch = useDispatch();
+	const { lockCircle } = useSelector(state => state.circleOfFifths);
 
-    return (
-        <View style={styles.lock}>
-            <Icon
-                fill={colors.white}
-                style={styles.lockIcon}
-                name={lockCircle ? 'lock' : 'unlock'}
-            />
-            <Toggle
-                checked={lockCircle}
-                onChange={() => dispatch(setLockCircle(!lockCircle))}
-            />
-        </View>
-    );
+	return (
+		<View style={styles.lock}>
+			<Icon fill={colors.white} style={styles.lockIcon} name={lockCircle ? 'lock' : 'unlock'} />
+			<Toggle checked={lockCircle} onChange={() => dispatch(setLockCircle(!lockCircle))} />
+		</View>
+	);
 };
 
 const CircleOfFifthsStack = () => {
-    const { t } = useTranslation();
+	const { t } = useTranslation();
 
-    return (
-        <Stack.Navigator screenOptions={screenOptions}>
-            <Stack.Screen
-                name={circleOfFifths.screen}
-                options={{
-                    headerTitle: t(circleOfFifths.name),
-                    headerLeft: MenuButton,
-                    headerRight: ToggleButton
-                }}
-                component={CircleOfFifths}
-            />
-            <Stack.Screen
-                name={circleOfFifths.triad}
-                options={{
-                    headerLeft: BackButton,
-                    ...TransitionPresets.SlideFromRightIOS,
-                    gestureDirection: 'horizontal'
-                }}
-                component={Chord}
-            />
-        </Stack.Navigator>
-    );
+	return (
+		<Stack.Navigator screenOptions={screenOptions}>
+			<Stack.Screen
+				name={circleOfFifths.screen}
+				options={{
+					headerTitle: t(circleOfFifths.name),
+					headerLeft: MenuButton,
+					headerRight: ToggleButton
+				}}
+				component={CircleOfFifths}
+			/>
+			<Stack.Screen
+				name={circleOfFifths.triad}
+				options={{
+					headerLeft: BackButton,
+					...TransitionPresets.SlideFromRightIOS,
+					gestureDirection: 'horizontal'
+				}}
+				component={Chord}
+			/>
+		</Stack.Navigator>
+	);
 };
 
 export default CircleOfFifthsStack;

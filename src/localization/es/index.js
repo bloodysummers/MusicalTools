@@ -5,9 +5,9 @@ import settings from './settings';
 import common from './common';
 
 export default {
-    home,
-    scaleFinder,
-    circleOfFifths,
-    settings,
-    common
+	home,
+	scaleFinder,
+	circleOfFifths,
+	settings,
+	common
 };

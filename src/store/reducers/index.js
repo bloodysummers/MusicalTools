@@ -4,9 +4,9 @@ import scaleFinder from './scaleFinder';
 import circleOfFifths from './circleOfFifths';
 
 const rootReducer = combineReducers({
-    settings,
-    scaleFinder,
-    circleOfFifths
+	settings,
+	scaleFinder,
+	circleOfFifths
 });
 
 export default rootReducer;
