@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Matches snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    appearance="default"
+    level="4"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#E4E9F2",
+        },
+        Object {
+          "flex": 1,
+          "padding": 15,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#E4E9F2",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "opacity": 1,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": undefined,
+            "height": 0,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "padding": 15,
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="h4"
+          style={
+            Array [
+              Object {
+                "color": "#222B45",
+                "fontFamily": "System",
+                "fontSize": 26,
+                "fontWeight": "800",
+              },
+              Object {
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          MusicalTools
+        </Text>
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#222B45",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          home:usefulTools
+        </Text>
+      </View>
+      <View
+        appearance="default"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#EDF1F7",
+              "height": 1,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 24,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "minHeight": 48,
+                "minWidth": 48,
+                "opacity": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 14,
+              }
+            }
+          >
+            <Text
+              appearance="default"
+              category="p1"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "color": "#3366FF",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "marginHorizontal": 10,
+                  },
+                ]
+              }
+            >
+              scaleFinder
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "minHeight": 48,
+                "minWidth": 48,
+                "opacity": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 14,
+              }
+            }
+          >
+            <Text
+              appearance="default"
+              category="p1"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "400",
+                  },
+                  Object {
+                    "color": "#3366FF",
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "marginHorizontal": 10,
+                  },
+                ]
+              }
+            >
+              circleOfFifths
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        appearance="default"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#EDF1F7",
+              "height": 1,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          Object {
+            "padding": 15,
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          onPress={[Function]}
+          status="primary"
+          style={
+            Array [
+              Object {
+                "color": "#3366FF",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              Object {
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          home:leaveComments
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

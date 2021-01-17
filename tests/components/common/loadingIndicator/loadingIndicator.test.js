@@ -3,8 +3,6 @@ import { render } from '@testing-library/react-native';
 import LoadingIndicator from '../../../../src/components/common/loadingIndicator';
 import KittenBase from '../../../kittenBase';
 
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
-
 describe('Loading Indicator', () => {
 	it('Matches snapshot - default', () => {
 		const { toJSON } = render(

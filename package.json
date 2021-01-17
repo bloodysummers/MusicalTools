@@ -83,6 +83,9 @@
     "transformIgnorePatterns": [],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
+    ],
+    "setupFiles": [
+      "<rootDir>/tests/jest.setup.js"
     ]
   }
 }
