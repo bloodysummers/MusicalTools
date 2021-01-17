@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 
 import Keyboard from '../../instruments/keyboard';
 import ScalesList from '../scalesList';
+import DummyList from '../../common/dummyList';
 import { findChords } from './helper';
 import styles from './styles';
 import routes from '../../../routes';
@@ -15,6 +16,7 @@ const { scaleFinder } = routes;
 
 const Scale = () => {
 	const [chords, setChords] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const navigation = useNavigation();
 	const route = useRoute();
 	const {
@@ -33,11 +35,17 @@ const Scale = () => {
 	}, [scale, notationType]);
 
 	const getChords = useCallback(() => {
+		setLoading(true);
 		const foundChords = new Promise(resolve => {
-			const chords = findChords(scale.name, notationType);
-			resolve(chords);
+			setTimeout(() => {
+				const chords = findChords(scale.name, notationType);
+				resolve(chords);
+			}, 0);
 		});
-		foundChords.then(chords => setChords(chords));
+		foundChords.then(chords => {
+			setChords(chords);
+			setLoading(false);
+		});
 	}, [scale, notationType]);
 
 	const tryChord = useCallback(
@@ -56,12 +64,16 @@ const Scale = () => {
 				<Layout style={styles.ad}>
 					<AdMobBanner adSize="banner" adUnitID={ads.scaleBanner} />
 				</Layout>
-				{chords.length > 0 && (
-					<ScalesList
-						scales={chords}
-						notationType={notationType}
-						onTry={tryChord}
-					/>
+				{loading ? (
+					<DummyList />
+				) : (
+					chords.length > 0 && (
+						<ScalesList
+							scales={chords}
+							notationType={notationType}
+							onTry={tryChord}
+						/>
+					)
 				)}
 			</Layout>
 		</ScrollView>
