@@ -11,6 +11,8 @@ import { majorScales } from '../../../../src/utils/scales';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
+const mockPlay = jest.fn();
+const mockStop = jest.fn();
 jest.mock('react-native-sound', () => {
 	let _filename = null;
 	let _basePath = null;
@@ -21,9 +23,13 @@ jest.mock('react-native-sound', () => {
 
 	SoundMocked.prototype.filename = () => _filename;
 	SoundMocked.prototype.basePath = () => _basePath;
-	SoundMocked.prototype.play = function () {};
+	SoundMocked.prototype.play = cb => {
+		mockPlay();
+		cb();
+	};
 	SoundMocked.prototype.pause = function () {};
-	SoundMocked.prototype.stop = function () {};
+	SoundMocked.prototype.isPlaying = () => false;
+	SoundMocked.prototype.stop = () => mockStop();
 	SoundMocked.prototype.reset = function () {};
 	SoundMocked.prototype.release = function () {};
 	SoundMocked.prototype.getDuration = function () {};
@@ -34,6 +40,10 @@ jest.mock('react-native-sound', () => {
 });
 
 describe('Keyboard', () => {
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
+
 	it('Matches snapshot', () => {
 		const store = mockStore({
 			settings: {
@@ -140,5 +150,29 @@ describe('Keyboard', () => {
 		expect(csKey.props.accessibilityState.disabled).toBe(false);
 		expect(dKey.props.accessibilityState.disabled).toBe(false);
 		expect(dsKey.props.accessibilityState.disabled).toBe(true);
+	});
+
+	it('Plays a sound', () => {
+		const store = mockStore({
+			settings: {
+				notationType: 'C',
+				instrumentSound: true
+			}
+		});
+		const onPress = jest.fn();
+		const { getByA11yLabel } = render(
+			<Provider store={store}>
+				<KittenBase>
+					<Keyboard onPress={onPress} allow />
+				</KittenBase>
+			</Provider>
+		);
+		const cKey = getByA11yLabel('C');
+
+		fireEvent(cKey, 'pressIn');
+
+		expect(onPress).toBeCalledWith('C');
+		expect(mockPlay).toBeCalled();
+		expect(mockStop).toBeCalled();
 	});
 });

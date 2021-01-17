@@ -24,6 +24,10 @@ jest.mock('react-i18next', () => ({
 		};
 	}
 }));
+const mockedOpenURL = jest.fn();
+jest.mock('react-native/Libraries/Linking/Linking', () => ({
+	openURL: mockedOpenURL
+}));
 
 describe('Home', () => {
 	beforeEach(() => {
@@ -58,5 +62,18 @@ describe('Home', () => {
 		const button = getByText('circleOfFifths');
 		fireEvent.press(button);
 		expect(mockedNavigate).toBeCalledWith('CircleSection');
+	});
+
+	it('Goto store', () => {
+		const { getByText } = render(
+			<KittenBase>
+				<Home />
+			</KittenBase>
+		);
+		const button = getByText('home:leaveComments');
+		fireEvent.press(button);
+		expect(mockedOpenURL).toBeCalledWith(
+			'market://details?id=com.musicaltools'
+		);
 	});
 });
