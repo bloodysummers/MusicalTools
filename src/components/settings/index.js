@@ -79,18 +79,30 @@ const Settings = () => {
 						<Button
 							status={activeButton('C')}
 							style={styles.firstButton}
+							accessibilityLabel="C"
+							accessibilityState={{
+								selected: 'C' === notationType
+							}}
 							onPress={() => saveNotationType('C')}>
 							C
 						</Button>
 						<Button
 							status={activeButton('Do')}
 							style={styles.middleButton}
+							accessibilityLabel="Do"
+							accessibilityState={{
+								selected: 'Do' === notationType
+							}}
 							onPress={() => saveNotationType('Do')}>
 							Do
 						</Button>
 						<Button
 							status={activeButton('None')}
 							style={styles.lastButton}
+							accessibilityLabel={t('settings:none')}
+							accessibilityState={{
+								selected: 'None' === notationType
+							}}
 							onPress={() => saveNotationType('None')}>
 							{t('settings:none')}
 						</Button>
@@ -103,6 +115,8 @@ const Settings = () => {
 						status={instrumentSound ? 'primary' : 'basic'}
 						onPress={saveSound}
 						accessoryLeft={VolumeIcon}
+						accessibilityLabel="Sound"
+						accessibilityState={{ selected: instrumentSound }}
 					/>
 				</Layout>
 				<Layout style={styles.section}>
