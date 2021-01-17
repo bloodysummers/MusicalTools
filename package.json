@@ -7,12 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx --fix",
-    "lint:watch": "esw . -w --ext .js,.jsx --fix"
+    "lint": "eslint . --fix",
+    "lint:watch": "esw . -w --fix"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "eslint . --ext .js,.jsx --fix"
+    "*.{js,jsx}": [
+      "eslint . --fix"
     ]
   },
   "husky": {
