@@ -7,7 +7,15 @@ import styles from './styles';
 import colors from '../../../../utils/colors';
 import { latinNotes } from '../../../../utils/notes';
 
-const BlackKey = ({ style, onPressIn, notationType, noteData, mark, root, disabled }) => (
+const BlackKey = ({
+	style,
+	onPressIn,
+	notationType,
+	noteData,
+	mark,
+	root,
+	disabled
+}) => (
 	<TouchableHighlight
 		style={[styles.blackKey, style, disabled ? styles.disabled : {}]}
 		underlayColor={colors.black}
@@ -19,7 +27,12 @@ const BlackKey = ({ style, onPressIn, notationType, noteData, mark, root, disabl
 			<Text category="s1" status="control" style={styles.blackKeyText}>
 				{notationType === 'C' ? noteData.flat : latinNotes[noteData.flat]}
 			</Text>
-			<View style={[mark ? styles.mark : styles.emptyMark, root ? styles.root : null]} />
+			<View
+				style={[
+					mark ? styles.mark : styles.emptyMark,
+					root ? styles.root : null
+				]}
+			/>
 		</>
 	</TouchableHighlight>
 );

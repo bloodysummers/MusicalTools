@@ -23,7 +23,9 @@ export const CustomDrawer = ({ navigation, descriptors, state }) => {
 				))}
 				<DrawerItem
 					title={t('rateUs')}
-					onPress={() => Linking.openURL('market://details?id=com.musicaltools')}
+					onPress={() =>
+						Linking.openURL('market://details?id=com.musicaltools')
+					}
 				/>
 			</Drawer>
 		</>

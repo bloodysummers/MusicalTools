@@ -57,7 +57,11 @@ const Scale = () => {
 					<AdMobBanner adSize="banner" adUnitID={ads.scaleBanner} />
 				</Layout>
 				{chords.length > 0 && (
-					<ScalesList scales={chords} notationType={notationType} onTry={tryChord} />
+					<ScalesList
+						scales={chords}
+						notationType={notationType}
+						onTry={tryChord}
+					/>
 				)}
 			</Layout>
 		</ScrollView>

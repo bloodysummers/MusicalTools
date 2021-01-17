@@ -21,7 +21,9 @@ const buildChordsByMode = (mode, notationType) => {
 
 const parseChord = (chordData, notationType) => {
 	const { tonic, notes, aliases } = chordData;
-	chordData.nameToDisplay = `${notationType !== 'Do' ? tonic : latinNotes[tonic]}${aliases[0]}`;
+	chordData.nameToDisplay = `${
+		notationType !== 'Do' ? tonic : latinNotes[tonic]
+	}${aliases[0]}`;
 	chordData.findBy = getNotesAndEnharmonics(notes);
 	return chordData;
 };

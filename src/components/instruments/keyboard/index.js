@@ -15,7 +15,9 @@ const whiteKeys = keys.filter(key => key.whole);
 const blackKeys = keys.filter(key => !key.whole);
 
 const Keyboard = ({ allow, scale, onPress }) => {
-	const { notationType, instrumentSound } = useSelector(state => state.settings);
+	const { notationType, instrumentSound } = useSelector(
+		state => state.settings
+	);
 
 	const playSound = useCallback(
 		key => {

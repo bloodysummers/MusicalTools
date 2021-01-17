@@ -20,7 +20,7 @@ module.exports = {
 				jsxBracketSameLine: true,
 				singleQuote: true,
 				trailingComma: 'none',
-				printWidth: 100,
+				printWidth: 80,
 				useTabs: true,
 				arrowParens: 'avoid'
 			}

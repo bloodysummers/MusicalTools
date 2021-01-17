@@ -21,7 +21,12 @@ const ScaleFinderSettingsButton = props => {
 			appearance="ghost"
 			status="danger"
 			accessoryLeft={() => (
-				<Icon {...props} name="settings" style={styles.icon} fill={colors.white} />
+				<Icon
+					{...props}
+					name="settings"
+					style={styles.icon}
+					fill={colors.white}
+				/>
 			)}
 			onPress={() => navigation.navigate(scaleFinder.settings.screen)}
 		/>

@@ -30,16 +30,24 @@ const CircleOfFifths = () => {
 
 	const scale = useMemo(() => {
 		return majorScales.find(scale => {
-			return scale.tonic === note.default || (scale.alt && scale.alt.tonic === note.default);
+			return (
+				scale.tonic === note.default ||
+				(scale.alt && scale.alt.tonic === note.default)
+			);
 		});
 	}, [note]);
 
 	const triads = useMemo(() => {
-		const triads = getTriads(tab === 0 ? note.default : note.minor, tab === 0 ? 'major' : 'minor');
+		const triads = getTriads(
+			tab === 0 ? note.default : note.minor,
+			tab === 0 ? 'major' : 'minor'
+		);
 		const triadsWithFindBy = triads.map(triad => {
 			const { notes, tonic, aliases } = triad;
 			triad.findBy = getNotesAndEnharmonics(notes);
-			triad.nameToDisplay = `${notationType !== 'Do' ? tonic : latinNotes[tonic]}${aliases[0]}`;
+			triad.nameToDisplay = `${
+				notationType !== 'Do' ? tonic : latinNotes[tonic]
+			}${aliases[0]}`;
 			return triad;
 		});
 		return triadsWithFindBy;
@@ -57,7 +65,11 @@ const CircleOfFifths = () => {
 	return (
 		<ScrollView>
 			<Layout level="1">
-				<Circle lock={lockCircle} currentKey={currentKey} setCurrentKey={setCurrentKey} />
+				<Circle
+					lock={lockCircle}
+					currentKey={currentKey}
+					setCurrentKey={setCurrentKey}
+				/>
 				<Layout style={styles.ad}>
 					<AdMobBanner adSize="banner" adUnitID={ads.circleOfFifthsBanner} />
 				</Layout>
@@ -68,7 +80,11 @@ const CircleOfFifths = () => {
 					<Tab title={t('major').toUpperCase()} />
 					<Tab title={t('minor').toUpperCase()} />
 				</TabBar>
-				<ChordsList chords={triads} onTry={tryChord} notationType={notationType} />
+				<ChordsList
+					chords={triads}
+					onTry={tryChord}
+					notationType={notationType}
+				/>
 			</Layout>
 		</ScrollView>
 	);

@@ -116,13 +116,17 @@ const getPosition = (selected, i) => (selected + i + keysLength) % keysLength;
 export const getColor = (index, selected, type) => {
 	if (type === 'major') {
 		if (index === selected) return theme['color-success-500'];
-		else if (index === getPosition(selected, -1)) return theme['color-primary-500'];
-		else if (index === getPosition(selected, 1)) return theme['color-primary-500'];
+		else if (index === getPosition(selected, -1))
+			return theme['color-primary-500'];
+		else if (index === getPosition(selected, 1))
+			return theme['color-primary-500'];
 		else return '#a3a2ab';
 	} else if (type === 'minor') {
 		if (index === selected) return theme['color-primary-300'];
-		else if (index === getPosition(selected, -1)) return theme['color-primary-400'];
-		else if (index === getPosition(selected, 1)) return theme['color-primary-400'];
+		else if (index === getPosition(selected, -1))
+			return theme['color-primary-400'];
+		else if (index === getPosition(selected, 1))
+			return theme['color-primary-400'];
 		else return '#b3b2bb';
 	} else if (type === 'dim') {
 		if (index === selected) return theme['color-primary-200'];

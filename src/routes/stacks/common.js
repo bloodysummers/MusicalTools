@@ -14,7 +14,9 @@ export const MenuButton = props => {
 		<Button
 			appearance="ghost"
 			status="danger"
-			accessoryLeft={() => <Icon {...props} name="menu" style={styles.icon} fill={colors.white} />}
+			accessoryLeft={() => (
+				<Icon {...props} name="menu" style={styles.icon} fill={colors.white} />
+			)}
 			onPress={() => navigation.openDrawer()}
 		/>
 	);
@@ -27,7 +29,12 @@ export const BackButton = props => {
 			appearance="ghost"
 			status="danger"
 			accessoryLeft={() => (
-				<Icon {...props} name="arrow-back" style={styles.icon} fill={colors.white} />
+				<Icon
+					{...props}
+					name="arrow-back"
+					style={styles.icon}
+					fill={colors.white}
+				/>
 			)}
 			onPress={() => navigation.goBack()}
 		/>

@@ -36,7 +36,10 @@ export const findScales = (subScale, scaleTypes, notationType, t) => {
 		scales = scales.concat(melodicMinorModes);
 	}
 	if (scaleTypes.augmentedDiminished) {
-		const augmentedDiminished = checkScales(subScale, augmentedAndDiminishedScales);
+		const augmentedDiminished = checkScales(
+			subScale,
+			augmentedAndDiminishedScales
+		);
 		scales = scales.concat(augmentedDiminished);
 	}
 	return scales.map(scale => {
@@ -48,11 +51,16 @@ export const findScales = (subScale, scaleTypes, notationType, t) => {
 const getScaleName = (scale, notationType, t) => {
 	const key = notationType !== 'Do' ? scale.tonic : latinNotes[scale.tonic];
 	if (scale.alt) {
-		const altKey = notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
-		return `${key} / ${altKey} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
+		const altKey =
+			notationType !== 'Do' ? scale.alt.tonic : latinNotes[scale.alt.tonic];
+		return `${key} / ${altKey} ${t(scale.type, {
+			context: 'she'
+		}).toLowerCase()}`;
 	}
 	return `${key} ${t(scale.type, { context: 'she' }).toLowerCase()}`;
 };
 
 const checkScales = (subScale, scalesSet) =>
-	scalesSet.filter(scale => subScale.every(note => scale.findBy.indexOf(note) > -1));
+	scalesSet.filter(scale =>
+		subScale.every(note => scale.findBy.indexOf(note) > -1)
+	);

@@ -77,7 +77,10 @@ const ScaleFinder = () => {
 				</Layout>
 				<Keyboard scale={{ findBy: scale }} allow onPress={toggleScale} />
 				<Layout style={styles.titleWrap}>
-					<Button style={styles.leftButton} disabled={scale.length < 3} onPress={startFinding}>
+					<Button
+						style={styles.leftButton}
+						disabled={scale.length < 3}
+						onPress={startFinding}>
 						{t('find')}
 					</Button>
 					<Button
@@ -92,7 +95,11 @@ const ScaleFinder = () => {
 					<AdMobBanner adSize="banner" adUnitID={ads.scaleFinderBanner} />
 				</Layout>
 				{scales.length > 0 ? (
-					<ScalesList scales={scales} notationType={notationType} onTry={tryScale} />
+					<ScalesList
+						scales={scales}
+						notationType={notationType}
+						onTry={tryScale}
+					/>
 				) : (
 					!init && <Text>No scales found</Text>
 				)}

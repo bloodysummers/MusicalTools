@@ -18,7 +18,10 @@ export const tones = [
 export const sounds = tones.reduce((all, key) => {
 	const allOctaves = {};
 	for (let i = 1; i <= 5; i++) {
-		allOctaves[`${key.sound}${i}`] = new Sound(`guitar_${key.sound}${i}.mp3`, Sound.MAIN_BUNDLE);
+		allOctaves[`${key.sound}${i}`] = new Sound(
+			`guitar_${key.sound}${i}.mp3`,
+			Sound.MAIN_BUNDLE
+		);
 	}
 	all[key.sound] = allOctaves;
 	return all;

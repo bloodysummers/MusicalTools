@@ -14,7 +14,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import styles from './styles';
-import { setNotationType, setInstrumentSound } from '../../store/actions/settings';
+import {
+	setNotationType,
+	setInstrumentSound
+} from '../../store/actions/settings';
 
 const languages = [
 	{ code: 'en', label: 'English' },
@@ -23,7 +26,9 @@ const languages = [
 
 const Settings = () => {
 	const dispatch = useDispatch();
-	const { notationType, instrumentSound } = useSelector(state => state.settings);
+	const { notationType, instrumentSound } = useSelector(
+		state => state.settings
+	);
 	const { t, i18n } = useTranslation();
 
 	const selectedLanguage = useMemo(() => {
@@ -39,13 +44,17 @@ const Settings = () => {
 		[i18n]
 	);
 
-	const activeButton = useMemo(() => type => (type === notationType ? 'primary' : 'basic'), [
-		notationType
-	]);
+	const activeButton = useMemo(
+		() => type => (type === notationType ? 'primary' : 'basic'),
+		[notationType]
+	);
 
 	const VolumeIcon = useCallback(
 		props => (
-			<Icon {...props} name={instrumentSound ? 'volume-up-outline' : 'volume-off-outline'} />
+			<Icon
+				{...props}
+				name={instrumentSound ? 'volume-up-outline' : 'volume-off-outline'}
+			/>
 		),
 		[instrumentSound]
 	);
@@ -98,7 +107,10 @@ const Settings = () => {
 				</Layout>
 				<Layout style={styles.section}>
 					<Text>{t('settings:language')}</Text>
-					<Select value={selectedLanguage.label} onSelect={setLanguage} style={styles.language}>
+					<Select
+						value={selectedLanguage.label}
+						onSelect={setLanguage}
+						style={styles.language}>
 						{languages.map(language => (
 							<SelectItem key={language.code} title={language.label} />
 						))}

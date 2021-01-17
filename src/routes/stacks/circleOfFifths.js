@@ -20,8 +20,15 @@ const ToggleButton = () => {
 
 	return (
 		<View style={styles.lock}>
-			<Icon fill={colors.white} style={styles.lockIcon} name={lockCircle ? 'lock' : 'unlock'} />
-			<Toggle checked={lockCircle} onChange={() => dispatch(setLockCircle(!lockCircle))} />
+			<Icon
+				fill={colors.white}
+				style={styles.lockIcon}
+				name={lockCircle ? 'lock' : 'unlock'}
+			/>
+			<Toggle
+				checked={lockCircle}
+				onChange={() => dispatch(setLockCircle(!lockCircle))}
+			/>
 		</View>
 	);
 };

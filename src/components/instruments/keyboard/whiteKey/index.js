@@ -7,14 +7,28 @@ import styles from './styles';
 import colors from '../../../../utils/colors';
 import { latinNotes } from '../../../../utils/notes';
 
-const WhiteKey = ({ onPressIn, notationType, noteData, mark, root, disabled }) => (
+const WhiteKey = ({
+	onPressIn,
+	notationType,
+	noteData,
+	mark,
+	root,
+	disabled
+}) => (
 	<TouchableHighlight
 		style={[styles.whiteKey, disabled ? styles.disabled : {}]}
 		underlayColor={colors.softBlue}
 		onPressIn={!disabled ? onPressIn : null}>
 		<>
-			<Text category="h6">{notationType === 'C' ? noteData.note : latinNotes[noteData.note]}</Text>
-			<View style={[mark ? styles.mark : styles.emptyMark, root ? styles.root : null]} />
+			<Text category="h6">
+				{notationType === 'C' ? noteData.note : latinNotes[noteData.note]}
+			</Text>
+			<View
+				style={[
+					mark ? styles.mark : styles.emptyMark,
+					root ? styles.root : null
+				]}
+			/>
 		</>
 	</TouchableHighlight>
 );

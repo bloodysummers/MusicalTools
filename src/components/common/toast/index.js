@@ -25,6 +25,7 @@ const Toast = ({ text1, text2, hide, type }) => (
 					onPress={hide}
 					size="large"
 					accessoryLeft={props => <Icon {...props} name="close" />}
+					testID="closeButton"
 				/>
 			</View>
 		</View>

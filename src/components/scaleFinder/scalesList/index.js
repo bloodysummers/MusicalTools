@@ -11,7 +11,9 @@ const ScalesList = ({ scales, notationType, onTry }) => {
 
 	const scaleToString = useCallback(
 		scale => {
-			const notationArray = scale.map(note => (notationType !== 'Do' ? note : latinNotes[note]));
+			const notationArray = scale.map(note =>
+				notationType !== 'Do' ? note : latinNotes[note]
+			);
 			return notationArray.join(' ');
 		},
 		[notationType]

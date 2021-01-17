@@ -13,7 +13,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Toast from 'react-native-toast-message';
 
 import theme from './src/utils/theme';
-import { Home, ScaleFinder, CircleOfFifths, Settings } from './src/routes/stacks';
+import {
+	Home,
+	ScaleFinder,
+	CircleOfFifths,
+	Settings
+} from './src/routes/stacks';
 import { CustomDrawer } from './src/routes/drawer';
 import routes from './src/routes';
 const { home, settings, scaleFinder, circleOfFifths } = routes;
@@ -29,13 +34,20 @@ const App = () => {
 	return (
 		<>
 			<IconRegistry icons={EvaIconsPack} />
-			<StatusBar backgroundColor={theme['color-primary-700']} barStyle="default" />
+			<StatusBar
+				backgroundColor={theme['color-primary-700']}
+				barStyle="default"
+			/>
 			<ApplicationProvider {...eva} theme={theme}>
 				<NavigationContainer>
 					<Drawer.Navigator
 						initialRouteName={home.section}
 						drawerContent={props => <CustomDrawer {...props} />}>
-						<Drawer.Screen name={home.section} options={{ title: home.name }} component={Home} />
+						<Drawer.Screen
+							name={home.section}
+							options={{ title: home.name }}
+							component={Home}
+						/>
 						<Drawer.Screen
 							name={scaleFinder.section}
 							options={{ title: scaleFinder.name }}

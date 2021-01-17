@@ -22,7 +22,9 @@ const postFix = {
 };
 
 const Circle = ({ lock, currentKey, setCurrentKey }) => {
-	const { notationType, instrumentSound } = useSelector(state => state.settings);
+	const { notationType, instrumentSound } = useSelector(
+		state => state.settings
+	);
 
 	const pieData = useCallback(
 		type => {

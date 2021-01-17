@@ -21,7 +21,8 @@ const languageDetector = {
 	detect: async callback => {
 		const language = await AsyncStorage.getItem('APP_LANG');
 		if (!language) {
-			const bestLanguage = RNLocalize.findBestAvailableLanguage(AVAILABLE_LANG_CODES) || {};
+			const bestLanguage =
+				RNLocalize.findBestAvailableLanguage(AVAILABLE_LANG_CODES) || {};
 			callback(bestLanguage.languageTag || 'en');
 			return;
 		}

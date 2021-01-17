@@ -15,7 +15,11 @@ const Settings = () => {
 
 	const types = useMemo(
 		() => [
-			{ name: t('scaleFinder:majorAndMinor'), key: 'regular', type: scaleTypes.regular },
+			{
+				name: t('scaleFinder:majorAndMinor'),
+				key: 'regular',
+				type: scaleTypes.regular
+			},
 			{ name: t('scaleFinder:modes'), key: 'modes', type: scaleTypes.modes },
 			{
 				name: t('scaleFinder:harmonicMinorModes'),
@@ -27,7 +31,11 @@ const Settings = () => {
 				key: 'melodicMinorModes',
 				type: scaleTypes.melodicMinorModes
 			},
-			{ name: t('scaleFinder:pentatonic'), key: 'pentatonic', type: scaleTypes.pentatonic },
+			{
+				name: t('scaleFinder:pentatonic'),
+				key: 'pentatonic',
+				type: scaleTypes.pentatonic
+			},
 			{ name: t('scaleFinder:blues'), key: 'blues', type: scaleTypes.blues },
 			{
 				name: t('scaleFinder:augmentedAndDiminished'),
@@ -63,7 +71,10 @@ const Settings = () => {
 					<View key={item.name}>
 						<Layout style={styles.item}>
 							<Text>{item.name}</Text>
-							<Toggle checked={item.type} onChange={() => setType(item.key, !item.type)} />
+							<Toggle
+								checked={item.type}
+								onChange={() => setType(item.key, !item.type)}
+							/>
 						</Layout>
 						{i < types.length - 1 && <Divider />}
 					</View>

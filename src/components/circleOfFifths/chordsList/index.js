@@ -13,7 +13,9 @@ const ChordsList = ({ chords, notationType, onTry }) => {
 
 	const chordToString = useCallback(
 		chord => {
-			const notationArray = chord.map(note => (notationType !== 'Do' ? note : latinNotes[note]));
+			const notationArray = chord.map(note =>
+				notationType !== 'Do' ? note : latinNotes[note]
+			);
 			return notationArray.join(' ');
 		},
 		[notationType]
@@ -48,7 +50,9 @@ const ChordsList = ({ chords, notationType, onTry }) => {
 							<Layout style={styles.itemText}>
 								<Text category="h6">
 									{getChordName(chord)}{' '}
-									<Text appearance="hint">({t(chord.quality.toLowerCase())})</Text>
+									<Text appearance="hint">
+										({t(chord.quality.toLowerCase())})
+									</Text>
 								</Text>
 								<Text category="s1" appearance="hint">
 									{chordToString(chord.notes)}
