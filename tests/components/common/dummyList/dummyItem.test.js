@@ -3,6 +3,7 @@ import { render } from '@testing-library/react-native';
 import DummyItem from '../../../../src/components/common/DummyList/dummyItem';
 import KittenBase from '../../../kittenBase';
 
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 jest.mock(
 	'../../../../src/components/common/DummyList/dummyItem/helper.js',
 	() => ({
