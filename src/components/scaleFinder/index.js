@@ -10,6 +10,7 @@ import Keyboard from '../instruments/keyboard';
 import ScalesList from './scalesList';
 import DummyList from '../common/dummyList';
 import NotFound from '../common/notFound';
+import LoadingIndicator from '../common/loadingIndicator';
 import { findScales } from './helper';
 import styles from './styles';
 import routes from '../../routes';
@@ -88,16 +89,27 @@ const ScaleFinder = () => {
 				<Layout style={styles.titleWrap}>
 					<Button
 						style={styles.leftButton}
+						status="primary"
 						disabled={scale.length < 3}
-						onPress={startFinding}>
-						{t('find')}
+						accessoryLeft={
+							loading
+								? props => <LoadingIndicator {...props} status="basic" />
+								: null
+						}
+						onPress={loading ? null : startFinding}>
+						{loading ? '' : t('find')}
 					</Button>
 					<Button
 						style={styles.rightButton}
 						status="basic"
 						disabled={!scale.length}
-						onPress={clear}>
-						{t('clear')}
+						accessoryLeft={
+							loading
+								? props => <LoadingIndicator {...props} status="primary" />
+								: null
+						}
+						onPress={loading ? null : clear}>
+						{loading ? '' : t('clear')}
 					</Button>
 				</Layout>
 				<Layout style={styles.ad}>
