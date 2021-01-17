@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toast Matches snapshot - another appearance 1`] = `
+exports[`Loading Indicator Matches snapshot - another appearance 1`] = `
 <View
   style={
     Object {
@@ -189,7 +189,7 @@ exports[`Toast Matches snapshot - another appearance 1`] = `
 </View>
 `;
 
-exports[`Toast Matches snapshot - default 1`] = `
+exports[`Loading Indicator Matches snapshot - default 1`] = `
 <View
   style={
     Object {

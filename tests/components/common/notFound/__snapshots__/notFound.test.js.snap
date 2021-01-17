@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not Found Matches snapshot - default 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    appearance="default"
+    level="1"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+        },
+        Object {
+          "alignItems": "center",
+          "paddingBottom": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      appearance="default"
+      category="h6"
+      style={
+        Array [
+          Object {
+            "color": "#222B45",
+            "fontFamily": "System",
+            "fontSize": 18,
+            "fontWeight": "800",
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      No results found
+    </Text>
+  </View>
+</View>
+`;
