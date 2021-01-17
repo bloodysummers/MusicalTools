@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
-import DummyItem from '../../../../src/components/common/DummyList/dummyItem';
-import KittenBase from '../../../kittenBase';
+import DummyItem from '../../../../../src/components/common/DummyList/dummyItem';
+import KittenBase from '../../../../kittenBase';
 
 jest.mock(
-	'../../../../src/components/common/DummyList/dummyItem/helper.js',
+	'../../../../../src/components/common/DummyList/dummyItem/helper.js',
 	() => ({
 		randomBetween: () => 100
 	})
