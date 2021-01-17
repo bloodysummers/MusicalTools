@@ -14,7 +14,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('Settings actions', () => {
-	it('should change the notation type', () => {
+	it('Should change the notation type', () => {
 		const store = mockStore({
 			settings: {
 				notationType: 'C'
@@ -29,7 +29,7 @@ describe('Settings actions', () => {
 		]);
 	});
 
-	it('should change the instrument sound state', () => {
+	it('Should change the instrument sound state', () => {
 		const store = mockStore({});
 		store.dispatch(setInstrumentSound(false));
 		expect(store.getActions()).toEqual([

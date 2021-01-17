@@ -8,7 +8,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('Circle of fifths actions', () => {
-	it('should change the lock status', () => {
+	it('Should change the lock status', () => {
 		const store = mockStore({});
 		store.dispatch(setLockCircle(true));
 		expect(store.getActions()).toEqual([
