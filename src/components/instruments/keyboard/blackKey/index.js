@@ -19,6 +19,10 @@ const BlackKey = ({
 	<TouchableHighlight
 		style={[styles.blackKey, style, disabled ? styles.disabled : {}]}
 		underlayColor={colors.black}
+		accessibilityLabel={noteData.note}
+		accessibilityState={{
+			disabled
+		}}
 		onPressIn={!disabled ? onPressIn : null}>
 		<>
 			<Text category="s1" status="control" style={styles.blackKeyText}>

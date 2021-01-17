@@ -92,7 +92,10 @@ const Keyboard = ({ allow, scale, onPress }) => {
 };
 
 Keyboard.defaultProps = {
-	scale: {}
+	scale: {
+		notes: [],
+		findBy: []
+	}
 };
 
 Keyboard.propTypes = {

@@ -18,6 +18,10 @@ const WhiteKey = ({
 	<TouchableHighlight
 		style={[styles.whiteKey, disabled ? styles.disabled : {}]}
 		underlayColor={colors.softBlue}
+		accessibilityLabel={noteData.note}
+		accessibilityState={{
+			disabled
+		}}
 		onPressIn={!disabled ? onPressIn : null}>
 		<>
 			<Text category="h6">
