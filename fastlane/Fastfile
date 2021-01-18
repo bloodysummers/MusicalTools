@@ -65,6 +65,7 @@ platform :android do
     build_type = options.fetch(:build_type, "Release")
 
     gradle_params = {
+      project_dir: "./android",
       task: build_task,
       build_type: build_type,
     }
