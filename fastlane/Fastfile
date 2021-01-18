@@ -91,7 +91,7 @@ platform :android do
     UI.important("Incremented android version code to #{new_version_code}")
 
     if should_commit
-      path = "android/app/build.gradle"
+      path = "./android/app/build.gradle"
       git_add(path: path)
       git_commit(path: path, message: commit_message)
       # Push the new commit and tag back to your git remote
@@ -125,7 +125,7 @@ platform :android do
     UI.important("Incremented android version name to #{new_version_name}")
 
     if should_commit
-      path = "android/app/build.gradle"
+      path = "./android/app/build.gradle"
       git_add(path: path)
       git_commit(path: path, message: commit_message)
       # Push the new commit and tag back to your git remote
