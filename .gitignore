@@ -30,7 +30,6 @@ local.properties
 *.iml
 android/vendor
 android/.bundle
-android/pc-api-7024061843477264879-725-927811f7d5a1.json
 
 # Visual Studio Code
 #
@@ -58,9 +57,10 @@ buck-out/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+pc-api-7024061843477264879-725-927811f7d5a1.json
 
 # Bundle artifact
 *.jsbundle
