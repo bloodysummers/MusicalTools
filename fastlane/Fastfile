@@ -75,7 +75,7 @@ platform :android do
   lane :ibn do |options|
     should_commit = options.fetch(:should_commit, true)
     commit_message = options.fetch(:commit_message, "android: bump build number (version code) [skip ci]")
-    should_push = options.fetch(:should_push, true)
+    should_push = options.fetch(:should_push, false)
 
     ensure_git_status_clean if should_commit
 
@@ -103,7 +103,7 @@ platform :android do
   lane :ivn do |options|
     should_commit = options.fetch(:should_commit, true)
     commit_message = options.fetch(:commit_message, "android: bump version number (version name) [skip ci]")
-    should_push = options.fetch(:should_push, true)
+    should_push = options.fetch(:should_push, false)
 
     # Ensure that your git status is not dirty
     ensure_git_status_clean if should_commit
