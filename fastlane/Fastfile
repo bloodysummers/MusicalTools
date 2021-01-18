@@ -80,7 +80,7 @@ platform :android do
     ensure_git_status_clean if should_commit
 
     params = {
-      :app_project_dir => 'app'
+      :app_project_dir => 'android/app'
     }
     if options[:build_number]
       params[:version_code] = options[:build_number].to_i
@@ -91,7 +91,7 @@ platform :android do
     UI.important("Incremented android version code to #{new_version_code}")
 
     if should_commit
-      path = "./android/app/build.gradle"
+      path = "android/app/build.gradle"
       git_add(path: path)
       git_commit(path: path, message: commit_message)
       # Push the new commit and tag back to your git remote
@@ -112,7 +112,7 @@ platform :android do
     new_version_params = options[:version]
 
     params = {
-      app_project_dir: 'app',
+      app_project_dir: 'android/app',
       increment_type: increment_type,
     }
 
@@ -125,7 +125,7 @@ platform :android do
     UI.important("Incremented android version name to #{new_version_name}")
 
     if should_commit
-      path = "./android/app/build.gradle"
+      path = "android/app/build.gradle"
       git_add(path: path)
       git_commit(path: path, message: commit_message)
       # Push the new commit and tag back to your git remote
