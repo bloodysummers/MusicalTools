@@ -126,7 +126,11 @@ const Settings = () => {
 						onSelect={setLanguage}
 						style={styles.language}>
 						{languages.map(language => (
-							<SelectItem key={language.code} title={language.label} />
+							<SelectItem
+								key={language.code}
+								accessibilityLabel={language.label}
+								title={language.label}
+							/>
 						))}
 					</Select>
 				</Layout>

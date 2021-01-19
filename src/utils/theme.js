@@ -2,7 +2,6 @@ import * as eva from '@eva-design/eva';
 
 export default {
 	...eva.light,
-
 	'color-primary-100': '#F6D2FD',
 	'color-primary-200': '#E8A5FC',
 	'color-primary-300': '#D378F6',

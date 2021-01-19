@@ -68,14 +68,29 @@ describe('Settings', () => {
 
 		const cButton = getByA11yLabel('C');
 		const doButton = getByA11yLabel('Do');
+		const noneButton = getByA11yLabel('settings:none');
 
 		expect(cButton.props.accessibilityState.selected).toBe(true);
 		expect(doButton.props.accessibilityState.selected).toBe(false);
+		expect(noneButton.props.accessibilityState.selected).toBe(false);
 
 		fireEvent.press(doButton);
 
 		expect(cButton.props.accessibilityState.selected).toBe(false);
 		expect(doButton.props.accessibilityState.selected).toBe(true);
+		expect(noneButton.props.accessibilityState.selected).toBe(false);
+
+		fireEvent.press(noneButton);
+
+		expect(cButton.props.accessibilityState.selected).toBe(false);
+		expect(doButton.props.accessibilityState.selected).toBe(false);
+		expect(noneButton.props.accessibilityState.selected).toBe(true);
+
+		fireEvent.press(cButton);
+
+		expect(cButton.props.accessibilityState.selected).toBe(true);
+		expect(doButton.props.accessibilityState.selected).toBe(false);
+		expect(noneButton.props.accessibilityState.selected).toBe(false);
 	});
 
 	it('Changes instrument sound', () => {
@@ -99,5 +114,23 @@ describe('Settings', () => {
 		fireEvent.press(soundButton);
 
 		expect(soundButton.props.accessibilityState.selected).toBe(true);
+	});
+
+	it('Changes language', () => {
+		const store = mockStore({
+			settings: {
+				notationType: 'C',
+				instrumentSound: false
+			}
+		});
+		const { getByDisplayValue } = render(
+			<Provider store={store}>
+				<KittenBase>
+					<Settings />
+				</KittenBase>
+			</Provider>
+		);
+		const languageSelect = getByDisplayValue('English');
+		console.log(languageSelect.props);
 	});
 });
