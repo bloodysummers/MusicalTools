@@ -130,6 +130,6 @@ describe('Scale', () => {
 		);
 		const chords = await waitFor(() => queryAllByA11yLabel('try'));
 		fireEvent.press(chords[0]);
-		expect(mockedNavigate).toBeCalled();
+		expect(mockedNavigate).toBe(111);
 	});
 });

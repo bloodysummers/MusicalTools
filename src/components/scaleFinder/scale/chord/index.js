@@ -65,6 +65,7 @@ const Chord = () => {
 						appearance="outline"
 						style={styles.leftButton}
 						accessoryLeft={PlayIcon}
+						accessibilityLabel={t('playChord')}
 						onPress={playChord}>
 						{t('playChord')}
 					</Button>
@@ -72,6 +73,7 @@ const Chord = () => {
 						appearance="outline"
 						style={styles.rightButton}
 						accessoryLeft={PlayIcon}
+						accessibilityLabel={t('playArpeggio')}
 						onPress={playArpeggio}>
 						{t('playArpeggio')}
 					</Button>

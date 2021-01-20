@@ -1,0 +1,1816 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scale Matches snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <View
+      appearance="default"
+      level="1"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFFFFF",
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderTopWidth": 2,
+            "height": 230,
+            "paddingBottom": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "height": "100%",
+            }
+          }
+        >
+          <View
+            accessibilityLabel="C"
+            accessibilityState={
+              Object {
+                "checked": true,
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {},
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              C
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#BA55EE",
+                    "borderRadius": 10,
+                    "height": 20,
+                    "marginTop": 5,
+                    "width": 20,
+                  },
+                  Object {
+                    "backgroundColor": "#5CB315",
+                  },
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="D"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {
+                  "backgroundColor": "#c1c7c9",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              D
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="E"
+            accessibilityState={
+              Object {
+                "checked": true,
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {},
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              E
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#BA55EE",
+                    "borderRadius": 10,
+                    "height": 20,
+                    "marginTop": 5,
+                    "width": 20,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="F"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {
+                  "backgroundColor": "#c1c7c9",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              F
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="G"
+            accessibilityState={
+              Object {
+                "checked": true,
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {},
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              G
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#BA55EE",
+                    "borderRadius": 10,
+                    "height": 20,
+                    "marginTop": 5,
+                    "width": 20,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="A"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {
+                  "backgroundColor": "#c1c7c9",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              A
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="B"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderBottomLeftRadius": 30,
+                  "borderBottomRightRadius": 30,
+                  "borderBottomWidth": 2,
+                  "borderColor": "#cccccc",
+                  "borderLeftWidth": 1,
+                  "borderRightWidth": 1,
+                  "elevation": 6,
+                  "flex": 1,
+                  "height": "100%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "14.285714285714286%",
+                },
+                Object {
+                  "backgroundColor": "#c1c7c9",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="h6"
+              style={
+                Array [
+                  Object {
+                    "color": "#222B45",
+                    "fontFamily": "System",
+                    "fontSize": 18,
+                    "fontWeight": "800",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              B
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "height": "100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <View
+            accessibilityLabel="C#"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#113147",
+                  "borderBottomLeftRadius": 20,
+                  "borderBottomRightRadius": 20,
+                  "elevation": 8,
+                  "flex": 1,
+                  "height": "70%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "position": "absolute",
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "10%",
+                },
+                Object {
+                  "left": "9.285714285714286%",
+                },
+                Object {
+                  "backgroundColor": "#666666",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              C#
+            </Text>
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Db
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="D#"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#113147",
+                  "borderBottomLeftRadius": 20,
+                  "borderBottomRightRadius": 20,
+                  "elevation": 8,
+                  "flex": 1,
+                  "height": "70%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "position": "absolute",
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "10%",
+                },
+                Object {
+                  "left": "23.571428571428573%",
+                },
+                Object {
+                  "backgroundColor": "#666666",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              D#
+            </Text>
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Eb
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="F#"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#113147",
+                  "borderBottomLeftRadius": 20,
+                  "borderBottomRightRadius": 20,
+                  "elevation": 8,
+                  "flex": 1,
+                  "height": "70%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "position": "absolute",
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "10%",
+                },
+                Object {
+                  "left": "52.142857142857146%",
+                },
+                Object {
+                  "backgroundColor": "#666666",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              F#
+            </Text>
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Gb
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="G#"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#113147",
+                  "borderBottomLeftRadius": 20,
+                  "borderBottomRightRadius": 20,
+                  "elevation": 8,
+                  "flex": 1,
+                  "height": "70%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "position": "absolute",
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "10%",
+                },
+                Object {
+                  "left": "66.42857142857143%",
+                },
+                Object {
+                  "backgroundColor": "#666666",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              G#
+            </Text>
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Ab
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+          <View
+            accessibilityLabel="A#"
+            accessibilityState={
+              Object {
+                "checked": false,
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#113147",
+                  "borderBottomLeftRadius": 20,
+                  "borderBottomRightRadius": 20,
+                  "elevation": 8,
+                  "flex": 1,
+                  "height": "70%",
+                  "justifyContent": "flex-end",
+                  "paddingBottom": 10,
+                  "position": "absolute",
+                  "shadowColor": "#222222",
+                  "shadowOffset": Object {
+                    "height": 4,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.3,
+                  "shadowRadius": 4.65,
+                  "width": "10%",
+                },
+                Object {
+                  "left": "80.71428571428572%",
+                },
+                Object {
+                  "backgroundColor": "#666666",
+                },
+              ]
+            }
+          >
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              A#
+            </Text>
+            <Text
+              appearance="default"
+              category="s1"
+              status="control"
+              style={
+                Array [
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontFamily": "System",
+                    "fontSize": 15,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Bb
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "height": 25,
+                  },
+                  null,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        appearance="default"
+        level="1"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+            },
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-evenly",
+              "padding": 15,
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityLabel="playChord"
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(51, 102, 255, 0.08)",
+              "borderColor": "#3366FF",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginRight": 8,
+              "minHeight": 40,
+              "minWidth": 40,
+              "opacity": 1,
+              "paddingHorizontal": 10,
+              "paddingVertical": 12,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={20}
+              bbWidth={20}
+              fill="#3366FF"
+              focusable={false}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  Object {
+                    "height": 20,
+                    "marginHorizontal": 10,
+                    "tintColor": "#3366FF",
+                    "width": 20,
+                  },
+                  Object {
+                    "opacity": 1,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+            >
+              <RNSVGGroup
+                fill={
+                  Array [
+                    0,
+                    4281558783,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                font={Object {}}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      4278190080,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                >
+                  <RNSVGGroup
+                    fill={
+                      Array [
+                        0,
+                        4278190080,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    font={Object {}}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={Array []}
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth={1}
+                    vectorEffect={0}
+                    x={0}
+                    y={0}
+                  >
+                    <RNSVGRect
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      height="24"
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={0}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      width="24"
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGPath
+                      d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGPath
+                      d="M12.34 7.45a1.7 1.7 0 0 0-1.85-.3 1.6 1.6 0 0 0-1 1.48v6.74a1.6 1.6 0 0 0 1 1.48 1.68 1.68 0 0 0 .69.15 1.74 1.74 0 0 0 1.16-.45L16 13.18a1.6 1.6 0 0 0 0-2.36zm-.84 7.15V9.4l2.81 2.6z"
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGGroup>
+                </RNSVGGroup>
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#222B45",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "color": "#3366FF",
+                  "fontFamily": "System",
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "marginHorizontal": 10,
+                },
+              ]
+            }
+          >
+            playChord
+          </Text>
+        </View>
+        <View
+          accessibilityLabel="playArpeggio"
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(51, 102, 255, 0.08)",
+              "borderColor": "#3366FF",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 40,
+              "minWidth": 40,
+              "opacity": 1,
+              "paddingHorizontal": 10,
+              "paddingVertical": 12,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              bbHeight={20}
+              bbWidth={20}
+              fill="#3366FF"
+              focusable={false}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  Object {
+                    "height": 20,
+                    "marginHorizontal": 10,
+                    "tintColor": "#3366FF",
+                    "width": 20,
+                  },
+                  Object {
+                    "opacity": 1,
+                  },
+                  Object {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              vbHeight={24}
+              vbWidth={24}
+            >
+              <RNSVGGroup
+                fill={
+                  Array [
+                    0,
+                    4281558783,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                font={Object {}}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      4278190080,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                >
+                  <RNSVGGroup
+                    fill={
+                      Array [
+                        0,
+                        4278190080,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    font={Object {}}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={Array []}
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth={1}
+                    vectorEffect={0}
+                    x={0}
+                    y={0}
+                  >
+                    <RNSVGRect
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      height="24"
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={0}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      width="24"
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGPath
+                      d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                    <RNSVGPath
+                      d="M12.34 7.45a1.7 1.7 0 0 0-1.85-.3 1.6 1.6 0 0 0-1 1.48v6.74a1.6 1.6 0 0 0 1 1.48 1.68 1.68 0 0 0 .69.15 1.74 1.74 0 0 0 1.16-.45L16 13.18a1.6 1.6 0 0 0 0-2.36zm-.84 7.15V9.4l2.81 2.6z"
+                      fill={
+                        Array [
+                          0,
+                          4278190080,
+                        ]
+                      }
+                      fillOpacity={1}
+                      fillRule={1}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
+                    />
+                  </RNSVGGroup>
+                </RNSVGGroup>
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#222B45",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                },
+                Object {
+                  "color": "#3366FF",
+                  "fontFamily": "System",
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "marginHorizontal": 10,
+                },
+              ]
+            }
+          >
+            playArpeggio
+          </Text>
+        </View>
+      </View>
+      <View
+        appearance="default"
+        level="1"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+            },
+            Object {
+              "alignItems": "center",
+              "height": 50,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
