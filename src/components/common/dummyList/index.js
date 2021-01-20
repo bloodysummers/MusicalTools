@@ -26,7 +26,11 @@ const DummyList = ({ count }) => {
 		return items;
 	}, []);
 
-	return <Layout style={styles.list}>{dummyItems.map(item => item)}</Layout>;
+	return (
+		<Layout style={styles.list} accessibilityLabel="Loading">
+			{dummyItems.map(item => item)}
+		</Layout>
+	);
 };
 
 DummyList.defaultProps = {
