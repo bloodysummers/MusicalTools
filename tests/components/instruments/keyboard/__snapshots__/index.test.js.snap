@@ -31,6 +31,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="C"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -104,6 +105,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="D"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -177,6 +179,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="E"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -250,6 +253,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="F"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -323,6 +327,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="G"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -396,6 +401,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="A"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -469,6 +475,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="B"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -552,6 +559,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="C#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -644,6 +652,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="D#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -736,6 +745,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="F#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -828,6 +838,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="G#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -920,6 +931,7 @@ exports[`Keyboard Matches snapshot - latin notation 1`] = `
         accessibilityLabel="A#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -1044,6 +1056,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="C"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": true,
           }
         }
@@ -1119,6 +1132,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="D"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1198,6 +1212,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="E"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1275,6 +1290,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="F"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": true,
           }
         }
@@ -1350,6 +1366,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="G"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1427,6 +1444,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="A"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1504,6 +1522,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="B"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1591,6 +1610,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="C#"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1687,6 +1707,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="D#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": true,
           }
         }
@@ -1781,6 +1802,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="F#"
         accessibilityState={
           Object {
+            "checked": true,
             "disabled": false,
           }
         }
@@ -1877,6 +1899,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="G#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": true,
           }
         }
@@ -1971,6 +1994,7 @@ exports[`Keyboard Matches snapshot - with scale 1`] = `
         accessibilityLabel="A#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": true,
           }
         }
@@ -2097,6 +2121,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="C"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2170,6 +2195,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="D"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2243,6 +2269,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="E"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2316,6 +2343,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="F"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2389,6 +2417,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="G"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2462,6 +2491,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="A"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2535,6 +2565,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="B"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2618,6 +2649,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="C#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2710,6 +2742,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="D#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2802,6 +2835,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="F#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2894,6 +2928,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="G#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }
@@ -2986,6 +3021,7 @@ exports[`Keyboard Matches snapshot 1`] = `
         accessibilityLabel="A#"
         accessibilityState={
           Object {
+            "checked": false,
             "disabled": false,
           }
         }

@@ -91,6 +91,11 @@ const ScaleFinder = () => {
 						style={styles.leftButton}
 						status="primary"
 						disabled={scale.length < 3}
+						accessibilityLabel={t('find')}
+						accessibilityState={{
+							disabled: scale.length < 3,
+							busy: loading
+						}}
 						accessoryLeft={
 							loading
 								? props => <LoadingIndicator {...props} status="basic" />
@@ -103,6 +108,11 @@ const ScaleFinder = () => {
 						style={styles.rightButton}
 						status="basic"
 						disabled={!scale.length}
+						accessibilityLabel={t('clear')}
+						accessibilityState={{
+							disabled: !scale.length,
+							busy: loading
+						}}
 						accessoryLeft={
 							loading
 								? props => <LoadingIndicator {...props} status="primary" />

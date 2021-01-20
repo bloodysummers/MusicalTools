@@ -116,7 +116,7 @@ describe('Settings', () => {
 		expect(soundButton.props.accessibilityState.selected).toBe(true);
 	});
 
-	it('Changes language', () => {
+	it.skip('Changes language', () => {
 		const store = mockStore({
 			settings: {
 				notationType: 'C',

@@ -20,7 +20,8 @@ const WhiteKey = ({
 		underlayColor={colors.softBlue}
 		accessibilityLabel={noteData.note}
 		accessibilityState={{
-			disabled
+			disabled,
+			checked: mark
 		}}
 		onPressIn={!disabled ? onPressIn : null}>
 		<>

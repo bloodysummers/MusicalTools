@@ -35,7 +35,10 @@ const ScalesList = ({ scales, notationType, onTry }) => {
 								</Text>
 							)}
 						</Layout>
-						<Button status="basic" onPress={() => onTry(scale)}>
+						<Button
+							status="basic"
+							accessibilityLabel={t('try')}
+							onPress={() => onTry(scale)}>
 							{t('try')}
 						</Button>
 					</Layout>
